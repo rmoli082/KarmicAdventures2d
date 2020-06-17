@@ -84,5 +84,9 @@ public class Enemy : MonoBehaviour
 		audioSource.PlayOneShot(hitSound);
 		audioSource.PlayOneShot(fixedSound);
 		Destroy(this.gameObject);
+		Player.player.baseStats.stats["xp"] += 5;
+		Debug.Log("xp: " + Player.player.baseStats.GetStats("xp").ToString());
+		Debug.Log("level: " + (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
+            Player.player.baseStats.GetStats("xp")))/100).ToString());
 	}
 }

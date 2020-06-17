@@ -9,5 +9,8 @@ public class Avatar : ScriptableObject
     public string avatarName;
     public string avatarDescription;
     public Sprite avatarIcon;
+    public int attackUp;
+    public int defenseUp;
+    public int magicUp;
 
 }

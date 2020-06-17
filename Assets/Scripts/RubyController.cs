@@ -25,11 +25,6 @@ public class RubyController : MonoBehaviour
         get { return currentHealth; }
     }
 
-    public int lives
-    {
-        get {return currentLives; }
-    }
-    
     // =========== MOVEMENT ==============
     Rigidbody2D rigidbody2d;
     Vector2 currentInput;
@@ -38,7 +33,6 @@ public class RubyController : MonoBehaviour
     
     // ======== HEALTH ==========
     int currentHealth;
-    int currentLives;
     float invincibleTimer;
     bool isInvincible;
    
@@ -60,13 +54,7 @@ public class RubyController : MonoBehaviour
         if (PlayerPrefs.HasKey("health")) {
             currentHealth = PlayerPrefsManager.GetHealth();
         } else {
-            currentHealth = GameManager.gm.startHealth;
-        }
-        
-        if (PlayerPrefs.HasKey("lives")){
-            currentLives = PlayerPrefsManager.GetLives();
-        } else {
-            currentLives = GameManager.gm.startLives;
+            currentHealth = Player.player.baseStats.GetStats("hpmax");
         }
         
         // ==== ANIMATION =====
@@ -188,24 +176,18 @@ public class RubyController : MonoBehaviour
             Instantiate(hitParticle, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         }
         
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, GameManager.gm.startHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, Player.player.baseStats.GetStats("hpmax"));
         
-        if(currentHealth == 0 && currentLives > 0) {
-            currentLives--;
-            PlayerPrefsManager.SetLives(currentLives);
+        if(currentHealth == 0 ) {;
             GameManager.gm.refreshGui();
             Respawn();
-        } else if (currentHealth == 0 && currentLives == 0) {
-            PlayerPrefsManager.ResetPlayerState(GameManager.gm.startLives, GameManager.gm.startHealth);
-            Respawn();
         }
-        
-        UIHealthBar.Instance.SetValue(currentHealth / (float)GameManager.gm.startHealth);
+        UIHealthBar.Instance.SetValue(currentHealth / (float)Player.player.baseStats.GetStats("hpmax"));
     }
     
     void Respawn()
     {
-        ChangeHealth(GameManager.gm.startHealth);
+        ChangeHealth(Player.player.baseStats.GetStats("hpmax"));
         transform.position = respawnPosition.position;
     }
     

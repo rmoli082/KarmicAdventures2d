@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject inventoryPanel;
     public SceneData data;
-    public int startLives = 3;
-    public int startHealth = 5;
 
     public GameObject[] EnemyTraps;
     public float secondsBetweenSpawning = 2.0f;
@@ -107,6 +105,7 @@ public class GameManager : MonoBehaviour
         if (_player == null) {
             _player = GameObject.FindGameObjectWithTag("Player");
         }
+        data = FindObjectOfType<SceneData>();
 
         pausePanel.SetActive(false);
 
@@ -143,8 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void EnterSubArea(string nextLevel) 
     {
-        PlayerPrefsManager.SavePlayerState(_player.GetComponent<RubyController>().lives, 
-          _player.GetComponent<RubyController>().health);
+        PlayerPrefsManager.SavePlayerState(_player.GetComponent<RubyController>().health);
         if (_scene.name.Equals("TesterScene"))
         {
             PlayerPrefsManager.PlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
@@ -154,7 +152,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void refreshGui() {
-        UILevel.text =  PlayerPrefsManager.GetLives().ToString();
+        /*
+        data.level.text = (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
+            Player.player.baseStats.GetStats("xp")))/100).ToString(); */
     }
 
     IEnumerator LoadNextLevel(string nextLevel) {

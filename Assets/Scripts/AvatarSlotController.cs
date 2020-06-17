@@ -20,15 +20,19 @@ public class AvatarSlotController : MonoBehaviour
         currentAvatar.avatar = this.avatar;
         currentAvatar.UpdateInfo();
         _player.currentAvatar = currentAvatar.avatar;
+        _player.baseStats.AddModifier(0, new Stats(new Dictionary<string, int>(){
+                {"attack", currentAvatar.avatar.attackUp},
+                {"defense", currentAvatar.avatar.defenseUp},
+                {"magic", currentAvatar.avatar.magicUp}
+            }));
         switch (currentAvatar.avatar.avatarID)
         {
             case 0:
-            _player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            _player.activeStats["Attack"] = _player.activeStats["Attack"] + 2;
-            Debug.Log(_player.activeStats["Attack"]);
-            break;
+                _player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                Debug.Log(_player.baseStats.GetStats("attack").ToString());
+                break;
             default:
-            break;
+                break;
         }
     }
 

@@ -17,3 +17,6 @@ MonoBehaviour:
   avatarDescription: You burn bright with the power of the sun
   avatarIcon: {fileID: -4667167764626823666, guid: d63932905cadea6b28dcb1b55f92bf8b,
     type: 3}
+  attackUp: 2
+  defenseUp: 5
+  magicUp: 3

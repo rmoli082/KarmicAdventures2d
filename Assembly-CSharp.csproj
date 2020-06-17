@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Quests\Quests.cs" />
      <Compile Include="Assets\Scripts\RubyController.cs" />
      <Compile Include="Assets\Scripts\SpawnGameObjects.cs" />
+     <Compile Include="Assets\Scripts\Stats.cs" />
      <Compile Include="Assets\Scripts\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Scripts\UI\UIAmmoCount.cs" />
      <Compile Include="Assets\Scripts\UI\UIDialogueBox.cs" />

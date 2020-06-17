@@ -16,7 +16,9 @@ public class Consumable : Items
         RubyController playerHealth = player.GetComponent<RubyController>();
 
         playerHealth.ChangeHealth(heal);
-        GameManager.gm.startHealth += healthUP;
+        int maxHP = Player.player.baseStats.GetStats("hpmax"); 
+        maxHP += healthUP;
+        Player.player.baseStats.stats["hpmax"] = maxHP;
         Inventory.inventory.RemoveItem(this);
     }
 }

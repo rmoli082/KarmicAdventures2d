@@ -12,10 +12,9 @@ public class GameManagerEditor : Editor
 
        GameManager myGm = (GameManager) target;
        if (GUILayout.Button("Reset Player State")) {
-           PlayerPrefsManager.ResetPlayerState(myGm.startLives, myGm.startHealth);
+           PlayerPrefsManager.ResetPlayerState(Player.player.baseStats.GetStats("hpmax"));
            ChestManager.chestManager.chestList.Clear();
-           Debug.Log("Player lives reset to " + myGm.startLives 
-            + " and player health reset to " + myGm.startHealth);
+           Debug.Log("Player health reset to " + Player.player.baseStats.GetStats("hpmax").ToString());
        }
    }
 }

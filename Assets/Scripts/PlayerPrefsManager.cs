@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class PlayerPrefsManager
 {
-    public static int GetLives() {
-        if (PlayerPrefs.HasKey("lives")) {
-            return PlayerPrefs.GetInt("lives");
-        } else {
-            return 0;
-        }
-    }
-
-    public static void SetLives(int lives) {
-        PlayerPrefs.SetInt("lives", lives);
-    }
-
     public static int GetHealth() {
         if (PlayerPrefs.HasKey("health")) {
             return PlayerPrefs.GetInt("health");
@@ -28,13 +16,11 @@ public class PlayerPrefsManager
         PlayerPrefs.SetInt("health", health);
     }
 
-    public static void SavePlayerState(int lives, int health) {
-        PlayerPrefs.SetInt("lives", lives);
+    public static void SavePlayerState(int health) {
         PlayerPrefs.SetInt("health", health);
     }
 
-    public static void ResetPlayerState(int startLives, int startHealth) {
-        PlayerPrefs.SetInt("lives", startLives);
+    public static void ResetPlayerState(int startHealth) {
         PlayerPrefs.SetInt("health", startHealth);
         PlayerPrefs.SetFloat("overworldX", 0);
         PlayerPrefs.SetFloat("overworldY", 0);

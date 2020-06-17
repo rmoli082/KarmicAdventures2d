@@ -8,8 +8,7 @@ public class Player : MonoBehaviour
     public static Player player;
 
     public Avatar currentAvatar;
-    public Dictionary<string, int> baseStats = new Dictionary<string, int>();
-    public Dictionary<string, int> activeStats = new Dictionary<string, int>();
+    public Stats baseStats;
     
     void Awake()
     {
@@ -20,30 +19,19 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        baseStats.Add("hp", 5);
-        baseStats.Add("mp", 7);
-        baseStats.Add("xp", 0);
-        baseStats.Add("Attack", 10);
-        baseStats.Add("Defense", 10);
-        baseStats.Add("Speed", 10);
-        baseStats.Add("Special", 10);
-        activeStats.Add("hp", 5);
-        activeStats.Add("mp", 7);
-        activeStats.Add("xp", 0);
-        activeStats.Add("Attack", 10);
-        activeStats.Add("Defense", 10);
-        activeStats.Add("Speed", 10);
-        activeStats.Add("Special", 10);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void LateUpdate()
-    {
-       
+        baseStats = new Stats(new Dictionary<string, int>()
+        {
+            {"xp", 0},
+            {"level", 0},
+            {"hpmax", 10},
+            {"hpnow", 10},
+            {"mpmax", 10},
+            {"mpnow", 10},
+            {"attack", 10},
+            {"defense", 10},
+            {"magic", 10},
+            {"karma", 10}
+        });
+        Debug.Log(baseStats.GetStats("attack").ToString());
     }
 }
