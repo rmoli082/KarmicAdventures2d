@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 	public float timeToChange;
 	public bool horizontal;
 	public EnemyType type;
+	public int xpAmount;
 
 	public GameObject smokeParticleEffect;
 	public ParticleSystem fixedParticleEffect;
@@ -79,14 +80,14 @@ public class Enemy : MonoBehaviour
 
 		//we don't want that enemy to react to the player or bullet anymore, remove its reigidbody from the simulation
 		rigidbody2d.simulated = false;
+
+		
+		Player.player.baseStats.AddXP(xpAmount);
+		Debug.Log("xp: " + Player.player.baseStats.GetStats("xp").ToString());
 		
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
 		audioSource.PlayOneShot(fixedSound);
 		Destroy(this.gameObject);
-		Player.player.baseStats.stats["xp"] += 5;
-		Debug.Log("xp: " + Player.player.baseStats.GetStats("xp").ToString());
-		Debug.Log("level: " + (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
-            Player.player.baseStats.GetStats("xp")))/100).ToString());
 	}
 }

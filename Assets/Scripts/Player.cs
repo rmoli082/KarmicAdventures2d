@@ -34,4 +34,12 @@ public class Player : MonoBehaviour
         });
         Debug.Log(baseStats.GetStats("attack").ToString());
     }
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("xp"))
+        {
+            baseStats.stats["xp"] = PlayerPrefsManager.GetXP();
+        }
+    }
 }

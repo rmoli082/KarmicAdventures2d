@@ -14,7 +14,8 @@ public class GameManagerEditor : Editor
        if (GUILayout.Button("Reset Player State")) {
            PlayerPrefsManager.ResetPlayerState(Player.player.baseStats.GetStats("hpmax"));
            ChestManager.chestManager.chestList.Clear();
-           Debug.Log("Player health reset to " + Player.player.baseStats.GetStats("hpmax").ToString());
+           Debug.Log("Player health reset to " + PlayerPrefsManager.GetHealth().ToString());
+           Debug.Log("Player Xp reset to " + PlayerPrefsManager.GetXP().ToString());
        }
    }
 }

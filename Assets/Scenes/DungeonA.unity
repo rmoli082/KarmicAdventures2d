@@ -31266,19 +31266,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1115188351}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1115188354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115188353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244d7589cbc185549868a01a4807683b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentAvatar: {fileID: 0}
 --- !u!4 &1122837649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8283498786106841226, guid: bf0d780db748a2a2f822ecf0dbde999c,
@@ -59017,12 +59004,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.6539373
+      value: 4.653935
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4105678
+      value: -3.4106302
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -59405,7 +59392,7 @@ PrefabInstance:
         type: 3}
       propertyPath: item.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: b0e410f80f29f29febffe7c02a25c7bf,
+      objectReference: {fileID: 11400000, guid: 13385410fca69211c89364e311d7c0ea,
         type: 2}
     - target: {fileID: 7461413930239705732, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}

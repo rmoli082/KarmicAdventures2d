@@ -38885,6 +38885,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1936357021, guid: 676b2f4fe813ee47c80bea53ccc314f7, type: 3}
+      propertyPath: xpAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8575684818433655544, guid: 676b2f4fe813ee47c80bea53ccc314f7,
         type: 3}
       propertyPath: aggroDistOrig
@@ -43339,19 +43343,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1387050973}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1387050975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387050974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 244d7589cbc185549868a01a4807683b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentAvatar: {fileID: 0}
 --- !u!1 &1387396444
 GameObject:
   m_ObjectHideFlags: 0
@@ -44116,6 +44107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeToChange
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982084178593964874, guid: fabc6663cd332f94d9c3b6a1e917070b,
+        type: 3}
+      propertyPath: xpAmount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6982084178593964875, guid: fabc6663cd332f94d9c3b6a1e917070b,
         type: 3}
@@ -54235,6 +54231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1936357021, guid: 676b2f4fe813ee47c80bea53ccc314f7, type: 3}
+      propertyPath: xpAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8575684818433655544, guid: 676b2f4fe813ee47c80bea53ccc314f7,
         type: 3}
       propertyPath: aggroDistOrig
@@ -61465,6 +61465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1936357021, guid: 676b2f4fe813ee47c80bea53ccc314f7, type: 3}
+      propertyPath: xpAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8575684818433655544, guid: 676b2f4fe813ee47c80bea53ccc314f7,
         type: 3}
       propertyPath: aggroDistOrig
@@ -63124,6 +63128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1936357021, guid: 676b2f4fe813ee47c80bea53ccc314f7, type: 3}
+      propertyPath: xpAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8575684818433655544, guid: 676b2f4fe813ee47c80bea53ccc314f7,
         type: 3}
       propertyPath: target

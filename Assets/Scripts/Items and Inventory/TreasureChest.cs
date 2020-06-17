@@ -35,6 +35,7 @@ public class TreasureChest : MonoBehaviour
                     id = Random.Range(1, 193734);
                     this.gameObject.GetComponent<Chest>().chestID = id;
                     Debug.Log("New chest ID: " + id);
+                    this.gameObject.GetComponent<Chest>().status = Chest.ChestState.CLOSED;
                 }
             }
             coinAmount = Random.Range(5, 11);

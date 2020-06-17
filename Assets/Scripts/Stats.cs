@@ -15,7 +15,7 @@ public class Stats
 
     public void AddModifier(int modifierID, Stats modifierList)
     {
-        modifiers.Add(modifierID, modifierList);
+        modifiers[modifierID] = modifierList;
     }
 
     public int GetStats(string statName)
@@ -36,6 +36,11 @@ public class Stats
         }
 
         return stat;
+    }
+
+    public void AddXP(int xpAmount)
+    {
+        stats["xp"] += xpAmount;
     }
 
 }
