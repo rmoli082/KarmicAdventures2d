@@ -11,6 +11,7 @@ public class RubyController : MonoBehaviour
     public float timeInvincible = 2.0f;
     public Transform respawnPosition;
     public ParticleSystem hitParticle;
+    public int currentHealth;
     
     // ======== PROJECTILE ==========
     public GameObject projectilePrefab;
@@ -18,12 +19,6 @@ public class RubyController : MonoBehaviour
     // ======== AUDIO ==========
     public AudioClip hitSound;
     public AudioClip shootingSound;
-    
-    // ======== HEALTH ==========
-    public int health
-    {
-        get { return currentHealth; }
-    }
 
     // =========== MOVEMENT ==============
     Rigidbody2D rigidbody2d;
@@ -32,7 +27,6 @@ public class RubyController : MonoBehaviour
     Scene _scene;
     
     // ======== HEALTH ==========
-    int currentHealth;
     float invincibleTimer;
     bool isInvincible;
    
@@ -178,10 +172,12 @@ public class RubyController : MonoBehaviour
         
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, Player.player.baseStats.GetStats("hpmax"));
         
-        if(currentHealth == 0 ) {;
+        if(currentHealth == 0 ) 
+        {
             GameManager.gm.refreshGui();
             Respawn();
         }
+        
         UIHealthBar.Instance.SetValue(currentHealth / (float)Player.player.baseStats.GetStats("hpmax"));
     }
     

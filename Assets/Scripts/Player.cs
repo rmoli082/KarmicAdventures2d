@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
 
     public Avatar currentAvatar;
     public Stats baseStats;
+
+    public float mpRegenTime;
+    public float hpRegenTime;
+
+    RubyController playerController;
+    float hpReturn;
+    float mpReturn;
     
     void Awake()
     {
@@ -32,7 +39,6 @@ public class Player : MonoBehaviour
             {"magic", 10},
             {"karma", 10}
         });
-        Debug.Log(baseStats.GetStats("attack").ToString());
     }
 
     void Start()
@@ -41,5 +47,28 @@ public class Player : MonoBehaviour
         {
             baseStats.stats["xp"] = PlayerPrefsManager.GetXP();
         }
+        playerController = this.gameObject.GetComponent<RubyController>();
     }
+
+    void Update()
+    {
+        if (playerController.currentHealth < baseStats.GetStats("hpmax") 
+            && Time.time >= hpReturn) 
+        {
+            playerController.ChangeHealth(1);
+            hpReturn = Time.time + hpRegenTime;
+            Debug.Log("Health increased!" + playerController.currentHealth.ToString() + "/" 
+                + baseStats.GetStats("hpmax"));
+        }
+        ReloadStats();
+    }
+
+    public void ReloadStats()
+    {
+        baseStats.stats["level"] = (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
+            Player.player.baseStats.GetStats("xp")))/100);
+        baseStats.stats["hpmax"] = baseStats.GetStats("defense") + (2 * baseStats.GetStats("level"));
+        baseStats.stats["mpmax"] = baseStats.GetStats("magic") + (2 * baseStats.GetStats("level")) + 1;
+    }
+
 }

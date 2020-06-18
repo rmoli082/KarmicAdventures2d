@@ -25,11 +25,15 @@ public class AvatarSlotController : MonoBehaviour
                 {"defense", currentAvatar.avatar.defenseUp},
                 {"magic", currentAvatar.avatar.magicUp}
             }));
+        Player.player.ReloadStats();
         switch (currentAvatar.avatar.avatarID)
         {
             case 0:
                 _player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                Debug.Log(_player.baseStats.GetStats("attack").ToString());
+                _player.gameObject.GetComponent<RubyController>().projectilePrefab = (GameObject) Resources.Load("Projectiles/SunProjectile");
+                Debug.Log("Health: " + Player.player.baseStats.GetStats("hpnow") + "/" 
+                    + Player.player.baseStats.GetStats("hpmax"));
+                Debug.Log("Defense: " + Player.player.baseStats.GetStats("defense"));
                 break;
             default:
                 break;

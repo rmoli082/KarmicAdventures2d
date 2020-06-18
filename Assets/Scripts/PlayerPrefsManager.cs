@@ -28,24 +28,40 @@ public class PlayerPrefsManager
         PlayerPrefs.SetInt("xp", XP);
     }
 
-    public static void SetHealth(int health) {
+    public static void SetHealth(int health) 
+    {
         PlayerPrefs.SetInt("health", health);
     }
 
-    public static void SavePlayerState(int health, int xp) {
-        PlayerPrefs.SetInt("health", health);
+    public static void SavePlayerState(int xp, int health, int maxHealth, int mpNow, int mpMax,
+        int attack, int defense, int magic, int karma) 
+    {
         PlayerPrefs.SetInt("xp", xp);
+        PlayerPrefs.SetInt("health", health);
+        PlayerPrefs.SetInt("hpmax", maxHealth);
+        PlayerPrefs.SetInt("mpnow", mpNow);
+        PlayerPrefs.SetInt("mpmax", mpMax);
+        PlayerPrefs.SetInt("attack", attack);
+        PlayerPrefs.SetInt("defense", defense);
+        PlayerPrefs.SetInt("magic", magic);
+        PlayerPrefs.SetInt("karma", karma);
     }
 
-    public static void ResetPlayerState(int startHealth) {
+    public static void ResetPlayerState(int startHealth) 
+    {
         PlayerPrefs.SetInt("health", startHealth);
         PlayerPrefs.SetInt("xp", 0);
+        PlayerPrefs.SetInt("attack", 10);
+        PlayerPrefs.SetInt("defense", 10);
+        PlayerPrefs.SetInt("magic", 10);
+        PlayerPrefs.SetInt("karma", 0);
         PlayerPrefs.SetFloat("overworldX", 0);
         PlayerPrefs.SetFloat("overworldY", 0);
         PlayerPrefs.SetFloat("overworldZ", 0);
     }
 
-    public static void PlayerOverworldPosition(float x, float y, float z) {
+    public static void PlayerOverworldPosition(float x, float y, float z) 
+    {
         PlayerPrefs.SetFloat("overworldX", x);
         PlayerPrefs.SetFloat("overworldY", y);
         PlayerPrefs.SetFloat("overworldZ", z);

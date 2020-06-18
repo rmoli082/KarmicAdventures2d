@@ -15,6 +15,6 @@ MonoBehaviour:
   itemID: 0
   itemName: Sun Stone
   itemDescription: Enables Sun Form
-  itemIcon: {fileID: -2997556313650783059, guid: d63932905cadea6b28dcb1b55f92bf8b,
+  itemIcon: {fileID: -4667167764626823666, guid: d63932905cadea6b28dcb1b55f92bf8b,
     type: 3}
   avatarForm: {fileID: 11400000, guid: c1afd351d06d563c386403aeb6f5e4b4, type: 2}

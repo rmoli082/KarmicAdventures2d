@@ -51,7 +51,7 @@
      <Compile Include="Assets\Scripts\Items and Inventory\Chest.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\InventorySlotController.cs" />
-     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\Avatar Stones.cs" />
+     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\AvatarStones.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Item Types\Consumable.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Items.cs" />

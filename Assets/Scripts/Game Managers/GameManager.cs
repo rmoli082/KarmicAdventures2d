@@ -144,8 +144,11 @@ public class GameManager : MonoBehaviour
 
     public void EnterSubArea(string nextLevel) 
     {
-        PlayerPrefsManager.SavePlayerState(_player.GetComponent<RubyController>().health, 
-            _player.GetComponent<Player>().baseStats.GetStats("xp"));
+        PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"), 
+            Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
+            Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
+            Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
+            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
         if (_scene.name.Equals("TesterScene"))
         {
             PlayerPrefsManager.PlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
@@ -155,8 +158,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void refreshGui() {
-        data.level.text = (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
-            Player.player.baseStats.GetStats("xp")))/100).ToString();
+        data.level.text = Player.player.baseStats.GetStats("level").ToString();
     }
 
     IEnumerator LoadNextLevel(string nextLevel) {
