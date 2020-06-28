@@ -49,7 +49,7 @@ public class TreasureChest : MonoBehaviour
 
     public void DisplayDialog() {
         StringBuilder message = new StringBuilder();
-        message.Append("Chest opened.\n You receive: \n\n");
+        message.Append("Chest opened.\n You receive:\n");
         if (coinAmount > 0)
         {
             message.Append(coinAmount);
@@ -59,6 +59,7 @@ public class TreasureChest : MonoBehaviour
         {
             message.Append(item[itemChoice].itemName);
         }
+        message.Append("\nPress enter to continue...");
         dialogText.text = message.ToString();
         dialogBox.SetActive (true);
     }

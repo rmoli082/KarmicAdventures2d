@@ -16,5 +16,7 @@ MonoBehaviour:
   itemName: Minor Restore Health
   itemDescription: Restores a small amount of health
   itemIcon: {fileID: 21300000, guid: 04f7e98e7f07b894bb89802335516cb1, type: 3}
-  heal: 2
-  healthUP: 0
+  restoreHpAmount: 5
+  increaseMaxHP: 0
+  restoreMpAmount: 0
+  increaseMaxMP: 0
