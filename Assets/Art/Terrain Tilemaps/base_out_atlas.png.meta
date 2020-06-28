@@ -2813,6 +2813,9 @@ TextureImporter:
   - first:
       213: 2405232306644303201
     second: base_out_atlas_936
+  - first:
+      213: 2202432978276538504
+    second: base_out_atlas_937
   externalObjects: {}
   serializedVersion: 11
   mipmaps:

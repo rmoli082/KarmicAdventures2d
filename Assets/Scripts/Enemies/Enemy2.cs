@@ -41,7 +41,7 @@ public class Enemy2 : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            Destroy(enemy, 0.25f);
+            Destroy(enemy);
         }
     }
 }

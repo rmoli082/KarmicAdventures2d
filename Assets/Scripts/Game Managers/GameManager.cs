@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     private float nextSpawnTime;
 
+    private static string OVERWORLD = "OverworldA";
+
     GameObject _player;
     Scene _scene;
     Vector3 _spawnLocation;
@@ -91,7 +93,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (_scene.name.Equals("TesterScene") && Time.time  >= nextSpawnTime) {
+        if (_scene.name.Equals(OVERWORLD) && Time.time  >= nextSpawnTime) {
             int random = Random.Range (0,2);
             if (random == 1) {
                 SpawnEnemyTrap();
@@ -113,7 +115,7 @@ public class GameManager : MonoBehaviour
 
         nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
         _scene = SceneManager.GetActiveScene();
-        if (PlayerPrefs.HasKey("overworldX") && _scene.name.Equals("TesterScene")){
+        if (PlayerPrefs.HasKey("overworldX") && _scene.name.Equals(OVERWORLD)){
             _spawnLocation.x = PlayerPrefs.GetFloat("overworldX") - 0.5f;
             _spawnLocation.y = PlayerPrefs.GetFloat("overworldY") - 0.5f;
             _spawnLocation.z = PlayerPrefs.GetFloat("overworldZ");
@@ -139,7 +141,7 @@ public class GameManager : MonoBehaviour
 		GameObject spawnedObject = Instantiate (EnemyTraps [objectToSpawn], _player.transform.position + spawnPosition, transform.rotation) as GameObject;
 
 		// make the parent the spawner so hierarchy doesn't get super messy
-		spawnedObject.transform.parent = gameObject.transform;
+		spawnedObject.transform.parent = GameObject.FindGameObjectWithTag("EnemyDoor").transform;
     }
 
     public void EnterSubArea(string nextLevel) 
@@ -149,7 +151,7 @@ public class GameManager : MonoBehaviour
             Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
             Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
             Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
-        if (_scene.name.Equals("TesterScene"))
+        if (_scene.name.Equals(OVERWORLD))
         {
             PlayerPrefsManager.PlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
                 _player.transform.position.z);
