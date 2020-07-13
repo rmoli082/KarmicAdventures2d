@@ -11,4 +11,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House1.unity
     guid: fa30390c1a2bd1dacb79c80e789bf750
+  - enabled: 1
+    path: Assets/Scenes/House2.unity
+    guid: 4efcc8b39d3cfc1069da337672706f19
+  - enabled: 1
+    path: Assets/Scenes/House3.unity
+    guid: 48f7cdbb83f56fc3d8e6e13f5644a17b
+  - enabled: 1
+    path: Assets/Scenes/House4.unity
+    guid: 77b5442290905abc88dc17f25e98168c
+  - enabled: 1
+    path: Assets/Scenes/House5.unity
+    guid: c7ddf2c4df9e0071b852f3a6d500bc8c
+  - enabled: 1
+    path: Assets/Scenes/House6.unity
+    guid: 6fd7b04cb0ae9a94481aa41066c83807
+  - enabled: 1
+    path: Assets/Scenes/Prototype/EnemyA.unity
+    guid: 494e6e127c90521ccade9c1566288f29
+  - enabled: 1
+    path: Assets/Scenes/Cemetery1.unity
+    guid: 7f1beb6295a99f7909f2b47cf892f72f
+  - enabled: 1
+    path: Assets/Scenes/Castle1.unity
+    guid: d1dcbb6ca10d578e09e179fb6acb119e
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: fdd8840e8429dec599dfcc09df349538
+  - enabled: 1
+    path: Assets/Scenes/Pond.unity
+    guid: c67c3263ce9c28fa89f6ad781d4bbe4e
   m_configObjects: {}

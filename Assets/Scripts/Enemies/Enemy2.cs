@@ -30,18 +30,8 @@ public class Enemy2 : MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.gm.EnterSubArea(loadLevel.ToString());
-            DestroyAll("EnemyDoor");
+            Destroy(this);
         }
         
-    }
-
-    void DestroyAll(string tag)
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(tag);
-
-        foreach (GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
     }
 }

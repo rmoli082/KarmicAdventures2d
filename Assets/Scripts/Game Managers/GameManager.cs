@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private float nextSpawnTime;
 
-    private static string OVERWORLD = "OverworldA";
+    private enum OVERWORLD {OverworldA};
 
     GameObject _player;
     Scene _scene;
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (_scene.name.Equals(OVERWORLD) && Time.time  >= nextSpawnTime) {
+        if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name) && Time.time  >= nextSpawnTime) {
             int random = Random.Range (0,2);
             if (random == 1) {
                 SpawnEnemyTrap();
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
 
         nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
         _scene = SceneManager.GetActiveScene();
-        if (PlayerPrefs.HasKey("overworldX") && _scene.name.Equals(OVERWORLD)){
+        if (PlayerPrefs.HasKey("overworldX") && System.Enum.IsDefined(typeof(OVERWORLD), _scene.name)){
             _spawnLocation.x = PlayerPrefs.GetFloat("overworldX") - 0.5f;
             _spawnLocation.y = PlayerPrefs.GetFloat("overworldY") - 0.5f;
             _spawnLocation.z = PlayerPrefs.GetFloat("overworldZ");
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
             Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
             Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
             Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
-        if (_scene.name.Equals(OVERWORLD))
+        if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
             PlayerPrefsManager.PlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
                 _player.transform.position.z);
