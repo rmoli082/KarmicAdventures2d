@@ -39,8 +39,6 @@ public class Player : MonoBehaviour
             {"magic", 10},
             {"karma", 10}
         });
-
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()

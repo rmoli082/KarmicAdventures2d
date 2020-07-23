@@ -23,6 +23,17 @@ public class PlayerPrefsManager
         }
     }
 
+    public static int GetAvatar() {
+        if (PlayerPrefs.HasKey("avatar"))
+        {
+            return PlayerPrefs.GetInt("avatar");
+        }
+        else
+        {
+            return -2;
+        }
+    }
+
     public static void SetXP(int XP)
     {
         PlayerPrefs.SetInt("xp", XP);
@@ -34,7 +45,7 @@ public class PlayerPrefsManager
     }
 
     public static void SavePlayerState(int xp, int health, int maxHealth, int mpNow, int mpMax,
-        int attack, int defense, int magic, int karma) 
+        int attack, int defense, int magic, int karma, int avatarId) 
     {
         PlayerPrefs.SetInt("xp", xp);
         PlayerPrefs.SetInt("health", health);
@@ -45,6 +56,7 @@ public class PlayerPrefsManager
         PlayerPrefs.SetInt("defense", defense);
         PlayerPrefs.SetInt("magic", magic);
         PlayerPrefs.SetInt("karma", karma);
+        PlayerPrefs.SetInt("avatar", avatarId);
     }
 
     public static void ResetPlayerState(int startHealth) 
@@ -60,7 +72,13 @@ public class PlayerPrefsManager
         PlayerPrefs.SetFloat("overworldZ", 0);
     }
 
-    public static void PlayerOverworldPosition(float x, float y, float z) 
+    public static void GetPlayerState()
+    {
+        int avatar = PlayerPrefs.GetInt("avatar", -2);
+        Debug.Log($"Current avatar is {avatar}");
+    }
+
+    public static void SetPlayerOverworldPosition(float x, float y, float z) 
     {
         PlayerPrefs.SetFloat("overworldX", x);
         PlayerPrefs.SetFloat("overworldY", y);

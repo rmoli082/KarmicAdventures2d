@@ -17,5 +17,7 @@ MonoBehaviour:
   itemDescription: Increases health by a small amount
   itemIcon: {fileID: 7432125196744552032, guid: 51429f9a16e6fa5eb9e0b58c25250114,
     type: 3}
-  heal: 0
-  healthUP: 2
+  restoreHpAmount: 0
+  increaseMaxHP: 5
+  restoreMpAmount: 0
+  increaseMaxMP: 0

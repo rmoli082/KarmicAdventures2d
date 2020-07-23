@@ -17,5 +17,8 @@ public class GameManagerEditor : Editor
            Debug.Log("Player health reset to " + PlayerPrefsManager.GetHealth().ToString());
            Debug.Log("Player Xp reset to " + PlayerPrefsManager.GetXP().ToString());
        }
+       if (GUILayout.Button("Print Player State")) {
+           PlayerPrefsManager.GetPlayerState();
+       }
    }
 }

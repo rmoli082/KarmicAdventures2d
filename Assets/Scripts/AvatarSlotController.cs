@@ -31,9 +31,9 @@ public class AvatarSlotController : MonoBehaviour
             case 0:
                 _player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                 _player.gameObject.GetComponent<RubyController>().projectilePrefab = (GameObject) Resources.Load("Projectiles/SunProjectile");
-                Debug.Log("Health: " + Player.player.baseStats.GetStats("hpnow") + "/" 
-                    + Player.player.baseStats.GetStats("hpmax"));
-                Debug.Log("Defense: " + Player.player.baseStats.GetStats("defense"));
+                break;
+            case 1:
+                _player.gameObject.GetComponent<SpriteRenderer>().color = new Color(128f,128f,128f,0.5f);
                 break;
             default:
                 break;

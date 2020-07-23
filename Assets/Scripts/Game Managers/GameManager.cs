@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         inventoryPanel = data.inventoryCanvas;
         _scene = SceneManager.GetActiveScene();
         _player = data.player;
+        Player.player.currentAvatar = SetCurrentAvatar();
         // Pause and pause menu toggle
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (Time.timeScale > 0f) {
@@ -109,7 +110,8 @@ public class GameManager : MonoBehaviour
             _spawnLocation.z = PlayerPrefs.GetFloat("overworldZ");
 
             _player.transform.position = _spawnLocation;
-        } 
+        }
+        Player.player.currentAvatar = SetCurrentAvatar();
         refreshGui();
         
     }
@@ -143,16 +145,37 @@ public class GameManager : MonoBehaviour
         data.currentAvatar.gameObject.SetActive(showPanels);
     }
 
+    Avatar SetCurrentAvatar()
+    {
+        int currentAvatarID = PlayerPrefsManager.GetAvatar();
+        switch(currentAvatarID)
+        {
+            case -1:
+                return null;
+            case 0:
+                return (Avatar) Resources.Load("Avatars/Sun Avatar.asset");
+            case 1:
+                return (Avatar) Resources.Load("Avatars/Moon Avatar.asset");
+        }
+        return null;
+    }
+
     public void EnterSubArea(string nextLevel) 
     {
+        int currentAv = -1;
+        if (Player.player.currentAvatar != null)
+        {
+            currentAv = Player.player.currentAvatar.avatarID;
+        }
         PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"), 
             Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
             Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
             Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
-            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
+            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"), 
+            currentAv);
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
-            PlayerPrefsManager.PlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
+            PlayerPrefsManager.SetPlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
                 _player.transform.position.z);
         }
         StartCoroutine(LoadNextLevel(nextLevel));
