@@ -180,7 +180,6 @@ public class RubyController : MonoBehaviour
         
         Player.player.ReloadStats();
         UIHealthBar.Instance.SetValue(currentHealth / (float)Player.player.baseStats.GetStats("hpmax"));
-        Debug.Log((currentHealth / (float)Player.player.baseStats.GetStats("hpmax")).ToString());
     }
     
     void Respawn()

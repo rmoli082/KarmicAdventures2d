@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    private enum OVERWORLD {OverworldA};
+
     public static GameManager gm;
 
     public Text UILevel;
@@ -24,8 +26,6 @@ public class GameManager : MonoBehaviour
     public bool gameIsOver = false;
 
     private float nextSpawnTime;
-
-    private enum OVERWORLD {OverworldA};
 
     GameObject _player;
     Scene _scene;
@@ -73,23 +73,11 @@ public class GameManager : MonoBehaviour
             {
                 Inventory.inventory.UpdatePanelSlots();
                 Inventory.inventory.UpdateAvatarSlots();
-                data.playerInfo.SetActive(false);
-                inventoryPanel.SetActive(true);
-                data.goldHeader.SetActive(true);
-                data.goldPieces.gameObject.SetActive(true);
-                data.avatarHeader.SetActive(true);
-                data.avatarPanel.SetActive(true);
-                data.currentAvatar.gameObject.SetActive(true);
+                ShowHidePanels(true);
             }
             else
             {
-                data.playerInfo.SetActive(true);
-                inventoryPanel.SetActive(false);
-                data.goldHeader.SetActive(false);
-                data.goldPieces.gameObject.SetActive(false);
-                data.avatarHeader.SetActive(false);
-                data.avatarPanel.SetActive(false);
-                data.currentAvatar.gameObject.SetActive(false);
+                ShowHidePanels(false);
             }
         }
 
@@ -142,6 +130,17 @@ public class GameManager : MonoBehaviour
 
 		// make the parent the spawner so hierarchy doesn't get super messy
 		spawnedObject.transform.parent = GameObject.FindGameObjectWithTag("EnemyDoor").transform;
+    }
+
+    void ShowHidePanels(bool showPanels)
+    {
+        data.playerInfo.SetActive(!showPanels);
+        inventoryPanel.SetActive(showPanels);
+        data.goldHeader.SetActive(showPanels);
+        data.goldPieces.gameObject.SetActive(showPanels);
+        data.avatarHeader.SetActive(showPanels);
+        data.avatarPanel.SetActive(showPanels);
+        data.currentAvatar.gameObject.SetActive(showPanels);
     }
 
     public void EnterSubArea(string nextLevel) 

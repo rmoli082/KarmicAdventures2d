@@ -46,10 +46,11 @@
      <Compile Include="Assets\Scripts\Enemies\Enemy2.cs" />
      <Compile Include="Assets\Scripts\Game Managers\ChestManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Game Managers\QuestManager.cs" />
      <Compile Include="Assets\Scripts\Game Managers\SceneData.cs" />
      <Compile Include="Assets\Scripts\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Chest.cs" />
-     <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\InventorySlotController.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Item Types\AvatarStones.cs" />
      <Compile Include="Assets\Scripts\Items and Inventory\Item Types\Consumable.cs" />
@@ -60,7 +61,8 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
-     <Compile Include="Assets\Scripts\Quests\KillQuest.cs" />
+     <Compile Include="Assets\Scripts\Quests\QuestEvent.cs" />
+     <Compile Include="Assets\Scripts\Quests\QuestPath.cs" />
      <Compile Include="Assets\Scripts\Quests\Quests.cs" />
      <Compile Include="Assets\Scripts\RubyController.cs" />
      <Compile Include="Assets\Scripts\SpawnGameObjects.cs" />

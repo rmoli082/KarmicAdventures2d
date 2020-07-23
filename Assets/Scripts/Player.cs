@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
             {"magic", 10},
             {"karma", 10}
         });
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -57,8 +59,6 @@ public class Player : MonoBehaviour
         {
             playerController.ChangeHealth(1);
             hpReturn = Time.time + hpRegenTime;
-            Debug.Log("Health increased!" + playerController.currentHealth.ToString() + "/" 
-                + baseStats.GetStats("hpmax"));
         }
         ReloadStats();
     }
