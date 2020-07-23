@@ -10,6 +10,9 @@ public class QuestManager : MonoBehaviour
    public Quests enterCastleQuest = new Quests();
    public Quests defeatPrinceQuest = new Quests();
 
+   public GameObject buttonPrefab;
+   public GameObject questPrintbox;
+
    void Start()
    {
        QuestEvent findStone = saveVillageQuest.AddQuestEvent("Locate Stone of Awakening", 
@@ -42,7 +45,21 @@ public class QuestManager : MonoBehaviour
 
        destroyCrystalQuest.OrderEvents(locateCrystal.GetID());
 
+       QuestButton button = CreateButton(findStone).GetComponent<QuestButton>();
+
        saveVillageQuest.PrintPath();
        destroyCrystalQuest.PrintPath();
+   }
+
+   GameObject CreateButton(QuestEvent e)
+   {
+       GameObject b = Instantiate(buttonPrefab);
+       b.GetComponent<QuestButton>().Setup(e, questPrintbox);
+       if (e.order == 1)
+       {
+           b.GetComponent<QuestButton>().UpdateButton(QuestEvent.EventStatus.CURRENT);
+           e.status = QuestEvent.EventStatus.CURRENT;
+       }
+       return b;
    }
 }

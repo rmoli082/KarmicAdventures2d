@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\Quests\QuestButton.cs" />
      <Compile Include="Assets\Scripts\Quests\QuestEvent.cs" />
      <Compile Include="Assets\Scripts\Quests\QuestPath.cs" />
      <Compile Include="Assets\Scripts\Quests\Quests.cs" />

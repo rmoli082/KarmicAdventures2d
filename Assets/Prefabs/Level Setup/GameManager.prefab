@@ -97,3 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b926e28267fde3a4785fcd1ba608a2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPrefab: {fileID: 4349370344454696355, guid: 3a0d16bcd642a796198b480e74007b3e,
+    type: 3}
+  questPrintbox: {fileID: 0}
