@@ -6780,12 +6780,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9222941
+      value: -0.92229503
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5248113
+      value: 3.5248191
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -10926,7 +10926,7 @@ GameObject:
   - component: {fileID: 671442934}
   - component: {fileID: 671442933}
   m_Layer: 30
-  m_Name: Grain Sack
+  m_Name: Grain Sack - ChestID 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11027,7 +11027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 65
+  chestID: 10
   status: 1
 --- !u!61 &671442935
 BoxCollider2D:
@@ -15520,7 +15520,7 @@ PrefabInstance:
     - target: {fileID: 7461413929606324946, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_Name
-      value: Treasure Chest
+      value: Treasure Chest - ChestID 9
       objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324948, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
@@ -15611,7 +15611,7 @@ PrefabInstance:
     - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: coinAmount
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
@@ -15661,7 +15661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 4
+  chestID: 9
   status: 1
 --- !u!1 &915335296
 GameObject:
@@ -21193,6 +21193,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 517525031822650060, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3062722990099331719, guid: 47b8588441cee67f4875df90e1dfacc9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -21236,6 +21241,51 @@ PrefabInstance:
     - target: {fileID: 3650482880372231044, guid: 47b8588441cee67f4875df90e1dfacc9,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597140521631951459, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170958875591940702, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170958875591940702, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170958875591940702, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5170958875591940702, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424042930384834528, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424042930384834528, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705850588768016199, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705850588768016199, guid: 47b8588441cee67f4875df90e1dfacc9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7903608086378807680, guid: 47b8588441cee67f4875df90e1dfacc9,
@@ -22706,7 +22756,7 @@ GameObject:
   - component: {fileID: 1244493855}
   - component: {fileID: 1244493854}
   m_Layer: 30
-  m_Name: Sacks
+  m_Name: Sacks - ChestID 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22785,7 +22835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 64
+  chestID: 13
   status: 1
 --- !u!1 &1245551646
 GameObject:
@@ -25643,7 +25693,7 @@ GameObject:
   - component: {fileID: 1427939741}
   - component: {fileID: 1427939740}
   m_Layer: 30
-  m_Name: Armoire
+  m_Name: Armoire - ChestID 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25679,7 +25729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 60
+  chestID: 11
   status: 1
 --- !u!61 &1427939742
 BoxCollider2D:
@@ -38275,7 +38325,7 @@ GameObject:
   - component: {fileID: 2049480394}
   - component: {fileID: 2049480396}
   m_Layer: 30
-  m_Name: Planter
+  m_Name: Planter - ChestID 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38326,7 +38376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 14
+  chestID: 12
   status: 1
 --- !u!61 &2049480396
 BoxCollider2D:
