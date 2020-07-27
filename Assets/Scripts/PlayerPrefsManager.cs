@@ -33,6 +33,10 @@ public class PlayerPrefsManager
             return -2;
         }
     }
+    public static void SetAvatar(int avatarID)
+    {
+        PlayerPrefs.SetInt("avatar", avatarID);
+    }
 
     public static void SetXP(int XP)
     {
@@ -45,7 +49,7 @@ public class PlayerPrefsManager
     }
 
     public static void SavePlayerState(int xp, int health, int maxHealth, int mpNow, int mpMax,
-        int attack, int defense, int magic, int karma, int avatarId) 
+        int attack, int defense, int magic, int karma) 
     {
         PlayerPrefs.SetInt("xp", xp);
         PlayerPrefs.SetInt("health", health);
@@ -56,7 +60,6 @@ public class PlayerPrefsManager
         PlayerPrefs.SetInt("defense", defense);
         PlayerPrefs.SetInt("magic", magic);
         PlayerPrefs.SetInt("karma", karma);
-        PlayerPrefs.SetInt("avatar", avatarId);
     }
 
     public static void ResetPlayerState(int startHealth) 

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     public static Player player;
 
-    public Avatar currentAvatar;
+    public Avatar currentAvatar = null;
     public Stats baseStats;
 
     public float mpRegenTime;

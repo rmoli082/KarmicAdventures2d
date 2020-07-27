@@ -162,17 +162,11 @@ public class GameManager : MonoBehaviour
 
     public void EnterSubArea(string nextLevel) 
     {
-        int currentAv = -1;
-        if (Player.player.currentAvatar != null)
-        {
-            currentAv = Player.player.currentAvatar.avatarID;
-        }
         PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"), 
             Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
             Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
             Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
-            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"), 
-            currentAv);
+            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
             PlayerPrefsManager.SetPlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
