@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e32b53d53d2911086d72126a984f65, type: 3}
   m_Name: Moon Stone
   m_EditorClassIdentifier: 
-  itemID: 3
+  itemID: 2
   itemName: Moon Stone
   itemDescription: Unlocks the Moon Avatar
   itemIcon: {fileID: 8937931039136467240, guid: d63932905cadea6b28dcb1b55f92bf8b,

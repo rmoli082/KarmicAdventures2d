@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e32b53d53d2911086d72126a984f65, type: 3}
   m_Name: Sun Stone
   m_EditorClassIdentifier: Assembly-CSharp::AvatarStones
-  itemID: 0
+  itemID: 1
   itemName: Sun Stone
   itemDescription: Unlocks Sun Avatar
   itemIcon: {fileID: -4667167764626823666, guid: d63932905cadea6b28dcb1b55f92bf8b,

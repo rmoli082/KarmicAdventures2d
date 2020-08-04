@@ -83,7 +83,6 @@ public class Enemy : MonoBehaviour
 
 		
 		Player.player.baseStats.AddXP(xpAmount);
-		Debug.Log("xp: " + Player.player.baseStats.GetStats("xp").ToString());
 		
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
