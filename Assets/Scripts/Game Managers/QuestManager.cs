@@ -1,65 +1,231 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
-   public Quests saveVillageQuest = new Quests();
-   public Quests destroyCrystalQuest = new Quests();
-   public Quests enterCastleQuest = new Quests();
-   public Quests defeatPrinceQuest = new Quests();
+    public static QuestManager questManager;
 
-   public GameObject buttonPrefab;
-   public GameObject questPrintbox;
+    public List<Quest> questList;
+    private List<Quest> currentQuests = new List<Quest>();
 
-   void Start()
-   {
-       QuestEvent findStone = saveVillageQuest.AddQuestEvent("Locate Stone of Awakening", 
-       "You must search everywhere to find a Stone of Awakening so you can bring us back to life!");
-       QuestEvent findSunStone = saveVillageQuest.AddQuestEvent("Locate a Sun Stone", 
-       "Find a Sun Stone so you can activate your Sun Avatar form to melt away the rock!");
-       QuestEvent awakenFamily = saveVillageQuest.AddQuestEvent("Awaken the family",
-       "Use the Stone of Awakening while in Sun Avatar form to bring the stone family back to life.");
-       QuestEvent awakenVillage = saveVillageQuest.AddQuestEvent("Awaken the Village",
-       "Find more Sun Stones to perform the awakening ritual on the rest of the villagers!");
+    public GameObject questCompletedBox;
+    public GameObject buttonPrefab;
+    public GameObject questPrintbox;
 
-       saveVillageQuest.AddPath(findStone.GetID(), findSunStone.GetID());
-       saveVillageQuest.AddPath(findSunStone.GetID(), awakenFamily.GetID());
-       saveVillageQuest.AddPath(awakenFamily.GetID(), awakenVillage.GetID());
 
-       saveVillageQuest.OrderEvents(findStone.GetID());
+    void Awake()
+    {
+        if (questManager == null)
+        {
+            questManager = this;
+        }
+        else if (questManager != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
 
-       QuestEvent locateCrystal = destroyCrystalQuest.AddQuestEvent("Locate a warp crystal", 
-       "Find a warp crystal to use as a focus for the ritual.");
-       QuestEvent locateCircle = destroyCrystalQuest.AddQuestEvent("Find a stone circle",
-       "You'll need to find a stone circle and perform the transportation ritual in it.");
-       QuestEvent collectWyrmTooth = destroyCrystalQuest.AddQuestEvent("Collect a White Wyrm Tooth",
-       "To destroy the crystal, you'll need to kill a white wyrm and gather his tooth!");
-       QuestEvent destroyCrystal = destroyCrystalQuest.AddQuestEvent("Destroy the Blight Crystal",
-       "Use the wyrm tooth to destroy the Blight Crystal and return the village plants and animals to normal!");
+        questList = new List<Quest>(Resources.LoadAll<Quest>("Quests"));
+    }
 
-       destroyCrystalQuest.AddPath(locateCrystal.GetID(), locateCircle.GetID());
-       destroyCrystalQuest.AddPath(locateCircle.GetID(), collectWyrmTooth.GetID());
-       destroyCrystalQuest.AddPath(collectWyrmTooth.GetID(), destroyCrystal.GetID());
+    void Start()
+    {
+        GameEvents.SaveInitiated += Save;
+        GameEvents.LoadInitiated += Load;
+        GameEvents.InventoryUpdated += CheckItemQuest;
+        GameEvents.KillSuccessful += CheckKillQuest;
+        GameEvents.LocationFound += CheckLocationQuest;
+        GameEvents.AwakenEvent += CheckAwakenQuest;
+    }
 
-       destroyCrystalQuest.OrderEvents(locateCrystal.GetID());
+    public void AcceptQuest(Quest quest)
+    {
+        currentQuests.Add(quest);
+        int index = currentQuests.IndexOf(quest);
+        SetQuestStatus(quest.questID, Quest.QuestProgress.CURRENT);
+    }
 
-       QuestButton button = CreateButton(findStone).GetComponent<QuestButton>();
+    public Quest GetQuestById(int questID)
+    {
+        foreach (Quest quest in questList)
+        {
+            if (quest.questID == questID)
+            {
+                return quest;
+            }
+        }
+        return null;
+    }
 
-       saveVillageQuest.PrintPath();
-       destroyCrystalQuest.PrintPath();
-   }
+    public List<Quest> GetMasterQuestList()
+    {
+        return questList;
+    }
 
-   GameObject CreateButton(QuestEvent e)
-   {
-       GameObject b = Instantiate(buttonPrefab);
-       b.GetComponent<QuestButton>().Setup(e, questPrintbox);
-       if (e.order == 1)
-       {
-           b.GetComponent<QuestButton>().UpdateButton(QuestEvent.EventStatus.CURRENT);
-           e.status = QuestEvent.EventStatus.CURRENT;
-       }
-       return b;
-   }
+    public List<Quest> GetMyQuests()
+    {
+        return currentQuests;
+    }
+
+    public List<Quest> GetQuestsByStatus(Quest.QuestProgress progress)
+    {
+        List<Quest> questList = new List<Quest>();
+        foreach (Quest q in currentQuests)
+        {
+            if (q.questProgress == progress)
+            {
+                questList.Add(q);
+            }
+        }
+        return questList;
+    }
+
+    public void SetQuestStatus(int questID, Quest.QuestProgress status)
+    {
+        foreach (Quest q in currentQuests)
+        {
+            if (questID == q.questID)
+            {
+                int index = currentQuests.IndexOf(q);
+                currentQuests[index].questProgress = status;
+            }
+        }
+    }
+
+    public Quest.QuestProgress GetQuestStatus(int questID)
+    {
+        foreach (Quest q in currentQuests)
+        {
+            if (questID == q.questID)
+            {
+                return q.questProgress;
+            }
+        }
+
+        return Quest.QuestProgress.NOT_AVAILABLE;
+    }
+
+    GameObject CreateButton(Quest quest)
+    {
+        GameObject b = Instantiate(buttonPrefab);
+        b.GetComponent<QuestButton>().Setup(quest, questPrintbox);
+        return b;
+    }
+
+    void Save()
+    {
+        List<QuestSave> saveList = new List<QuestSave>();
+        foreach (Quest quest in currentQuests)
+        {
+            saveList.Add(new QuestSave(quest));
+        }
+        SaveLoad.Save<List<QuestSave>>(saveList, "Quests");
+    }
+
+    void Load()
+    {
+        if (SaveLoad.SaveExists("Quests"))
+        {
+            currentQuests.Clear();
+            List<QuestSave> saveList = SaveLoad.Load<List<QuestSave>>("Quest");
+            foreach (QuestSave q in saveList)
+            {
+                Quest quest = QuestManager.questManager.GetQuestById(q.questID);
+                quest.questProgress = q.questStatus;
+                currentQuests.Add(quest);
+            }
+
+        }
+    }
+
+    void CheckKillQuest(string tag)
+    {
+        foreach (Quest quest in QuestManager.questManager.currentQuests)
+        {
+            if (quest.questType == Quest.QuestType.KILL)
+            {
+                KillQuest killQuest = (KillQuest) quest;
+                if (killQuest.killTarget.tag == tag && quest.questProgress == Quest.QuestProgress.CURRENT)
+                {
+                    killQuest.killsCompleted += 1;
+                    if (killQuest.killsCompleted >= killQuest.killsRequired)
+                    {
+                        CompleteQuest(killQuest);
+                    }
+                }
+            }
+        }
+    }
+
+    void CheckAwakenQuest()
+    {
+        foreach (Quest quest in QuestManager.questManager.currentQuests)
+        {
+            if (quest.questType == Quest.QuestType.AWAKEN)
+            {
+                AwakenQuest awakenQuest = (AwakenQuest)quest;
+                if (quest.questProgress == Quest.QuestProgress.CURRENT)
+                {
+                    awakenQuest.numberAwakened += 1;
+                    if (awakenQuest.numberAwakened >= awakenQuest.numberToAwaken)
+                    {
+                        CompleteQuest(awakenQuest);
+                    }
+                }
+            }
+        }
+    }
+
+    void CheckItemQuest()
+    {
+        foreach (Quest quest in QuestManager.questManager.currentQuests) 
+        {
+            if (quest.questType == Quest.QuestType.FIND_ITEM)
+            {
+                FindItem itemQuest = (FindItem)quest;
+                foreach (Items item in Inventory.inventory.itemList)
+                {
+                    if (item == itemQuest.itemRequired && itemQuest.questProgress == Quest.QuestProgress.CURRENT)
+                    {
+                        itemQuest.numberHeld += 1;
+                        if (itemQuest.numberHeld == itemQuest.numberNeeded)
+                        {
+                            CompleteQuest(itemQuest);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void CheckLocationQuest(string location)
+    {
+        foreach (Quest quest in QuestManager.questManager.currentQuests)
+        {
+            if (quest.questType == Quest.QuestType.LOCATION && quest.questProgress == Quest.QuestProgress.CURRENT)
+            {
+                LocateQuest locateQuest = (LocateQuest)quest;
+                if (locateQuest.locationName == location)
+                {
+                    CompleteQuest(locateQuest);
+                }
+            }
+        }
+
+    }
+
+    void CompleteQuest(Quest quest)
+    {
+        SetQuestStatus(quest.questID, Quest.QuestProgress.COMPLETED);
+        GameManager.gm.data.questCompletedBox.SetActive(true);
+        StartCoroutine(DeactivateBox(GameManager.gm.data.questCompletedBox));
+    }
+
+    IEnumerator DeactivateBox(GameObject box)
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        box.SetActive(false);
+    }
+
 }

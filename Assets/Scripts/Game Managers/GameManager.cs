@@ -175,11 +175,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadNextLevel(nextLevel));
     }
 
-    public void refreshGui() {
+    public void refreshGui()
+    {
         data.level.text = Player.player.baseStats.GetStats("level").ToString();
     }
 
-    IEnumerator LoadNextLevel(string nextLevel) {
+    IEnumerator LoadNextLevel(string nextLevel)
+    {
         yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(nextLevel);
     }

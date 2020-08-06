@@ -26,6 +26,12 @@ public class Inventory : MonoBehaviour
         UpdatePanelSlots();
     }
 
+    void Start()
+    {
+        GameEvents.SaveInitiated += Save;
+        GameEvents.LoadInitiated += Load;
+    }
+
     public void AddCoins(int amount) 
     {
         wallet += amount;
@@ -39,6 +45,14 @@ public class Inventory : MonoBehaviour
             itemList.Add(item);
         }
         UpdatePanelSlots();
+    }
+
+    public void AddItems(List<Items> itemList)
+    {
+        foreach (Items item in itemList)
+        {
+            AddItem(item);
+        }
     }
 
     public void RemoveItem(Items item)
@@ -77,6 +91,7 @@ public class Inventory : MonoBehaviour
         }
 
         GameManager.gm.data.goldPieces.GetComponent<Text>().text = GetCoins();
+        GameEvents.OnInventoryUpdated();
     }
 
     public void UpdateAvatarSlots()
@@ -101,5 +116,55 @@ public class Inventory : MonoBehaviour
         }
     }
 
- 
+    void Save()
+    {
+        List<ItemSave> saveList = new List<ItemSave>();
+        List<AvatarSave> avatarSaves = new List<AvatarSave>();
+
+        foreach (Items item in itemList)
+        {
+            saveList.Add(new ItemSave(item));
+        }
+
+        foreach (Avatar avatar in avatarList)
+        {
+            avatarSaves.Add(new AvatarSave(avatar));
+        }
+
+        SaveLoad.Save<List<ItemSave>>(saveList, "Inventory");
+        SaveLoad.Save<int>(wallet, "Wallet");
+        SaveLoad.Save<List<AvatarSave>>(avatarSaves, "Avatars");
+    }
+
+    void Load()
+    {
+        if (SaveLoad.SaveExists("Inventory"))
+        {
+            itemList.Clear();
+            List<ItemSave> saveList = SaveLoad.Load<List<ItemSave>>("Inventory");
+            foreach (ItemSave item in saveList)
+            {
+                itemList.Add(ItemDatabase.itemDb.GetItemByID(item.itemID));
+            }
+            UpdatePanelSlots();
+        }
+
+        if (SaveLoad.SaveExists("Wallet"))
+        {
+            wallet = SaveLoad.Load<int>("Wallet");
+            UpdatePanelSlots();
+        }
+
+        if (SaveLoad.SaveExists("Avatars"))
+        {
+            avatarList.Clear();
+            List<AvatarSave> saveList = SaveLoad.Load<List<AvatarSave>>("Avatars");
+            foreach (AvatarSave avatar in saveList)
+            {
+                avatarList.Add(AvatarDatabase.avatarDb.GetAvatarById(avatar.avatarID));
+            }
+            UpdateAvatarSlots();
+        }
+    }
+
 }

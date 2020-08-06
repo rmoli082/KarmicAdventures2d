@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "new Avatar Stone", menuName = "Avatars/Avatar Stone")]
+[Serializable]
 public class AvatarStones : Items
 {
     public Avatar avatarForm;

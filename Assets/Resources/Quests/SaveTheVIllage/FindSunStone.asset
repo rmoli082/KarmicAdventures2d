@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
+  m_Name: FindSunStone
+  m_EditorClassIdentifier: 
+  questID: 1
+  questLine: Save the Village
+  questType: 1
+  questTitle: Find a Sun Stone
+  questDesc: Locate a Sun Stone to build up the power to bring this family back to
+    life.
+  questProgress: 0
+  questHint: Find a Sun Stone in a treasure chest nearby.
+  questCompleteText: Woo you found a sun stone! Good job.
+  nextQuest: 2
+  questObjective: find a sun stone
+  xpReward: 25
+  goldReward: 5
+  itemRewards: []
+  numberNeeded: 1
+  numberHeld: 0
+  itemRequired: {fileID: 11400000, guid: 13385410fca69211c89364e311d7c0ea, type: 2}

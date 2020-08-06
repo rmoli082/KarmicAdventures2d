@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class ItemDatabase: MonoBehaviour
 {
-    public List<Items> itemDbList = new List<Items>();
+    public static ItemDatabase itemDb;
+
+    public List<Items> itemDbList;
 
     void Awake() 
     {
-        
+        if (itemDb == null)
+        {
+            itemDb = this.GetComponent<ItemDatabase>();
+        }
+        else if (itemDb != this)
+        {
+            Destroy(gameObject);
+        }
+
+        itemDbList = new List<Items>(Resources.LoadAll<Items>("Items"));
     }
 
-    public string GetItemNameByID(int itemID)
+    public Items GetItemByID(int itemID)
     {
         foreach (Items item in itemDbList)
-           {
+        {
                if (item.itemID == itemID)
                {
-                   return item.itemName;
+                   return item;
                }
-           }
-        return "Item not found";
+        }
+
+        return null;
     }
 }

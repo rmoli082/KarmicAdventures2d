@@ -88,5 +88,7 @@ public class Enemy : MonoBehaviour
 		audioSource.PlayOneShot(hitSound);
 		audioSource.PlayOneShot(fixedSound);
 		Destroy(this.gameObject);
+		GameEvents.OnKillSuccessful(gameObject.tag);
 	}
+
 }

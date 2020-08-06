@@ -20607,6 +20607,11 @@ PrefabInstance:
       propertyPath: questPrintbox
       value: 
       objectReference: {fileID: 1184831512}
+    - target: {fileID: 4012499859553495844, guid: 3817047b79aa4a9969cb61d916906e3a,
+        type: 3}
+      propertyPath: questCompletedBox
+      value: 
+      objectReference: {fileID: 1184831513}
     - target: {fileID: 7222854264176691432, guid: 3817047b79aa4a9969cb61d916906e3a,
         type: 3}
       propertyPath: m_Name
@@ -25927,6 +25932,12 @@ GameObject:
 --- !u!1 &1184831512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7845541304526555088, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1184831513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4167858448110464262, guid: 47b8588441cee67f4875df90e1dfacc9,
     type: 3}
   m_PrefabInstance: {fileID: 1184831510}
   m_PrefabAsset: {fileID: 0}
@@ -35883,12 +35894,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.028600482
+      value: -0.028601436
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.637642
+      value: 3.6376405
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}

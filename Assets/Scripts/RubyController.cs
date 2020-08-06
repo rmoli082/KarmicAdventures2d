@@ -119,6 +119,7 @@ public class RubyController : MonoBehaviour
                     chest.GetComponent<Chest>().status = Chest.ChestState.OPENED;
                     ChestManager.chestManager.UpdateChest(chest.GetComponent<Chest>().chestID, chest.GetComponent<Chest>().status);
                 }
+
             }
         }
 

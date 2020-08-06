@@ -11,10 +11,13 @@ public class NonPlayerCharacter : MonoBehaviour
     public float displayTime = 4.0f;
     public GameObject dialogBox;
     float timerDisplay;
+    public bool isQuestGiver;
+    public GameObject questToken;
     
     void Start()
     {
         dialogBox.SetActive(false);
+        questToken.SetActive(false);
         timerDisplay = -1.0f;
     }
 
@@ -26,6 +29,10 @@ public class NonPlayerCharacter : MonoBehaviour
             if (timerDisplay < 0)
             {
                 dialogBox.SetActive(false);
+                if (isQuestGiver)
+                {
+                    questToken.SetActive(true);
+                }
             }
         }
     }

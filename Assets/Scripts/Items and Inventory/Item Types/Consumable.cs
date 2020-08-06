@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu (fileName = "new Consumable", menuName = "Items/Consumable")]
+[Serializable]
 public class Consumable : Items
 {
     [SerializeField]

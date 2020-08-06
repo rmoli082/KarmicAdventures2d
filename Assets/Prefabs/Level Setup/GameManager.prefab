@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7222854264176691435}
   - component: {fileID: 3017622544902515107}
   - component: {fileID: 7030315992528205759}
-  - component: {fileID: 2751057020627657697}
+  - component: {fileID: 4012499859553495844}
+  - component: {fileID: 1219209718}
+  - component: {fileID: 1219209719}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -85,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071de4469fc3553ce81c38f90b4fa65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2751057020627657697
+--- !u!114 &4012499859553495844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,9 +96,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 7222854264176691432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b926e28267fde3a4785fcd1ba608a2de, type: 3}
+  m_Script: {fileID: 11500000, guid: 4385b5e92b09e8242bcfead6aad0c05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 4349370344454696355, guid: 3a0d16bcd642a796198b480e74007b3e,
-    type: 3}
-  questPrintbox: {fileID: 0}
+  questList: []
+  currentQuests: []
+  questCompletedBox: {fileID: 0}
+--- !u!114 &1219209718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222854264176691432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3fb957873a0a69c9823eebf1529fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDbList: []
+--- !u!114 &1219209719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222854264176691432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c55b226c7e6eb7459b557560ffc6215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatarDatabase: []
