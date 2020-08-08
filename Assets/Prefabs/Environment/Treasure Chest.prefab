@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 7461413929606324949}
   - component: {fileID: 7461413929606324951}
   - component: {fileID: 7461413929606324950}
-  - component: {fileID: 8514993515866802668}
+  - component: {fileID: 913093154}
   m_Layer: 30
   m_Name: Treasure Chest
   m_TagString: Untagged
@@ -249,8 +249,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2027680095
   m_SortingLayer: -2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 8628819441776004312, guid: 1a0f1a46da5f54e12859fa42bb0c742f,
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -8592684481334554066, guid: 31e1cec54e778fd32883394e874e0903,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -272,7 +272,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.004000932}
@@ -301,10 +301,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 7461413929035772258}
-  dialogText: {fileID: 0}
-  coinAmount: 100
-  item: []
---- !u!114 &8514993515866802668
+  dialogText: {fileID: 7461413930239705732}
+  coinAmount: 10
+  item:
+  - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
+--- !u!114 &913093154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,8 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestID: 0
-  status: 0
+  chestID: 3
+  status: 1
 --- !u!1 &7461413930239705730
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,9 +419,6 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
   m_fontSize: 32
   m_fontSizeBase: 32
   m_fontWeight: 400
@@ -431,7 +429,6 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 257
-  m_isAlignmentEnumConverted: 0
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -441,10 +438,8 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
-  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -452,30 +447,17 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
   m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 25.209904, y: 23.157787, z: 26.572609, w: 25.201225}
-  m_textInfo:
-    textComponent: {fileID: 7461413930239705732}
-    characterCount: 69
-    spriteCount: 0
-    spaceCount: 10
-    wordCount: 10
-    linkCount: 0
-    lineCount: 5
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}

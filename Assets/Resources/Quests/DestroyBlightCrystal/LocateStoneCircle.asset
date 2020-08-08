@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0aef28e1d7fb3428ef489a4e08d74c, type: 3}
+  m_Name: LocateStoneCircle
+  m_EditorClassIdentifier: 
+  questID: 6
+  questLine: Destroy the Blight Crystal
+  questType: 2
+  questTitle: Locate a Stone Circle
+  questDesc: You need to do the ritual in a stone circle to ascend to the Immaterial
+    Realms. So find a stone circle, yeah?
+  questProgress: 0
+  questHint: You'll need to go to a cemetery to find a stone circle, yeah?
+  questCompleteText: You did it,  yeah?
+  nextQuest: 7
+  questObjective: Find a stone circle
+  xpReward: 12
+  goldReward: 25
+  itemRewards: []
+  locationName: Stone Circle

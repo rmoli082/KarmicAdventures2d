@@ -8,10 +8,8 @@ public class QuestManager : MonoBehaviour
 
     public List<Quest> questList;
     private List<Quest> currentQuests = new List<Quest>();
-
-    public GameObject questCompletedBox;
+    
     public GameObject buttonPrefab;
-    public GameObject questPrintbox;
 
 
     void Awake()
@@ -93,6 +91,17 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public void UpdateQuestUI()
+    {
+        foreach (Quest q in currentQuests)
+        {
+            if (q.questProgress == Quest.QuestProgress.CURRENT)
+            {
+                CreateButton(q);
+            }
+        }
+    }
+
     public Quest.QuestProgress GetQuestStatus(int questID)
     {
         foreach (Quest q in currentQuests)
@@ -109,7 +118,7 @@ public class QuestManager : MonoBehaviour
     GameObject CreateButton(Quest quest)
     {
         GameObject b = Instantiate(buttonPrefab);
-        b.GetComponent<QuestButton>().Setup(quest, questPrintbox);
+        b.GetComponent<QuestButton>().Setup(quest, GameManager.gm.data.questContentFrame);
         return b;
     }
 
@@ -128,7 +137,7 @@ public class QuestManager : MonoBehaviour
         if (SaveLoad.SaveExists("Quests"))
         {
             currentQuests.Clear();
-            List<QuestSave> saveList = SaveLoad.Load<List<QuestSave>>("Quest");
+            List<QuestSave> saveList = SaveLoad.Load<List<QuestSave>>("Quests");
             foreach (QuestSave q in saveList)
             {
                 Quest quest = QuestManager.questManager.GetQuestById(q.questID);

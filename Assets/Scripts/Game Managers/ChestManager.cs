@@ -21,9 +21,26 @@ public class ChestManager : MonoBehaviour
        }
    }
 
-   public void UpdateChest(int chestID, Chest.ChestState status)
+    private void Start()
+    {
+        GameEvents.SaveInitiated += Save;
+        GameEvents.LoadInitiated += Load;
+    }
+
+    public void UpdateChest(int chestID, Chest.ChestState status)
    {
        chestList[chestID] = status;
    }
-   
+
+    void Save()
+    {
+        SaveLoad.Save<Dictionary<int, Chest.ChestState>>(chestList, "Chests");
+    }
+
+    void Load()
+    {
+        chestList.Clear();
+        chestList = SaveLoad.Load<Dictionary<int, Chest.ChestState>>("Chests");
+    }
+
 }

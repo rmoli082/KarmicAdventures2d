@@ -977,6 +977,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1184831510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1184831514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1929467222628385278, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214714016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1187,21 @@ PrefabInstance:
       propertyPath: avatarPanel
       value: 
       objectReference: {fileID: 438793900}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questCompletedBox
+      value: 
+      objectReference: {fileID: 1184831513}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questPanel
+      value: 
+      objectReference: {fileID: 1184831514}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questContentFrame
+      value: 
+      objectReference: {fileID: 1184831512}
     - target: {fileID: 1575762944404959180, guid: 27b4aac720bc02461a26d559d09f0d60,
         type: 3}
       propertyPath: m_LocalPosition.x

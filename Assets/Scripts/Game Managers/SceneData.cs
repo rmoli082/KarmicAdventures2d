@@ -16,5 +16,7 @@ public class SceneData : MonoBehaviour
     public Text level;
     public GameObject pause;
     public GameObject questCompletedBox;
-
+    public GameObject questPanel;
+    public GameObject questContentFrame;
+    public GameObject controlsFrame;
 }

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestButton : MonoBehaviour
 {
     public Button buttonComponent;
-    public Text eventName;
+    public TextMeshProUGUI eventName;
     public Quest currentQuest;
 
     public void Setup(Quest quest, GameObject scrollList)

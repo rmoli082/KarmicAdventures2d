@@ -18,7 +18,7 @@ MonoBehaviour:
   questTitle: Bring your family back to life
   questDesc: You've heard rumours of a magical stone that can shatter the stone crysalis.
     Find it and bring it back here.
-  questProgress: 1
+  questProgress: 5
   questHint: Find a stone of awakening in a treasure chest somewhere.
   questCompleteText: Congratulations! You've located an awakening stone! Place it
     here to start the ritual. \nNow you must locate a Sun Stone to complete the ritual!
@@ -29,4 +29,4 @@ MonoBehaviour:
   itemRewards: []
   numberNeeded: 1
   numberHeld: 0
-  itemRequired: {fileID: 11400000, guid: f494b957b6d4adb6d90d32b8569df3cb, type: 2}
+  itemRequired: {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}

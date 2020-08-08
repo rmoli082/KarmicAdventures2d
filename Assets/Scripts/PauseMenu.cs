@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Hosting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -29,11 +28,14 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Controls()
+    {
+        GameManager.gm.data.controlsFrame.SetActive(true);
+    }
+
     IEnumerator PopUpPause()
     {
-        Debug.Log("Enter coroutine");
         yield return new WaitForSecondsRealtime(2.0f);
-        Debug.Log("Wait ended");
         savedTile.SetActive(false);
     }
 }

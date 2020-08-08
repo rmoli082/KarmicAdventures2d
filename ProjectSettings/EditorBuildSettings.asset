@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/OpeningMenu.unity
+    guid: 32cf32ba2bc686a4c9fcf1c117db4a58
+  - enabled: 1
+    path: Assets/Scenes/OpeningStory.unity
+    guid: 1b39f51517d78c7429841a3765b8a808
+  - enabled: 1
     path: Assets/Scenes/OverworldA.unity
     guid: fee13435eeb3868cbb09e61a24494a79
   - enabled: 1
@@ -35,12 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cemetery1.unity
     guid: b77526fadc0710845a1590e69eb61a21
-  - enabled: 1
-    path: Assets/Scenes/Castle1.unity
-    guid: d1dcbb6ca10d578e09e179fb6acb119e
-  - enabled: 1
-    path: Assets/Scenes/Store.unity
-    guid: fdd8840e8429dec599dfcc09df349538
   - enabled: 1
     path: Assets/Scenes/Pond.unity
     guid: c67c3263ce9c28fa89f6ad781d4bbe4e

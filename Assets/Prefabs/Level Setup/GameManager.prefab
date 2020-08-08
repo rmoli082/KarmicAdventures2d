@@ -100,8 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questList: []
-  currentQuests: []
   questCompletedBox: {fileID: 0}
+  buttonPrefab: {fileID: 5099126346101039330, guid: 8a3d20ee418d58840826c8d0102031b4,
+    type: 3}
+  questPrintbox: {fileID: 0}
 --- !u!114 &1219209718
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6e49baacb762134cb38bf513a352ecc, type: 3}
-  m_Name: new Awaken Quest
+  m_Name: AwakenFamily
   m_EditorClassIdentifier: 
-  questID: 0
-  questLine: 
-  questType: 0
-  questTitle: 
-  questDesc: 
+  questID: 3
+  questLine: Save the Village
+  questType: 3
+  questTitle: Awaken your family
+  questDesc: Great! Now that you have the Stone of Awakening and have learned your
+    Sun Avatar form, perform the ritual of awakening to return us to life!
   questProgress: 0
-  questHint: 
-  questCompleteText: 
-  nextQuest: 0
-  questObjective: 
-  xpReward: 0
-  goldReward: 0
+  questHint: While wearing the Sun Avatar form, use the Stone of Awakening from your
+    inventory
+  questCompleteText: Congratulations, you've brought us back to life!
+  nextQuest: 4
+  questObjective: perform awakening ritual
+  xpReward: 25
+  goldReward: 15
   itemRewards: []
-  numberToAwaken: 0
+  numberToAwaken: 1
   numberAwakened: 0

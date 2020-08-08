@@ -11,10 +11,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager gm;
 
-    public Text UILevel;
-    public GameObject pausePanel;
-    public GameObject inventoryPanel;
     public SceneData data;
+
+    public string playerName;
 
     public GameObject[] EnemyTraps;
     public float secondsBetweenSpawning = 2.0f;
@@ -48,21 +47,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         data = FindObjectOfType<SceneData>();
-        pausePanel = data.pause;
-        UILevel = data.level;
-        inventoryPanel = data.inventoryCanvas;
         _scene = SceneManager.GetActiveScene();
-        _player = data.player;
-        Player.player.currentAvatar = SetCurrentAvatar();
         // Pause and pause menu toggle
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (Time.timeScale > 0f) {
                 // when paused
-                pausePanel.SetActive(true);
+                data.pause.SetActive(true);
                 Time.timeScale = 0f;
             } else {
                 // when unpaused
-                pausePanel.SetActive(false);
+                data.pause.SetActive(false);
                 Time.timeScale = 1f;
             }
         }
@@ -70,7 +64,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
 
-            if (!inventoryPanel.activeSelf)
+            if (!data.inventoryCanvas.activeSelf)
             {
                 Inventory.inventory.UpdatePanelSlots();
                 Inventory.inventory.UpdateAvatarSlots();
@@ -79,6 +73,19 @@ public class GameManager : MonoBehaviour
             else
             {
                 ShowHidePanels(false);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (!data.questPanel.activeSelf)
+            {
+                QuestManager.questManager.UpdateQuestUI();
+                data.questPanel.SetActive(true);
+            }
+            else
+            {
+                data.questPanel.SetActive(false);
             }
         }
 
@@ -100,7 +107,7 @@ public class GameManager : MonoBehaviour
         }
         data = FindObjectOfType<SceneData>();
 
-        pausePanel.SetActive(false);
+        data.pause.SetActive(false);
 
         nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
         _scene = SceneManager.GetActiveScene();
@@ -111,7 +118,6 @@ public class GameManager : MonoBehaviour
 
             _player.transform.position = _spawnLocation;
         }
-        Player.player.currentAvatar = SetCurrentAvatar();
         refreshGui();
         
     }
@@ -127,8 +133,9 @@ public class GameManager : MonoBehaviour
 		// determine which object to spawn
 		int objectToSpawn = Random.Range (0, EnemyTraps.Length);
 
-		// actually spawn the game object
-		GameObject spawnedObject = Instantiate (EnemyTraps [objectToSpawn], _player.transform.position + spawnPosition, transform.rotation) as GameObject;
+        // actually spawn the game object
+        _player = GameObject.FindGameObjectWithTag("Player");
+        GameObject spawnedObject = Instantiate (EnemyTraps [objectToSpawn], _player.transform.position + spawnPosition, transform.rotation) as GameObject;
 
 		// make the parent the spawner so hierarchy doesn't get super messy
 		spawnedObject.transform.parent = GameObject.FindGameObjectWithTag("EnemyDoor").transform;
@@ -137,7 +144,7 @@ public class GameManager : MonoBehaviour
     void ShowHidePanels(bool showPanels)
     {
         data.playerInfo.SetActive(!showPanels);
-        inventoryPanel.SetActive(showPanels);
+        data.inventoryCanvas.SetActive(showPanels);
         data.goldHeader.SetActive(showPanels);
         data.goldPieces.gameObject.SetActive(showPanels);
         data.avatarHeader.SetActive(showPanels);
@@ -145,28 +152,16 @@ public class GameManager : MonoBehaviour
         data.currentAvatar.gameObject.SetActive(showPanels);
     }
 
-    Avatar SetCurrentAvatar()
-    {
-        int currentAvatarID = PlayerPrefsManager.GetAvatar();
-        switch(currentAvatarID)
-        {
-            case -1:
-                return null;
-            case 0:
-                return (Avatar) Resources.Load("Avatars/Sun Avatar.asset");
-            case 1:
-                return (Avatar) Resources.Load("Avatars/Moon Avatar.asset");
-        }
-        return null;
-    }
-
     public void EnterSubArea(string nextLevel) 
     {
-        PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"), 
-            Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
-            Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
-            Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"), 
-            Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
+        if (!_scene.name.Equals("OpeningStory"))
+        {
+            PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"),
+                Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
+                Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
+                Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"),
+                Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
+        }
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
             PlayerPrefsManager.SetPlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
@@ -177,7 +172,10 @@ public class GameManager : MonoBehaviour
 
     public void refreshGui()
     {
-        data.level.text = Player.player.baseStats.GetStats("level").ToString();
+        if (!_scene.name.Equals("OpeningStory"))
+        {
+            data.level.text = Player.player.baseStats.GetStats("level").ToString();
+        }
     }
 
     IEnumerator LoadNextLevel(string nextLevel)
