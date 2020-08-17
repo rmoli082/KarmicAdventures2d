@@ -7,28 +7,42 @@ using UnityEngine;
 [Serializable]
 public class Consumable : Items
 {
+    public enum ConsumableType { RESTORE_HP, RESTORE_MP, INCREASE_HP, INCREASE_MP }
     [SerializeField]
-    private int restoreHpAmount;
+    private ConsumableType consumableType;
     [SerializeField]
-    private int increaseMaxHP;
-    [SerializeField]
-    private int restoreMpAmount;
-    [SerializeField]
-    private int increaseMaxMP;
+    private int amount;
     
     public override void Use()
     {
         GameObject player = GameManager.gm.data.player;
         RubyController playerHealth = player.GetComponent<RubyController>();
 
-        playerHealth.ChangeHealth(restoreHpAmount);
-        if (increaseMaxHP > 0)
+        switch (consumableType)
         {
-            Player.player.baseStats.stats["hpmax"] += increaseMaxHP;
+            case ConsumableType.RESTORE_HP:
+                playerHealth.ChangeHealth(amount);
+                break;
+            case ConsumableType.RESTORE_MP:
+                Player.player.baseStats.stats["mpnow"] += amount;
+                break;
+            case ConsumableType.INCREASE_HP:
+                Player.player.baseStats.stats["hpmax"] += amount;
+                break;
+            case ConsumableType.INCREASE_MP:
+                Player.player.baseStats.stats["mpmax"] += amount;
+                break;
         }
         Inventory.inventory.RemoveItem(this);
+    }
 
-        Debug.Log("Health: " + Player.player.baseStats.GetStats("hpnow") + "/" 
-            + Player.player.baseStats.GetStats("hpmax"));
+    public void Init(int itemId, string itemName, string itemDesc, Sprite itemIcon, ConsumableType type, int amount)
+    {
+        this.itemID = itemId;
+        this.itemName = itemName;
+        this.itemDescription = itemDesc;
+        this.itemIcon = itemIcon;
+        this.consumableType = type;
+        this.amount = amount;
     }
 }

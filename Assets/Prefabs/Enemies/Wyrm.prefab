@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7894570580405500253}
   - component: {fileID: 3900926473652901571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6982084178593964874}
   - component: {fileID: 6982084178593964871}
   - component: {fileID: 183533452884923571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wyrm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 1989188481354725645}
   - component: {fileID: 852029928385863247}
   - component: {fileID: 6920737778470011210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

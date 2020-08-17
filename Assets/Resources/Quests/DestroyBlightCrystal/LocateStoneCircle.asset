@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0aef28e1d7fb3428ef489a4e08d74c, type: 3}
   m_Name: LocateStoneCircle
   m_EditorClassIdentifier: 
-  questID: 6
+  questID: 5
   questLine: Destroy the Blight Crystal
   questType: 2
   questTitle: Locate a Stone Circle
@@ -21,7 +21,7 @@ MonoBehaviour:
   questProgress: 0
   questHint: You'll need to go to a cemetery to find a stone circle, yeah?
   questCompleteText: You did it,  yeah?
-  nextQuest: 7
+  nextQuest: 6
   questObjective: Find a stone circle
   xpReward: 12
   goldReward: 25

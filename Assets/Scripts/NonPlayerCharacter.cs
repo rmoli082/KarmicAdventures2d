@@ -29,6 +29,7 @@ public class NonPlayerCharacter : MonoBehaviour
             if (timerDisplay < 0)
             {
                 dialogBox.SetActive(false);
+                Time.timeScale = 1f;
                 if (isQuestGiver)
                 {
                     questToken.SetActive(true);

@@ -99,7 +99,10 @@ public class RubyController : MonoBehaviour
         // ============== PROJECTILE ======================
 
         if (Input.GetKeyDown(KeyCode.C))
-            LaunchProjectile();
+            CheckMana();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+            SwordAttack();
         
         // ======== DIALOGUE ==========
         if (Input.GetKeyDown(KeyCode.X))
@@ -111,6 +114,7 @@ public class RubyController : MonoBehaviour
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
+                    Time.timeScale = 0f;
                     character.DisplayDialog();
                 } 
                 else if (chest != null && chest.GetComponent<Chest>().status == Chest.ChestState.CLOSED) 
@@ -190,15 +194,25 @@ public class RubyController : MonoBehaviour
     }
     
     // =============== PROJECTICLE ========================
+
+    void CheckMana()
+    {
+        Debug.Log(Player.player.baseStats.GetStats("mpnow"));
+        if (Player.player.baseStats.GetStats("mpnow") >= 2)
+        {
+            LaunchProjectile();
+        }
+    }
     void LaunchProjectile()
     {
-        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 1.1f, Quaternion.identity);
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(lookDirection, 300);
         
         animator.SetTrigger("Launch");
         audioSource.PlayOneShot(shootingSound);
+        Player.player.baseStats.SubtractMP(2);
     }
     
     // =============== SOUND ==========================
@@ -207,5 +221,17 @@ public class RubyController : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
+    }
+
+    void SwordAttack()
+    {
+        animator.SetTrigger("Sword");
+        audioSource.PlayOneShot(shootingSound);
+        RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, 1 << LayerMask.NameToLayer("Enemy"));
+        if (hit.collider != null)
+        {
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
+            enemy.Fix();
+        }
     }
 }

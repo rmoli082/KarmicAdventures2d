@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
   m_Name: FindWarpCrystal
   m_EditorClassIdentifier: 
-  questID: 5
+  questID: 4
   questLine: Destroy the Blight Crystal
   questType: 1
   questTitle: Locate a Warp Crystal
@@ -21,7 +21,7 @@ MonoBehaviour:
   questProgress: 0
   questHint: Find a warp crystal.
   questCompleteText: You did it! You found a warp crystal.
-  nextQuest: 6
+  nextQuest: 5
   questObjective: Find a warp crystal
   xpReward: 14
   goldReward: 1

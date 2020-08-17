@@ -15,6 +15,5 @@ MonoBehaviour:
   itemID: 2
   itemName: Moon Stone
   itemDescription: Unlocks the Moon Avatar
-  itemIcon: {fileID: 8937931039136467240, guid: d63932905cadea6b28dcb1b55f92bf8b,
-    type: 3}
+  itemIcon: {fileID: 21300000, guid: 0170a14ea9f8a094bacbd02901ddc0e7, type: 3}
   avatarForm: {fileID: 11400000, guid: 20784357beedb9ba1b860e8e3498486d, type: 2}

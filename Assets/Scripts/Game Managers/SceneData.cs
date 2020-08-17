@@ -19,4 +19,5 @@ public class SceneData : MonoBehaviour
     public GameObject questPanel;
     public GameObject questContentFrame;
     public GameObject controlsFrame;
+    public GameObject warpPopup;
 }

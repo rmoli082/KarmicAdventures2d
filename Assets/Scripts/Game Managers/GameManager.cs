@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public string playerName;
 
     public GameObject[] EnemyTraps;
-    public float secondsBetweenSpawning = 2.0f;
+    public float secondsBetweenSpawning = 5.0f;
 	public float xMinRange = -5.0f;
 	public float xMaxRange = 5.0f;
 	public float yMinRange = 2f;
@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     Scene _scene;
     Vector3 _spawnLocation;
 
+    [SerializeField]
+    string locationName;
+    string lastLocation;
+
     void Awake()
     {
         if (gm == null) {
@@ -41,6 +45,11 @@ public class GameManager : MonoBehaviour
         }
 
         setupDefaults();
+    }
+
+    void Start()
+    {
+        GameEvents.LocationFound += SetCurrentLocation;
     }
 
     // Update is called once per frame
@@ -89,11 +98,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name) && Time.time  >= nextSpawnTime) {
-            int random = Random.Range (0,2);
+        if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name) && Time.timeSinceLevelLoad  >= nextSpawnTime) {
+            int random = Random.Range (0,3);
             if (random == 1) {
                 SpawnEnemyTrap();
-                nextSpawnTime = Time.time + secondsBetweenSpawning;
+                nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
             }
         }
 
@@ -119,6 +128,7 @@ public class GameManager : MonoBehaviour
             _player.transform.position = _spawnLocation;
         }
         refreshGui();
+        locationName = " ";
         
     }
 
@@ -175,6 +185,24 @@ public class GameManager : MonoBehaviour
         if (!_scene.name.Equals("OpeningStory"))
         {
             data.level.text = Player.player.baseStats.GetStats("level").ToString();
+        }
+    }
+
+    public string GetCurrentLocation()
+    {
+        return locationName;
+    }
+
+    void SetCurrentLocation(string location)
+    {
+        if (locationName.Equals(" ") || !locationName.Equals(location))
+        {
+            lastLocation = locationName;
+            locationName = location;
+        } else if (locationName.Equals(location))
+        {
+            locationName = lastLocation;
+            lastLocation = location;
         }
     }
 

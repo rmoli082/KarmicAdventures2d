@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3468792509797828422}
   - component: {fileID: 3468792509797828417}
   - component: {fileID: 5125469663317308199}
-  - component: {fileID: 5125469663317308198}
   - component: {fileID: 5125469663317308185}
   - component: {fileID: 5125469663317308196}
-  m_Layer: 0
+  - component: {fileID: 6830599625093307491}
+  m_Layer: 10
   m_Name: Chaser Bat
   m_TagString: Slime
   m_Icon: {fileID: 0}
@@ -72,22 +72,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &5125469663317308198
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3468792509797828416}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010315061, y: -0.09094554}
-  serializedVersion: 2
-  m_Radius: 0.33495724
 --- !u!82 &5125469663317308185
 AudioSource:
   m_ObjectHideFlags: 0
@@ -206,6 +190,22 @@ MonoBehaviour:
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
   fixedSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
+--- !u!70 &6830599625093307491
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468792509797828416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.059499264, y: -0.04375887}
+  m_Size: {x: 0.3040018, y: 0.91248226}
+  m_Direction: 0
 --- !u!1 &3468792510286288288
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 3468792510286288289}
   - component: {fileID: 3468792510286288294}
   - component: {fileID: 3419912989995287862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

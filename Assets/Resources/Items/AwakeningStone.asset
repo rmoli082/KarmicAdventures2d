@@ -15,5 +15,4 @@ MonoBehaviour:
   itemID: 0
   itemName: Stone of Awakening
   itemDescription: a mystical stone used to restore people from a stone crysalis
-  itemIcon: {fileID: 1465308314516040611, guid: d63932905cadea6b28dcb1b55f92bf8b,
-    type: 3}
+  itemIcon: {fileID: 21300000, guid: df84693447d2d334fb460115c06d298f, type: 3}

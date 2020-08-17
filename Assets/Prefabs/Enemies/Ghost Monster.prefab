@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8575684818433655551}
   - component: {fileID: 8575684818433655544}
   - component: {fileID: 1936357022}
-  - component: {fileID: 1936357023}
   - component: {fileID: 1936357024}
   - component: {fileID: 1936357021}
-  m_Layer: 0
-  m_Name: Chaser Slime
+  - component: {fileID: 6400485510266282308}
+  m_Layer: 10
+  m_Name: Ghost Monster
   m_TagString: Slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5399e181ab4b75a79ea2a72ab5c82ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  aggroDistOrig: 1
+  speed: 2
+  aggroDistOrig: 5
   target: {fileID: 0}
 --- !u!50 &1936357022
 Rigidbody2D:
@@ -72,22 +72,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &1936357023
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8575684818433655545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010315061, y: -0.09094554}
-  serializedVersion: 2
-  m_Radius: 0.33495724
 --- !u!82 &1936357024
 AudioSource:
   m_ObjectHideFlags: 0
@@ -206,6 +190,37 @@ MonoBehaviour:
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
   fixedSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
+--- !u!60 &6400485510266282308
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575684818433655545}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2862816, y: 1}
+      - {x: -0.09919077, y: 0.1622093}
+      - {x: -0.59874344, y: 0.10046959}
+      - {x: -0.23167938, y: -0.80901706}
+      - {x: 0.92992747, y: -0.8020265}
+      - {x: 0.53210735, y: -0.012562811}
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +232,8 @@ GameObject:
   - component: {fileID: 8575684818516152344}
   - component: {fileID: 8575684818516152351}
   - component: {fileID: 7517821962862854287}
-  m_Layer: 0
-  m_Name: Slime
+  m_Layer: 10
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,6 +268,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -277,7 +293,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db4da70804d0564ac9fe31770d05b05d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db61d286cce067347adc3c6e89149cc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

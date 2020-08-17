@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\AvatarSave.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\QuestSave.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Item Types\WarpStone.cs" />
     <Compile Include="Assets\Scripts\RubyController.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestLocation.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\UI\UIAmmoCount.cs" />
     <Compile Include="Assets\Scripts\Game Managers\SceneData.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
+    <Compile Include="Assets\capsule.cs" />
     <Compile Include="Assets\Scripts\Quests\KillQuest.cs" />
     <Compile Include="Assets\Scripts\AvatarDatabase.cs" />
     <Compile Include="Assets\Scripts\TimedObjectDestructor.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="Assets\Scripts\UI\UIQuestDisplay.cs" />
     <Compile Include="Assets\Scripts\Quests\FindItem.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Items.cs" />
+    <Compile Include="Assets\Scripts\WarpPopup.cs" />
     <Compile Include="Assets\Scripts\UI\UIHealthBar.cs" />
     <Compile Include="Assets\Scripts\Stats.cs" />
     <Compile Include="Assets\Scripts\SpawnGameObjects.cs" />

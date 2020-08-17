@@ -43,4 +43,9 @@ public class Stats
         stats["xp"] += xpAmount;
     }
 
+    public void SubtractMP(int mpAmount)
+    {
+        stats["mpnow"] -= +mpAmount;
+    }
+
 }

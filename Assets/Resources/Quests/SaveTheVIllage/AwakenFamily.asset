@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e49baacb762134cb38bf513a352ecc, type: 3}
   m_Name: AwakenFamily
   m_EditorClassIdentifier: 
-  questID: 3
+  questID: 2
   questLine: Save the Village
   questType: 3
   questTitle: Awaken your family
@@ -22,7 +22,7 @@ MonoBehaviour:
   questHint: While wearing the Sun Avatar form, use the Stone of Awakening from your
     inventory
   questCompleteText: Congratulations, you've brought us back to life!
-  nextQuest: 4
+  nextQuest: 3
   questObjective: perform awakening ritual
   xpReward: 25
   goldReward: 15

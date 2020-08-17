@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float hpRegenTime;
 
     RubyController playerController;
+    int currentMP;
     float hpReturn;
     float mpReturn;
     
@@ -57,6 +58,13 @@ public class Player : MonoBehaviour
         {
             playerController.ChangeHealth(1);
             hpReturn = Time.time + hpRegenTime;
+        }
+        ReloadStats();
+        if (currentMP < baseStats.GetStats("mpmax")
+           && Time.time >= mpReturn)
+        {
+            baseStats.stats["mpnow"] += 1;
+            mpReturn = Time.time + mpRegenTime;
         }
         ReloadStats();
     }

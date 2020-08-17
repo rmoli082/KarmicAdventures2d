@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
   m_Name: FindWyrmTooth
   m_EditorClassIdentifier: 
-  questID: 7
+  questID: 6
   questLine: Destroy the Blight Crystal
   questType: 1
   questTitle: Find a wyrm tooth
@@ -22,7 +22,7 @@ MonoBehaviour:
   questProgress: 0
   questHint: Kill a wyrm and take his tooth
   questCompleteText: You're brave, yeah. You killed a wyrm.
-  nextQuest: 8
+  nextQuest: 7
   questObjective: Find a wyrm tooth
   xpReward: 50
   goldReward: 10

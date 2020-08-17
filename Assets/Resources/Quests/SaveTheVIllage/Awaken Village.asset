@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e49baacb762134cb38bf513a352ecc, type: 3}
   m_Name: Awaken Village
   m_EditorClassIdentifier: 
-  questID: 4
+  questID: 3
   questLine: Save the Village!
   questType: 3
   questTitle: Awaken the villagers
