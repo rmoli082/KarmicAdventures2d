@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
 		spawnedObject.transform.parent = GameObject.FindGameObjectWithTag("EnemyDoor").transform;
     }
 
-    void ShowHidePanels(bool showPanels)
+    public void ShowHidePanels(bool showPanels)
     {
         data.playerInfo.SetActive(!showPanels);
         data.inventoryCanvas.SetActive(showPanels);
@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
         data.avatarHeader.SetActive(showPanels);
         data.avatarPanel.SetActive(showPanels);
         data.currentAvatar.gameObject.SetActive(showPanels);
+        data.tooltip.SetActive(showPanels);
     }
 
     public void EnterSubArea(string nextLevel) 

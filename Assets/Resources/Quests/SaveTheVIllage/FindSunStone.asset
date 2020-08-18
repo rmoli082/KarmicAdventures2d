@@ -16,11 +16,12 @@ MonoBehaviour:
   questLine: Save the Village
   questType: 1
   questTitle: Find a Sun Stone
-  questDesc: Locate a Sun Stone to build up the power to bring this family back to
-    life.
-  questProgress: 4
+  questDesc: You must locate a Sun Stone to build up the power to bring your family
+    back to life.
+  questProgress: 0
   questHint: Find a Sun Stone in a treasure chest nearby.
   questCompleteText: Woo you found a sun stone! Good job.
+  questDoneText: 
   nextQuest: 2
   questObjective: find a sun stone
   xpReward: 25

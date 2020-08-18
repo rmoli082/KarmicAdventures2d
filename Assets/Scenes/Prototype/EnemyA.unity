@@ -1736,7 +1736,7 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.831745
+      value: -9.836338
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -2333,6 +2333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
+      propertyPath: item.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 909541191}
@@ -2341,6 +2346,42 @@ PrefabInstance:
       propertyPath: coinAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf,
+        type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf,
+        type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f,
+        type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f,
+        type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1,
+        type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: item.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: c37d7a5448436da47a6206617feebb08,
+        type: 2}
     - target: {fileID: 7461413929606324951, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_IsTrigger

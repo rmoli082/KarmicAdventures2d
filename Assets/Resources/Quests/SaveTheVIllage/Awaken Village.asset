@@ -16,14 +16,14 @@ MonoBehaviour:
   questLine: Save the Village!
   questType: 3
   questTitle: Awaken the villagers
-  questDesc: Find enough stones of awakening to return the rest of the village back
-    to their true forms.
+  questDesc: Find enough stones of awakening to return some villagers back to life.
   questProgress: 0
-  questHint: Find 6 stones of awakening and restore the remaining 6 village families
-    to human form.
+  questHint: Find 10 stones of awakening and restore the remaining 10 villagers to
+    human form.
   questCompleteText: You did it!
+  questDoneText: 
   nextQuest: -1
-  questObjective: find and awaken 6 families
+  questObjective: find stones and awaken 10 villagers
   xpReward: 100
   goldReward: 25
   itemRewards: []

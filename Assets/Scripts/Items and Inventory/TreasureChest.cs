@@ -21,8 +21,9 @@ public class TreasureChest : MonoBehaviour
         _scene = SceneManager.GetActiveScene();
         if (_scene.name == "EnemyA")
         {
-            int treasureChance = Random.Range(0,2);
-            if (treasureChance == 0)
+            int treasureChance = Random.Range(0,3);
+            Debug.Log(treasureChance);
+            if (treasureChance >= 1) 
             {
                 this.gameObject.SetActive(false);
             }

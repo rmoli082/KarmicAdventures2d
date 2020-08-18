@@ -9,23 +9,24 @@ public class QuestGiver : MonoBehaviour
     public GameObject questDialog;
     public TextMeshProUGUI questText;
     public Quest.QuestType questType;
-
-    float timerDisplay;
+    public float timerDisplay = 5f;
+    private float currentTimer;
 
     void Awake()
     {
         questToGive.questProgress = Quest.QuestProgress.AVAILABLE;
-        timerDisplay = -1;
     }
 
     void Update()
     {
-        if (timerDisplay >= 0)
+        if (currentTimer >= 0)
         {
-            timerDisplay -= Time.deltaTime;
-            if (timerDisplay < 0)
+            currentTimer -= Time.unscaledDeltaTime;
+            if (currentTimer < 0)
             {
                 questDialog.SetActive(false);
+                Time.timeScale = 1f;
+                currentTimer = timerDisplay;
             }
         }
     }
@@ -39,7 +40,7 @@ public class QuestGiver : MonoBehaviour
     {
         Quest.QuestProgress statusTest = questToGive.questProgress;
         questDialog.SetActive(true);
-        timerDisplay = 4.0f;
+        Time.timeScale = 0f;
 
         switch (statusTest)
         {
@@ -60,25 +61,28 @@ public class QuestGiver : MonoBehaviour
                 }
                 if (questType == Quest.QuestType.KILL)
                 {
-
+                    KillQuest quest = (KillQuest)questToGive;
                 }
                 if (questType == Quest.QuestType.LOCATION)
                 {
+                    LocateQuest quest = (LocateQuest)questToGive;
                 }
                 QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.DONE);
-                QuestManager.questManager.AcceptQuest(QuestManager.questManager.GetQuestById(questToGive.nextQuest));
-                this.gameObject.GetComponent<NonPlayerCharacter>().questToken.SetActive(false);
                 break;
             case Quest.QuestProgress.DONE:
-                questText.text = questToGive.questCompleteText;
-                this.gameObject.GetComponent<NonPlayerCharacter>().questToken.SetActive(false);
+                questText.text = questToGive.questDoneText;
+                questToGive.GiveRewards();
+                if (questToGive.nextQuest == -1)
+                {
+                    this.gameObject.GetComponent<NonPlayerCharacter>().questToken.SetActive(false);
+                    break;
+                }
+                questToGive = QuestManager.questManager.GetQuestById(questToGive.nextQuest);
+                Debug.Log(questToGive.questTitle);
+                QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.AVAILABLE);
                 break;
             default:
                 break;
-        }
-        foreach (Quest quest in QuestManager.questManager.GetMyQuests())
-        {
-            Debug.Log($"{quest.questTitle} {quest.questProgress}");
         }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4012499859553495844}
   - component: {fileID: 1219209718}
   - component: {fileID: 1219209719}
+  - component: {fileID: 127279607100559675}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,10 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34cac8356afc2750b0babf87e25ab63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UILevel: {fileID: 0}
-  pausePanel: {fileID: 0}
-  inventoryPanel: {fileID: 0}
   data: {fileID: 0}
+  playerName: 
   EnemyTraps:
   - {fileID: 1965382990565091119, guid: 02af15cfdba48ce50a54e407e2a75372, type: 3}
   - {fileID: 7972439738810679191, guid: b33b49b51f9830650b75cda05fc20764, type: 3}
@@ -61,6 +60,7 @@ MonoBehaviour:
   yMinRange: -2
   yMaxRange: 2
   gameIsOver: 0
+  locationName: 
 --- !u!114 &3017622544902515107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,10 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questList: []
-  questCompletedBox: {fileID: 0}
   buttonPrefab: {fileID: 5099126346101039330, guid: 8a3d20ee418d58840826c8d0102031b4,
     type: 3}
-  questPrintbox: {fileID: 0}
 --- !u!114 &1219209718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3fb957873a0a69c9823eebf1529fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDbList: []
+  itemDbList:
+  - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
 --- !u!114 &1219209719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +129,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatarDatabase: []
+--- !u!114 &127279607100559675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222854264176691432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68528f7bb6652a542a4f5df58e5d5a83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

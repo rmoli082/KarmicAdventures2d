@@ -22,10 +22,11 @@ MonoBehaviour:
   questHint: While wearing the Sun Avatar form, use the Stone of Awakening from your
     inventory
   questCompleteText: Congratulations, you've brought us back to life!
+  questDoneText: 
   nextQuest: 3
   questObjective: perform awakening ritual
   xpReward: 25
   goldReward: 15
   itemRewards: []
-  numberToAwaken: 1
+  numberToAwaken: 3
   numberAwakened: 0

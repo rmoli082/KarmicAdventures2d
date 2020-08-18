@@ -17,11 +17,19 @@ public class Quest : ScriptableObject
     public QuestProgress questProgress;
     public string questHint;
     public string questCompleteText;
+    public string questDoneText;
     public int nextQuest;
     public string questObjective;
 
     public int xpReward;
     public int goldReward;
     public Items[] itemRewards;
+
+    public void GiveRewards()
+    {
+        Player.player.baseStats.AddXP(xpReward);
+        Inventory.inventory.AddCoins(goldReward);
+        Inventory.inventory.AddItems(itemRewards);
+    }
 
 }

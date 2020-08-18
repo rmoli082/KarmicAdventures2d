@@ -55,6 +55,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void AddItems(Items[] items)
+    {
+        foreach (Items item in items)
+        {
+            AddItem(item);
+        }
+    }
+
     public void RemoveItem(Items item)
     {
         itemList.Remove(item);

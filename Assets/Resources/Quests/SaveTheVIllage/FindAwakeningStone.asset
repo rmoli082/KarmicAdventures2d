@@ -16,17 +16,20 @@ MonoBehaviour:
   questLine: Save the Village!
   questType: 1
   questTitle: Bring your family back to life
-  questDesc: You've heard rumours of a magical stone that can shatter the stone crysalis.
+  questDesc: I've heard rumours of a magical stone that can shatter the stone crysalis.
     Find it and bring it back here.
-  questProgress: 5
-  questHint: Find a stone of awakening in a treasure chest somewhere.
-  questCompleteText: Congratulations! You've located an awakening stone! Place it
-    here to start the ritual. \nNow you must locate a Sun Stone to complete the ritual!
+  questProgress: 1
+  questHint: Find a Stone of Awakening in a treasure chest somewhere.
+  questCompleteText: 'You''ve done it, my son. You''ve found the Stone of Awakening.\n\nThere
+    is just one more thing you need to find, my son. '
+  questDoneText: It's a rare and powerful object that will help to unlock the power
+    within you.
   nextQuest: 1
   questObjective: find a stone of awakening
   xpReward: 50
   goldReward: 10
-  itemRewards: []
+  itemRewards:
+  - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
   numberNeeded: 1
   numberHeld: 0
   itemRequired: {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}

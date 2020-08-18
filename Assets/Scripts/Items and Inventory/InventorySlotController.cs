@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotController : MonoBehaviour
+public class InventorySlotController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
    public Items item;
+    public Tooltip tooltip;
+
+    void Awake()
+    {
+        tooltip = GameManager.gm.data.tooltip.GetComponent<Tooltip>();
+    }
 
    void Start()
    {
@@ -36,4 +43,19 @@ public class InventorySlotController : MonoBehaviour
            item.Use();
        }
    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (this.item != null)
+        {
+            tooltip.GenerateTooltip(this.item);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        tooltip.gameObject.SetActive(false);
+    }
+
+
 }
