@@ -15823,6 +15823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayTime: 4
   dialogBox: {fileID: 1129269208}
+  talkNotifier: {fileID: 0}
   isQuestGiver: 0
   questToken: {fileID: 0}
 --- !u!1 &285027358
@@ -26102,6 +26103,12 @@ MonoBehaviour:
 --- !u!1 &438793904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3062291689702196147, guid: 6eb7516673a3ff9b3b6b84d4b0782ffc,
+    type: 3}
+  m_PrefabInstance: {fileID: 438793898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &438793905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 709829328, guid: 6eb7516673a3ff9b3b6b84d4b0782ffc,
     type: 3}
   m_PrefabInstance: {fileID: 438793898}
   m_PrefabAsset: {fileID: 0}
@@ -87281,6 +87288,11 @@ PrefabInstance:
       propertyPath: warpPopup
       value: 
       objectReference: {fileID: 1188571187}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 438793905}
     - target: {fileID: 1575762944404959180, guid: 27b4aac720bc02461a26d559d09f0d60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -101322,12 +101334,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7006717
+      value: -6.700668
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.523703
+      value: 26.523706
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}

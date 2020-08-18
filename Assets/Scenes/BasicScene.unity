@@ -502,6 +502,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 438793898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &438793905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 709829328, guid: 6eb7516673a3ff9b3b6b84d4b0782ffc,
+    type: 3}
+  m_PrefabInstance: {fileID: 438793898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &649772922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -869,6 +875,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1184831510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1184831515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4890246063928039139, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1184831516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 732625264698577806, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214714016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1106,21 @@ PrefabInstance:
       propertyPath: questCompletedBox
       value: 
       objectReference: {fileID: 1184831514}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: controlsFrame
+      value: 
+      objectReference: {fileID: 1184831516}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: warpPopup
+      value: 
+      objectReference: {fileID: 1184831515}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 438793905}
     - target: {fileID: 1575762944404959180, guid: 27b4aac720bc02461a26d559d09f0d60,
         type: 3}
       propertyPath: m_LocalPosition.x
