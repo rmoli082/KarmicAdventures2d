@@ -471,6 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d950830031d2b949ab94e02d15d34c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  status: {fileID: 2069204933}
+  currentQuest: {fileID: 4151283663741310670}
   displayTime: 15
   dialogBox: {fileID: 1320769905385122485}
   talkNotifier: {fileID: 4069663142469471781}
@@ -493,9 +495,9 @@ MonoBehaviour:
   animatorToEnable: {fileID: 0}
   stoneToUse: {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
   awakeningStatus: 0
-  displayDialog: {fileID: 1320769905385122485}
   awakeTextBox: {fileID: 2460259880218793395}
   awakenText: You've freed me. Thank you.
+  npc: {fileID: 483759319208647280}
 --- !u!1 &3400923767122794283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,3 +1252,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7685565856255094340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4151283663741310670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5995644681442719882, guid: da1872b70e4186840b518251b865cb14,
+    type: 3}
+  m_PrefabInstance: {fileID: 7685565856255094340}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554b45c581f480844a4f2a6767080695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

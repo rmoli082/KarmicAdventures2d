@@ -17,7 +17,7 @@ MonoBehaviour:
   questType: 3
   questTitle: Awaken the villagers
   questDesc: Find enough Stones of Awakening to return some villagers back to life.
-  questProgress: 0
+  questProgress: 1
   questHint: Find 10 stones of awakening and restore the remaining 10 villagers to
     human form.
   questCompleteText: You did it!

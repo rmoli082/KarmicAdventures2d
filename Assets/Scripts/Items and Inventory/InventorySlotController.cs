@@ -37,7 +37,7 @@ public class InventorySlotController : MonoBehaviour, IPointerEnterHandler, IPoi
 
    public void Use() 
    {
-       RubyController player = GameManager.gm.data.player.GetComponent<RubyController>();
+       PlayerController player = GameManager.gm.data.player.GetComponent<PlayerController>();
        if (item)
        {
            item.Use();

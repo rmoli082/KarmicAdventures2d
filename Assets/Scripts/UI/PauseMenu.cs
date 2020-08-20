@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class PauseMenu : MonoBehaviour
         GameEvents.OnSaveInitiated();
         savedTile.SetActive(true);
         StartCoroutine(PopUpPause());
+        SaveLoad.Save<string>(SceneManager.GetActiveScene().name, "SceneToLoad");
     }
 
    public void Load()
    {
+        Time.timeScale = 1f;
+        GameManager.gm.data.pause.SetActive(false);
         GameEvents.OnLoadInitiated();
+        GameManager.gm.EnterSubArea(SaveLoad.Load<string>("SceneToLoad"));
    }
 
     public void New()

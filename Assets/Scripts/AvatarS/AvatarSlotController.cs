@@ -22,7 +22,6 @@ public class AvatarSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
    public void EquipAvatar()
     {
         AvatarSlotController currentAvatar = GameManager.gm.data.currentAvatar;
-        Debug.Log(this.avatar.avatarName);
         currentAvatar.avatar = this.avatar;
         currentAvatar.UpdateInfo();
 
@@ -33,7 +32,7 @@ public class AvatarSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
         CharacterSheet.charSheet.CalculateStats();
         CharacterSheet.charSheet.ChangeAvatar(this.avatar);
 
-        Player.player.SetAvatar(this.avatar);
+        Player.player.SetAvatar(this.avatar.avatarID);
     }
 
    public void UpdateInfo()

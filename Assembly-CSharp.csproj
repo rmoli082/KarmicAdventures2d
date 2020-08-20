@@ -61,8 +61,8 @@
     <Compile Include="Assets\Scripts\SaveSystem\AvatarSave.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\QuestSave.cs" />
     <Compile Include="Assets\Scripts\Game Managers\CharacterSheet.cs" />
+    <Compile Include="Assets\Scripts\Game Managers\NPCManager.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\WarpStone.cs" />
-    <Compile Include="Assets\Scripts\Characters\RubyController.cs" />
     <Compile Include="Assets\Scripts\Events and Locations\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestLocation.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\AvatarStones.cs" />
@@ -100,7 +100,6 @@
     <Compile Include="Assets\Scripts\UI\Tooltip.cs" />
     <Compile Include="Assets\Scripts\Quests\AwakenQuest.cs" />
     <Compile Include="Assets\Scripts\UI\PopDialog.cs" />
-    <Compile Include="Assets\Scripts\Game Managers\AwakeningManager.cs" />
     <Compile Include="Assets\Scripts\Game Managers\GameEvents.cs" />
     <Compile Include="Assets\Scripts\Game Managers\Inventory.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\AwakeningStone.cs" />
@@ -116,7 +115,10 @@
     <Compile Include="Assets\Scripts\Events and Locations\StoneCircle.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\TreasureChest.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Game Managers\NPCManager.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\StatWrapper.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\CharSheetWrapper.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\NPCCharacterWrapper.cs" />
+    <Compile Include="Assets\Scripts\Characters\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

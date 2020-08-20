@@ -27,15 +27,20 @@ public class CharacterSheet : MonoBehaviour
         if (charSheet == null)
         {
             charSheet = this.GetComponent<CharacterSheet>();
+            currentAvatar = (Avatar)Resources.Load("Avatars/NoAvatar.asset");
         }
         else if (charSheet != this)
         {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+       
+    }
 
-        
-      
+    private void Start()
+    {
+        GameEvents.SaveInitiated += Save;
+        GameEvents.LoadInitiated += Load;
     }
 
     private void Update()
@@ -82,12 +87,16 @@ public class CharacterSheet : MonoBehaviour
             Respawn();
         }
 
-        UIHealthBar.Instance.SetValue(baseStats.GetStats("currentHP") / (float)baseStats.GetStats("hp"));
+        UIHealthBar.Instance.SetHealthValue(baseStats.GetStats("currentHP") / (float)baseStats.GetStats("hp"));
     }
 
     public void ChangeMP(int amount)
     {
         baseStats.UpdateStats("currentMP", Mathf.Clamp(baseStats.GetStats("currentMP") + amount, 0, baseStats.GetStats("mp")));
+
+        UIHealthBar.Instance.SetManaValue(baseStats.GetStats("currentMP") / (float)baseStats.GetStats("mp"));
+
+        Debug.Log(baseStats.GetStats("currentMP"));
     }
 
     public void ChangeXP(int amount)
@@ -144,6 +153,20 @@ public class CharacterSheet : MonoBehaviour
         baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * buffedStats.GetStats("level")) + 1);
     }
 
+    public Avatar GetAvatar()
+    {
+        if (currentAvatar != null)
+        {
+            Debug.Log("not null");
+            return currentAvatar;
+        }
+        else
+        {
+            Debug.Log("null");
+            return (Avatar) Resources.Load("Avatars/NoAvatar.asset");
+        }
+    }
+
     void ApplyAdditiveModifiers()
     {
         foreach (KeyValuePair<string, Dictionary<int, int>> stat in additiveBuffs)
@@ -170,10 +193,36 @@ public class CharacterSheet : MonoBehaviour
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
         ChangeHealth(baseStats.GetStats("hpmax"));
         transform.position = GameManager.gm.data.respawnPosition.position;
+    }
+
+    void Save()
+    {
+        SaveLoad.Save<CharSheetWrapper>(new CharSheetWrapper(CharacterSheet.charSheet), "CharacterSheet");
+        Debug.Log("Saved");
+    }
+
+    void Load()
+    {
+        if (SaveLoad.SaveExists("CharacterSheet"))
+        {
+            CharSheetWrapper wrappedSheet = SaveLoad.Load<CharSheetWrapper>("CharacterSheet");
+
+            playerName = wrappedSheet.playerName;
+            baseStats = wrappedSheet.baseStats;
+            buffedStats = wrappedSheet.buffedStats;
+            derivedStats = wrappedSheet.derivedStats;
+            selectedSkills = wrappedSheet.selectedSkills;
+            additiveBuffs = wrappedSheet.additiveBuffs;
+            percentileBuffs = wrappedSheet.percentileBuffs;
+
+            currentAvatar = AvatarDatabase.avatarDb.GetAvatarById(wrappedSheet.currentAvatar.avatarID);
+
+            Debug.Log("Loaded");
+        }
     }
 
     IEnumerator RemoveAdditiveBuff (string stat, int buffID, float time)

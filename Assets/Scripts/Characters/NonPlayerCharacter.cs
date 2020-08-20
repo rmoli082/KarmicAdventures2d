@@ -10,13 +10,11 @@ public class NonPlayerCharacter : MonoBehaviour
 {
     public Awaken status;
     public QuestGiver currentQuest;
-    public float displayTime = 4.0f;
     public GameObject dialogBox;
     public GameObject talkNotifier;
     public bool isQuestGiver;
     public GameObject questToken;
 
-    float timerDisplay;
 
     void Start()
     {
@@ -33,33 +31,20 @@ public class NonPlayerCharacter : MonoBehaviour
             talkNotifier.SetActive(true);
             dialogBox.SetActive(false);
             questToken.SetActive(false);
-            timerDisplay = -1.0f;
         }
        
     }
-
-    void Update()
-    {
-        if (timerDisplay >= 0)
-        {
-            timerDisplay -= Time.fixedUnscaledDeltaTime;
-            if (timerDisplay < 0)
-            {
-                dialogBox.SetActive(false);
-                Time.timeScale = 1f;
-                if (isQuestGiver)
-                {
-                    questToken.SetActive(true);
-                }
-            }
-        }
-    }
-    
     public void DisplayDialog()
     {
-        timerDisplay = displayTime;
         dialogBox.SetActive(true);
         talkNotifier.SetActive(false);
         NPCManager.npcManager.UpdateNPCList(status.ID, status.awakeningStatus, currentQuest.questToGive, talkNotifier.activeSelf, questToken.activeSelf);
+    }
+
+    public void CloseDialog()
+    {
+        Time.timeScale = 1f;
+        dialogBox.SetActive(false);
+        questToken.SetActive(true);
     }
 }

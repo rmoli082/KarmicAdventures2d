@@ -62,16 +62,16 @@ public class Player : MonoBehaviour
 
         CharacterSheet.charSheet.ChangeHealth(0);
     }
-    public void SetAvatar(Avatar avatar)
+    public void SetAvatar(int avatar)
     {
-        switch (avatar.avatarID)
+        switch (avatar)
         {
             case 0:
-                Player.player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                Player.player.gameObject.GetComponent<RubyController>().projectilePrefab = (GameObject)Resources.Load("Projectiles/SunProjectile");
+                player.GetComponent<SpriteRenderer>().color = Color.red;
+                player.GetComponent<PlayerController>().projectilePrefab = (GameObject)Resources.Load("Projectiles/SunProjectile");
                 break;
             case 1:
-                Player.player.gameObject.GetComponent<SpriteRenderer>().color = new Color(128f, 128f, 128f, 0.5f);
+                player.GetComponent<SpriteRenderer>().color = new Color(128f, 128f, 128f, 0.5f);
                 break;
             default:
                 break;
@@ -80,7 +80,8 @@ public class Player : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        SetAvatar(CharacterSheet.charSheet.currentAvatar);
+        if (CharacterSheet.charSheet.currentAvatar != null)
+            SetAvatar(CharacterSheet.charSheet.currentAvatar.avatarID);
     }
     
 

@@ -14,6 +14,7 @@ public class Awaken : MonoBehaviour
     public AwakeningStatus awakeningStatus;
     public TextMeshProUGUI awakeTextBox;
     public string awakenText;
+    public NonPlayerCharacter npc;
 
     public void Awakening(int itemID)
     {
@@ -25,7 +26,7 @@ public class Awaken : MonoBehaviour
             {
                 animatorToEnable.enabled = true;
             }
-            AwakeningManager.awakeningManager.UpdateList(ID);
+            NPCManager.npcManager.UpdateNPCList(ID, awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
             GameEvents.OnAwakenEvent();
             Inventory.inventory.RemoveItem(stoneToUse);
             GameManager.gm.ShowHidePanels(false);

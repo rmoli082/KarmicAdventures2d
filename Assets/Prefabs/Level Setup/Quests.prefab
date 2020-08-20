@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1641897370698697828}
   - component: {fileID: 4070257687683333581}
-  - component: {fileID: 2406081753837753028}
+  - component: {fileID: 766503515}
   m_Layer: 0
   m_Name: Quests
   m_TagString: Untagged
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433227686858588244}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1113977, y: 7.44062, z: -4.814453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -47,7 +47,7 @@ MonoBehaviour:
   questList: []
   buttonPrefab: {fileID: 5099126346101039330, guid: 8a3d20ee418d58840826c8d0102031b4,
     type: 3}
---- !u!114 &2406081753837753028
+--- !u!114 &766503515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,6 +56,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7433227686858588244}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68528f7bb6652a542a4f5df58e5d5a83, type: 3}
+  m_Script: {fileID: 11500000, guid: c6d0d0e186c1c7943ae7c39a6b440b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -9,9 +9,11 @@ public class UIHealthBar : MonoBehaviour
 {
 	public static UIHealthBar Instance { get; private set; }
 
-	public Image bar;
+	public Image healthBar;
+	public Image manaBar;
 
-	float originalSize;
+	float healthOriginalSize;
+	float manaOriginalSize;
 
 	// Use this for initialization
 	void Awake ()
@@ -21,11 +23,17 @@ public class UIHealthBar : MonoBehaviour
 
 	void OnEnable()
 	{
-		originalSize = bar.rectTransform.rect.width;
+		healthOriginalSize = healthBar.rectTransform.rect.width;
+		manaOriginalSize = manaBar.rectTransform.rect.width;
 	}
 
-	public void SetValue(float value)
+	public void SetHealthValue(float value)
 	{		
-		bar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * value);
+		healthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthOriginalSize * value);
 	}
+
+	public void SetManaValue(float value)
+    {
+		manaBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, manaOriginalSize * value);
+    }
 }

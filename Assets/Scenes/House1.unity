@@ -11404,6 +11404,14 @@ PrefabInstance:
       propertyPath: status
       value: 
       objectReference: {fileID: 820599210}
+    - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_text
+      value: "Help me, my son.\n\nThere is so much for me to tell you and very little
+        time to do it in. You have a great gift, my son: the very essence of magic
+        flows through your veins. \n\nI have heard rumours of a ritual that can bring
+        us out of stasis, but you must hurry. There's no time...\n\n(Press X to dismiss)"
+      objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
@@ -15367,7 +15375,11 @@ PrefabInstance:
 
         You...
 
-        My son...'
+        My son...
+
+
+        (Press
+        X to dismiss)'
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -25991,7 +26003,11 @@ PrefabInstance:
       value: 'Hahaha what?
 
 
-        This feels so weird...'
+        This feels so weird...
+
+
+        (Press X to
+        dismiss)'
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
