@@ -21,4 +21,10 @@ public class SceneData : MonoBehaviour
     public GameObject controlsFrame;
     public GameObject warpPopup;
     public GameObject tooltip;
+
+    public Transform respawnPosition;
+
+    public Animator playerAnimator;
+    public AudioSource playerAudioSource;
+    
 }

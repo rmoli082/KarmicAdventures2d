@@ -26,9 +26,7 @@ public class RubyController : MonoBehaviour
 
     Scene _scene;
     
-    // ======== HEALTH ==========
-    float invincibleTimer;
-    bool isInvincible;
+    
    
     // ==== ANIMATION =====
     Animator animator;
@@ -44,12 +42,7 @@ public class RubyController : MonoBehaviour
         _scene = SceneManager.GetActiveScene();
                 
         // ======== HEALTH ==========
-        invincibleTimer = -1.0f;
-        if (PlayerPrefs.HasKey("health")) {
-            currentHealth = PlayerPrefsManager.GetHealth();
-        } else {
-            currentHealth = Player.player.baseStats.GetStats("hpmax");
-        }
+        
         
         // ==== ANIMATION =====
         animator = GetComponent<Animator>();
@@ -61,13 +54,7 @@ public class RubyController : MonoBehaviour
 
     void Update()
     {
-        // ================= HEALTH ====================
-        if (isInvincible)
-        {
-            invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer < 0)
-                isInvincible = false;
-        }
+        
 
         // ============== MOVEMENT ======================
         float horizontal = Input.GetAxis("Horizontal");
@@ -145,7 +132,6 @@ public class RubyController : MonoBehaviour
             }
         }
 
-        ChangeHealth(0);
  
     }
 
@@ -158,47 +144,10 @@ public class RubyController : MonoBehaviour
         rigidbody2d.MovePosition(position);
     }
 
-    // ===================== HEALTH ==================
-    public void ChangeHealth(int amount)
-    {
-        if (amount < 0)
-        { 
-            if (isInvincible)
-                return;
-            
-            isInvincible = true;
-            invincibleTimer = timeInvincible;
-            
-            animator.SetTrigger("Hit");
-            audioSource.PlayOneShot(hitSound);
-
-            Instantiate(hitParticle, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-        }
-        
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, Player.player.baseStats.GetStats("hpmax"));
-        
-        if(currentHealth == 0 ) 
-        {
-            GameManager.gm.refreshGui();
-            Respawn();
-        }
-        
-        Player.player.ReloadStats();
-        UIHealthBar.Instance.SetValue(currentHealth / (float)Player.player.baseStats.GetStats("hpmax"));
-    }
-    
-    void Respawn()
-    {
-        ChangeHealth(Player.player.baseStats.GetStats("hpmax"));
-        transform.position = respawnPosition.position;
-    }
-    
-    // =============== PROJECTICLE ========================
 
     void CheckMana()
     {
-        Debug.Log(Player.player.baseStats.GetStats("mpnow"));
-        if (Player.player.baseStats.GetStats("mpnow") >= 2)
+        if (CharacterSheet.charSheet.baseStats.GetStats("currentMP") >= 2)
         {
             LaunchProjectile();
         }
@@ -212,7 +161,7 @@ public class RubyController : MonoBehaviour
         
         animator.SetTrigger("Launch");
         audioSource.PlayOneShot(shootingSound);
-        Player.player.baseStats.SubtractMP(2);
+        CharacterSheet.charSheet.ChangeMP(2);
     }
     
     // =============== SOUND ==========================

@@ -7,18 +7,24 @@ using UnityEngine.SceneManagement;
 public class OpeningStory : MonoBehaviour
 {
     public TMP_InputField inputField;
-    public string nextScene;
+    public string levelToLoad;
     public GameObject storyPanel;
     public GameObject namePanel;
+
+    public GameObject statsBar;
+    public GameObject skillsBar;
 
     public void CloseStoryPanel()
     {
         storyPanel.SetActive(false);
         namePanel.SetActive(true);
     }
-    public void SaveName()
+    public void SaveCharacterSheet()
     {
-        GameManager.gm.playerName = inputField.text;
-        GameManager.gm.EnterSubArea(nextScene);
+        Stats stats = statsBar.GetComponent<StatsBar>().GetBaseStats();
+        Dictionary<string, int> skills = skillsBar.GetComponent<SkillsBar>().GetSkills();
+        CharacterSheet.charSheet.BuildCharacterSheet(inputField.text, stats, skills);
+        GameManager.gm.EnterSubArea(levelToLoad);
+        
     }
 }

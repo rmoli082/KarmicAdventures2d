@@ -27,7 +27,7 @@ public class Quest : ScriptableObject
 
     public void GiveRewards()
     {
-        Player.player.baseStats.AddXP(xpReward);
+        CharacterSheet.charSheet.ChangeXP(xpReward);
         Inventory.inventory.AddCoins(goldReward);
         Inventory.inventory.AddItems(itemRewards);
     }

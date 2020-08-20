@@ -21,6 +21,7 @@ public class AwakeningManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {

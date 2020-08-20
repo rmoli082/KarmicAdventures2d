@@ -18,15 +18,15 @@ MonoBehaviour:
   questTitle: Awaken the villagers
   questDesc: Find enough Stones of Awakening to return some villagers back to life.
   questProgress: 0
-  questHint: Find 15 stones of awakening and restore the remaining 10 villagers to
+  questHint: Find 10 stones of awakening and restore the remaining 10 villagers to
     human form.
   questCompleteText: You did it!
   questDoneText: Enough villagers have been awakened to find some way to bring the
     rest of them back. Thank you so much.
   nextQuest: -1
-  questObjective: find stones and awaken 15 villagers
+  questObjective: find stones and awaken 10 villagers
   xpReward: 100
   goldReward: 25
   itemRewards: []
-  numberToAwaken: 15
+  numberToAwaken: 10
   numberAwakened: 0

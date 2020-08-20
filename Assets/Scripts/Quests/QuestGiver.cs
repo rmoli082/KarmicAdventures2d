@@ -6,6 +6,7 @@ using TMPro;
 public class QuestGiver : MonoBehaviour
 {
     public Quest questToGive;
+    public NonPlayerCharacter npc;
     public GameObject questDialog;
     public TextMeshProUGUI questText;
     public Quest.QuestType questType;
@@ -14,7 +15,8 @@ public class QuestGiver : MonoBehaviour
 
     void Awake()
     {
-        questToGive.questProgress = Quest.QuestProgress.AVAILABLE;
+        if (NPCManager.npcManager.GetNPC(npc.status.ID) == null)
+            questToGive.questProgress = Quest.QuestProgress.AVAILABLE;
     }
 
     void Update()
@@ -50,7 +52,7 @@ public class QuestGiver : MonoBehaviour
                 break;
             case Quest.QuestProgress.CURRENT:
             case Quest.QuestProgress.ACCEPTED:
-                questText.text = questToGive.questHint;
+                questText.text = questToGive.questDesc;
                 break;
             case Quest.QuestProgress.COMPLETED:
                 questText.text = questToGive.questCompleteText;
@@ -80,6 +82,8 @@ public class QuestGiver : MonoBehaviour
                 questToGive = QuestManager.questManager.GetQuestById(questToGive.nextQuest);
                 Debug.Log(questToGive.questTitle);
                 QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.AVAILABLE);
+                QuestManager.questManager.AcceptQuest(questToGive);
+                NPCManager.npcManager.UpdateNPCList(npc.status.ID, npc.status.awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
                 break;
             default:
                 break;

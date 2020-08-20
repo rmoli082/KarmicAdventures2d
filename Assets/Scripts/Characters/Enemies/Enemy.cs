@@ -68,10 +68,10 @@ public class Enemy : MonoBehaviour
 	void OnCollisionStay2D(Collision2D other)
 	{
 		
-		RubyController controller = other.collider.GetComponent<RubyController>();
+		Player player = other.collider.GetComponent<Player>();
 		
-		if(controller != null)
-			controller.ChangeHealth(-1);
+		if(player != null)
+			CharacterSheet.charSheet.ChangeHealth(-1);
 	}
 
 	public void Fix()
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
 		rigidbody2d.simulated = false;
 
 		
-		Player.player.baseStats.AddXP(xpAmount);
+		CharacterSheet.charSheet.baseStats.UpdateStats("xp", xpAmount);
 		
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);

@@ -15,22 +15,20 @@ public class Consumable : Items
     
     public override void Use()
     {
-        GameObject player = GameManager.gm.data.player;
-        RubyController playerHealth = player.GetComponent<RubyController>();
 
         switch (consumableType)
         {
-            case ConsumableType.RESTORE_HP:
-                playerHealth.ChangeHealth(amount);
-                break;
-            case ConsumableType.RESTORE_MP:
-                Player.player.baseStats.stats["mpnow"] += amount;
-                break;
             case ConsumableType.INCREASE_HP:
-                Player.player.baseStats.stats["hpmax"] += amount;
+                CharacterSheet.charSheet.baseStats.UpdateStats("mp", CharacterSheet.charSheet.baseStats.GetStats("mp") + amount);
                 break;
             case ConsumableType.INCREASE_MP:
-                Player.player.baseStats.stats["mpmax"] += amount;
+                CharacterSheet.charSheet.baseStats.UpdateStats("mp", CharacterSheet.charSheet.baseStats.GetStats("mp") + amount);
+                break;
+            case ConsumableType.RESTORE_HP:
+                CharacterSheet.charSheet.ChangeHealth(amount);
+                break;
+            case ConsumableType.RESTORE_MP:
+                CharacterSheet.charSheet.ChangeMP(amount);
                 break;
         }
         Inventory.inventory.RemoveItem(this);

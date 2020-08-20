@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7222854264176691432
+--- !u!1 &4749840115493440267
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,14 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7222854264176691434}
-  - component: {fileID: 7222854264176691435}
-  - component: {fileID: 3017622544902515107}
-  - component: {fileID: 7030315992528205759}
-  - component: {fileID: 4012499859553495844}
-  - component: {fileID: 1219209718}
-  - component: {fileID: 1219209719}
-  - component: {fileID: 127279607100559675}
+  - component: {fileID: 4749840115493440265}
+  - component: {fileID: 4749840115493440264}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -23,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7222854264176691434
+--- !u!4 &4749840115493440265
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
+  m_GameObject: {fileID: 4749840115493440267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1113977, y: 7.44062, z: -4.814453}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7222854264176691435
+--- !u!114 &4749840115493440264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
+  m_GameObject: {fileID: 4749840115493440267}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d34cac8356afc2750b0babf87e25ab63, type: 3}
@@ -61,83 +55,3 @@ MonoBehaviour:
   yMaxRange: 2
   gameIsOver: 0
   locationName: 
---- !u!114 &3017622544902515107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd4d66c094ffd004aed50a84bb52928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemList: []
-  avatarList: []
---- !u!114 &7030315992528205759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071de4469fc3553ce81c38f90b4fa65a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4012499859553495844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4385b5e92b09e8242bcfead6aad0c05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questList: []
-  buttonPrefab: {fileID: 5099126346101039330, guid: 8a3d20ee418d58840826c8d0102031b4,
-    type: 3}
---- !u!114 &1219209718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed3fb957873a0a69c9823eebf1529fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDbList:
-  - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
---- !u!114 &1219209719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c55b226c7e6eb7459b557560ffc6215, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatarDatabase: []
---- !u!114 &127279607100559675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7222854264176691432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68528f7bb6652a542a4f5df58e5d5a83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

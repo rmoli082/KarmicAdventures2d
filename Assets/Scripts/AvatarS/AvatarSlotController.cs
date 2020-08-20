@@ -25,27 +25,15 @@ public class AvatarSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
         Debug.Log(this.avatar.avatarName);
         currentAvatar.avatar = this.avatar;
         currentAvatar.UpdateInfo();
-        PlayerPrefsManager.SetAvatar(currentAvatar.avatar.avatarID);
-        Debug.Log(PlayerPrefsManager.GetAvatar());
-        Player.player.baseStats.AddModifier(0, new Stats(new Dictionary<string, int>(){
-                {"attack", currentAvatar.avatar.attackUp},
-                {"defense", currentAvatar.avatar.defenseUp},
-                {"magic", currentAvatar.avatar.magicUp}
-            }));
-        Player.player.ReloadStats();
-        switch (currentAvatar.avatar.avatarID)
-        {
-            case 0:
-                Player.player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                Player.player.gameObject.GetComponent<RubyController>().projectilePrefab = (GameObject) Resources.Load("Projectiles/SunProjectile");
-                break;
-            case 1:
-                Player.player.gameObject.GetComponent<SpriteRenderer>().color = new Color(128f,128f,128f,0.5f);
-                break;
-            default:
-                break;
-        }
-        Player.player.SetCurrentAvatar(this.avatar);
+
+
+        CharacterSheet.charSheet.AdditiveModifier("attack", 1, this.avatar.attackUp, 0);
+        CharacterSheet.charSheet.AdditiveModifier("defense", 1, this.avatar.defenseUp, 0);
+        CharacterSheet.charSheet.AdditiveModifier("magic", 1, this.avatar.magicUp, 0);
+        CharacterSheet.charSheet.CalculateStats();
+        CharacterSheet.charSheet.ChangeAvatar(this.avatar);
+
+        Player.player.SetAvatar(this.avatar);
     }
 
    public void UpdateInfo()

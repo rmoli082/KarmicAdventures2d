@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
 
     public static Player player;
 
-    public Avatar currentAvatar = null;
-    public Stats baseStats;
-
     public float mpRegenTime;
     public float hpRegenTime;
-
-    RubyController playerController;
-    int currentMP;
+    
     float hpReturn;
     float mpReturn;
-    
+
+    public float timeInvincible = 2.0f;
+    public float invincibleTimer;
+    public bool isInvincible;
+
+    Transform respawnPosition;
+
     void Awake()
     {
          if (player == null) {
@@ -27,59 +29,59 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        baseStats = new Stats(new Dictionary<string, int>()
-        {
-            {"xp", 0},
-            {"level", 0},
-            {"hpmax", 10},
-            {"hpnow", 10},
-            {"mpmax", 10},
-            {"mpnow", 10},
-            {"attack", 10},
-            {"defense", 10},
-            {"magic", 10},
-            {"karma", 10}
-        });
+
+        invincibleTimer = -1.0f;
     }
 
-    void Start()
+    private void Start()
     {
-        if (PlayerPrefs.HasKey("xp"))
-        {
-            baseStats.stats["xp"] = PlayerPrefsManager.GetXP();
-        }
-        playerController = this.gameObject.GetComponent<RubyController>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
     {
-        if (playerController.currentHealth < baseStats.GetStats("hpmax") 
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+        }
+
+        if (CharacterSheet.charSheet.baseStats.GetStats("currentHP") < CharacterSheet.charSheet.baseStats.GetStats("hp") 
             && Time.time >= hpReturn) 
         {
-            playerController.ChangeHealth(1);
+            CharacterSheet.charSheet.ChangeHealth(1);
             hpReturn = Time.time + hpRegenTime;
         }
-        ReloadStats();
-        if (currentMP < baseStats.GetStats("mpmax")
+        if (CharacterSheet.charSheet.baseStats.GetStats("currentHP") < CharacterSheet.charSheet.baseStats.GetStats("mp")
            && Time.time >= mpReturn)
         {
-            baseStats.stats["mpnow"] += 1;
+            CharacterSheet.charSheet.ChangeMP(1);
             mpReturn = Time.time + mpRegenTime;
         }
-        ReloadStats();
+
+        CharacterSheet.charSheet.ChangeHealth(0);
+    }
+    public void SetAvatar(Avatar avatar)
+    {
+        switch (avatar.avatarID)
+        {
+            case 0:
+                Player.player.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                Player.player.gameObject.GetComponent<RubyController>().projectilePrefab = (GameObject)Resources.Load("Projectiles/SunProjectile");
+                break;
+            case 1:
+                Player.player.gameObject.GetComponent<SpriteRenderer>().color = new Color(128f, 128f, 128f, 0.5f);
+                break;
+            default:
+                break;
+        }
     }
 
-    public void ReloadStats()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        baseStats.stats["level"] = (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 * 
-            Player.player.baseStats.GetStats("xp")))/100);
-        baseStats.stats["hpmax"] = baseStats.GetStats("defense") + (2 * baseStats.GetStats("level"));
-        baseStats.stats["mpmax"] = baseStats.GetStats("magic") + (2 * baseStats.GetStats("level")) + 1;
+        SetAvatar(CharacterSheet.charSheet.currentAvatar);
     }
-
-    public void SetCurrentAvatar(Avatar avatar)
-    {
-        currentAvatar = avatar;
-    }
+    
 
 }

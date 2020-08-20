@@ -9,7 +9,7 @@ public class SaveLoad : MonoBehaviour
 {
    public static void Save<T>(T objectToSave, string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + GameManager.gm.playerName;
+        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
 
         Directory.CreateDirectory(path);
 
@@ -24,7 +24,7 @@ public class SaveLoad : MonoBehaviour
 
     public static T Load<T>(string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + GameManager.gm.playerName;
+        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
 
         BinaryFormatter formatter = new BinaryFormatter();
         T returnValue = default(T);
@@ -38,13 +38,13 @@ public class SaveLoad : MonoBehaviour
 
     public static bool SaveExists(string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + GameManager.gm.playerName + key + ".txt";
+        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName + key + ".txt";
         return File.Exists(path);
     }
 
     public static void DeleteAllSaveData()
     {
-        string path = Application.persistentDataPath + "/saves/" + GameManager.gm.playerName;
+        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
         DirectoryInfo directory = new DirectoryInfo(path);
         directory.Delete();
         Directory.CreateDirectory(path);

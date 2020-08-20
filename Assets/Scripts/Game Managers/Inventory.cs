@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         if(inventory == null){
-            inventory = this;
+            inventory = this.GetComponent<Inventory>();
         } 
         else if(inventory != this)
         {

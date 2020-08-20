@@ -1,51 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Stats 
 {
     public Dictionary<string, int> stats;
-    public Dictionary<int, Stats> modifiers;
+
+    public Stats() 
+    {
+        stats = new Dictionary<string, int>();
+    }
 
     public Stats(Dictionary<string, int> statsList)
     {
         this.stats = statsList;
-        this.modifiers = new Dictionary<int, Stats>();
-    }
-
-    public void AddModifier(int modifierID, Stats modifierList)
-    {
-        modifiers[modifierID] = modifierList;
     }
 
     public int GetStats(string statName)
     {
-        int stat = stats[statName];
-        if (modifiers.Count > 0)
+        if (stats.ContainsKey(statName))
+            return stats[statName];
+        else
+            return -1;
+    }
+
+    public void GetAllStats()
+    {
+        foreach (KeyValuePair<string, int>stat in stats)
         {
-            foreach (KeyValuePair<int, Stats> keypair in modifiers)
-            {
-                foreach (KeyValuePair<string, int> modifier in keypair.Value.stats)
-                {
-                    if (modifier.Key == statName)
-                    {
-                        stat += modifier.Value;
-                    }
-                }
-            }
+            Debug.Log($"{stat.Key} {stat.Value}");
         }
-
-        return stat;
     }
 
-    public void AddXP(int xpAmount)
+    public void UpdateStats(string statName, int value)
     {
-        stats["xp"] += xpAmount;
-    }
-
-    public void SubtractMP(int mpAmount)
-    {
-        stats["mpnow"] -= +mpAmount;
+        stats[statName] = value;    
     }
 
 }

@@ -16,7 +16,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questManager == null)
         {
-            questManager = this;
+            questManager = this.GetComponent<QuestManager>();
         }
         else if (questManager != this)
         {

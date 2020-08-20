@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     public SceneData data;
 
-    public string playerName;
 
     public GameObject[] EnemyTraps;
     public float secondsBetweenSpawning = 5.0f;
@@ -43,13 +42,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        setupDefaults();
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         GameEvents.LocationFound += SetCurrentLocation;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        setupDefaults();
     }
 
     // Update is called once per frame
@@ -167,16 +167,16 @@ public class GameManager : MonoBehaviour
     {
         if (!_scene.name.Equals("OpeningStory"))
         {
-            PlayerPrefsManager.SavePlayerState(Player.player.baseStats.GetStats("xp"),
-                Player.player.baseStats.GetStats("hpnow"), Player.player.baseStats.GetStats("hpmax"),
-                Player.player.baseStats.GetStats("mpnow"), Player.player.baseStats.GetStats("mpmax"),
-                Player.player.baseStats.GetStats("attack"), Player.player.baseStats.GetStats("defense"),
-                Player.player.baseStats.GetStats("magic"), Player.player.baseStats.GetStats("karma"));
+            PlayerPrefsManager.SavePlayerState(CharacterSheet.charSheet.baseStats.GetStats("xp"),
+                CharacterSheet.charSheet.baseStats.GetStats("currentHP"), CharacterSheet.charSheet.baseStats.GetStats("hp"),
+               CharacterSheet.charSheet.baseStats.GetStats("currentMP"), CharacterSheet.charSheet.baseStats.GetStats("mp"),
+                CharacterSheet.charSheet.baseStats.GetStats("attack"), CharacterSheet.charSheet.baseStats.GetStats("defense"),
+                CharacterSheet.charSheet.baseStats.GetStats("magic"), CharacterSheet.charSheet.baseStats.GetStats("special"));
         }
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
-            PlayerPrefsManager.SetPlayerOverworldPosition(_player.transform.position.x,_player.transform.position.y,
-                _player.transform.position.z);
+            PlayerPrefsManager.SetPlayerOverworldPosition(data.player.transform.position.x, data.player.transform.position.y,
+               data.player.transform.position.z);
         }
         StartCoroutine(LoadNextLevel(nextLevel));
     }
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
     {
         if (!_scene.name.Equals("OpeningStory"))
         {
-            data.level.text = Player.player.baseStats.GetStats("level").ToString();
+            data.level.text = CharacterSheet.charSheet.baseStats.GetStats("level").ToString();
         }
     }
 
@@ -205,6 +205,11 @@ public class GameManager : MonoBehaviour
             locationName = lastLocation;
             lastLocation = location;
         }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        setupDefaults();
     }
 
     IEnumerator LoadNextLevel(string nextLevel)

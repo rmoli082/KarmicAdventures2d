@@ -18,11 +18,12 @@ MonoBehaviour:
   questTitle: Awaken your family
   questDesc: Great! Now that you have the Stone of Awakening and have learned your
     Sun Avatar form, perform the ritual of awakening to return us to life!
-  questProgress: 0
+  questProgress: 1
   questHint: While wearing the Sun Avatar form, use the Stone of Awakening from your
     inventory
   questCompleteText: Congratulations, you've brought us back to life!
-  questDoneText: 
+  questDoneText: If you awaken some of the villagers, we might be able to help you
+    on your quest.
   nextQuest: 3
   questObjective: perform awakening ritual
   xpReward: 25
