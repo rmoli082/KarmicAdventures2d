@@ -902,6 +902,60 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1184831510}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184831521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4346341843122336755, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1184831522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3763854325390248729, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1184831523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1000802320923276577, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1184831524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5625417309827735553, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1184831525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4232780355685862625, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1184831510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214714016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1232,31 @@ PrefabInstance:
       propertyPath: levelUpButton
       value: 
       objectReference: {fileID: 1184831520}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questDetailsPane
+      value: 
+      objectReference: {fileID: 1184831525}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questDetailsStory
+      value: 
+      objectReference: {fileID: 1184831524}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questDetailsTitle
+      value: 
+      objectReference: {fileID: 1184831523}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questDetailsDesc
+      value: 
+      objectReference: {fileID: 1184831522}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: questRewards
+      value: 
+      objectReference: {fileID: 1184831521}
     - target: {fileID: 1575762944404959180, guid: 27b4aac720bc02461a26d559d09f0d60,
         type: 3}
       propertyPath: m_LocalPosition.x
