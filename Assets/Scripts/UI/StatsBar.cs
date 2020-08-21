@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatsBar : MonoBehaviour
@@ -39,39 +40,59 @@ public class StatsBar : MonoBehaviour
         ShowStatPoints(specialSlider, specialDisplay);
     }
 
+    private void Update()
+    {
+        currentStatPoints = attack + defense + magic + special;
+        statPointsLeftDisplay.text = (totalStatPoints - currentStatPoints).ToString();
+    }
+
     public void Attack()
     {
-        attack = attackSlider.value;
+        if (currentStatPoints < totalStatPoints)
+            attack = attackSlider.value;
+        else
+            attackSlider.value = attack;
         ShowStatPoints(attackSlider, attackDisplay);
     }
 
     public void Defense()
     {
-       
-        defense = defenseSlider.value;
+        if (currentStatPoints < totalStatPoints)
+            defense = defenseSlider.value;
+        else
+            defenseSlider.value = defense;
         ShowStatPoints(defenseSlider, defenseDisplay);
     }
 
     public void Magic()
     {
-        magic = magicSlider.value;
+        if (currentStatPoints < totalStatPoints)
+            magic = magicSlider.value;
+        else
+            magicSlider.value = magic;
         ShowStatPoints(magicSlider, magicDisplay);
         
     }
 
     public void Special()
     {
-        special = specialSlider.value;
+        if (currentStatPoints < totalStatPoints)
+            special = specialSlider.value;
+        else
+            specialSlider.value = special;
         ShowStatPoints(specialSlider, specialDisplay);
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void ShowStatPoints(Slider slider, TextMeshProUGUI textBox)
     {
         textBox.text = slider.value.ToString();
-        currentStatPoints = attack + defense + magic + special;
         hpDisplay.text = defense.ToString();
         mpDisplay.text = (magic + 1).ToString();
-        statPointsLeftDisplay.text = (totalStatPoints - currentStatPoints).ToString();
     }
 
     public Stats GetBaseStats()

@@ -19,7 +19,9 @@ public class CharacterSheet : MonoBehaviour
 
     public GameObject hitParticle;
     public AudioClip hitSound;
-    
+
+    public int statPoints;
+    public int skillPoints;
 
 
     private void Awake()
@@ -41,11 +43,7 @@ public class CharacterSheet : MonoBehaviour
     {
         GameEvents.SaveInitiated += Save;
         GameEvents.LoadInitiated += Load;
-    }
-
-    private void Update()
-    {
-        
+        GameEvents.XpAwarded += CheckForLevelUp;
     }
 
     public void BuildCharacterSheet(string name, Stats stats, Dictionary<string, int> skills)
@@ -60,7 +58,6 @@ public class CharacterSheet : MonoBehaviour
 
         baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
         baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
-
     }
 
     public void ChangeHealth(int amount)
@@ -83,7 +80,6 @@ public class CharacterSheet : MonoBehaviour
 
         if (baseStats.GetStats("hp") == 0)
         {
-            GameManager.gm.refreshGui();
             Respawn();
         }
 
@@ -93,15 +89,16 @@ public class CharacterSheet : MonoBehaviour
     public void ChangeMP(int amount)
     {
         baseStats.UpdateStats("currentMP", Mathf.Clamp(baseStats.GetStats("currentMP") + amount, 0, baseStats.GetStats("mp")));
-
+        Debug.Log(baseStats.GetStats("currentMP"));
         UIHealthBar.Instance.SetManaValue(baseStats.GetStats("currentMP") / (float)baseStats.GetStats("mp"));
 
-        Debug.Log(baseStats.GetStats("currentMP"));
+        
     }
 
     public void ChangeXP(int amount)
     {
         baseStats.UpdateStats("xp", baseStats.GetStats("xp") + amount);
+        GameEvents.OnXpAwarded();
     }
 
     public void ChangeAvatar(Avatar avatar)
@@ -148,7 +145,6 @@ public class CharacterSheet : MonoBehaviour
     {
         ApplyAdditiveModifiers();
         ApplyPercentileModifiers();
-        baseStats.UpdateStats("level", (Mathf.FloorToInt(50 + Mathf.Sqrt(625 + 100 + baseStats.GetStats("xp"))) / 100));
         baseStats.UpdateStats("hp", buffedStats.GetStats("defense") + (2 * buffedStats.GetStats("level")));
         baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * buffedStats.GetStats("level")) + 1);
     }
@@ -222,6 +218,28 @@ public class CharacterSheet : MonoBehaviour
             currentAvatar = AvatarDatabase.avatarDb.GetAvatarById(wrappedSheet.currentAvatar.avatarID);
 
             Debug.Log("Loaded");
+        }
+    }
+
+    void CheckForLevelUp()
+    {
+        if (baseStats.GetStats("level") < Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100))
+        {
+            baseStats.UpdateStats("level", Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100));
+            GameManager.gm.data.level.text = baseStats.GetStats("level").ToString();
+            DoLevelUp();
+        }
+    }
+
+    void DoLevelUp()
+    {
+        GameManager.gm.data.levelUpButton.SetActive(true);
+        skillPoints++;
+        if (baseStats.GetStats("level") % 3 == 0)
+        {
+            GameManager.gm.data.levelUpText.text = "You have 1 stat point and 1 skill point you can spend.";
+            statPoints++;
+            GameManager.gm.data.statsPanel.SetActive(true);
         }
     }
 

@@ -30,7 +30,7 @@ public class Stats
     {
         foreach (KeyValuePair<string, int>stat in stats)
         {
-            Debug.Log($"{stat.Key} {stat.Value}");
+            Debug.Log($"{stat.Key}   {stat.Value}");
         }
     }
 

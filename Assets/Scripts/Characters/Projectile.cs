@@ -27,12 +27,10 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Enemy e = other.collider.GetComponent<Enemy>();
-
-        //if the object we touched wasn't an enemy, just destroy the projectile.
-        if (e != null)
+        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            e.Fix();
+            Enemy e = other.gameObject.GetComponent<Enemy>();
+            e.Die();
         }
         
         Destroy(gameObject);

@@ -47,7 +47,7 @@ public class SkillsBar : MonoBehaviour
         secondDropdown.AddOptions(options);
         secondDropdown.gameObject.SetActive(true);
 
-        switch(firstDropdown.value)
+        switch (firstDropdown.value)
         {
             case 1:
                 firstSkillDescription.text = STEALTH;
@@ -67,7 +67,7 @@ public class SkillsBar : MonoBehaviour
         }
 
         firstSkillDescription.gameObject.SetActive(true);
-        firstSkill = firstDropdown.value.ToString();
+        firstSkill = firstDropdown.options[firstDropdown.value].text;
     }
 
     public void SecondDropdown()
@@ -92,7 +92,7 @@ public class SkillsBar : MonoBehaviour
         }
 
         secondSkillDescription.gameObject.SetActive(true);
-        secondSkill = secondDropdown.value.ToString();
+        secondSkill = secondDropdown.options[secondDropdown.value].text;
     }
 
     public Dictionary<string, int> GetSkills()

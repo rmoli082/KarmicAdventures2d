@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1936357022}
   - component: {fileID: 1936357023}
   - component: {fileID: 1936357024}
-  - component: {fileID: 1936357021}
   m_Layer: 10
   m_Name: Chaser Slime
   m_TagString: Slime
@@ -48,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5399e181ab4b75a79ea2a72ab5c82ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  attack: 2
+  defense: 1
+  magic: 0
+  xpAmount: 2
+  fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
+    type: 3}
+  hitSound: {fileID: 8300000, guid: 683e01d57e63fe749866ca4fd3cc424c, type: 3}
   speed: 1
   aggroDistOrig: 1
   target: {fileID: 0}
@@ -85,9 +92,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010315061, y: -0.09094554}
+  m_Offset: {x: -0.01150012, y: -0.09094554}
   serializedVersion: 2
-  m_Radius: 0.33495724
+  m_Radius: 0.6076467
 --- !u!82 &1936357024
 AudioSource:
   m_ObjectHideFlags: 0
@@ -184,28 +191,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1936357021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8575684818433655545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c355cf67d54abee4aae3b97fd7e93987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  timeToChange: 0
-  horizontal: 0
-  type: 0
-  xpAmount: 2
-  smokeParticleEffect: {fileID: 0}
-  fixedParticleEffect: {fileID: 2688776450615711917, guid: 96e9cd9955be74842b5d6b2e427ffe16,
-    type: 3}
-  hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
-  fixedSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0

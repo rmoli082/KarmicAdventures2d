@@ -98,6 +98,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            if (!data.levelUpPanel.activeSelf)
+            {
+                Time.timeScale = 0f;
+                data.levelUpPanel.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                data.levelUpPanel.SetActive(false);
+            }
+        }
+
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name) && Time.timeSinceLevelLoad  >= nextSpawnTime) {
             int random = Random.Range (0,3);
             if (random == 1) {
@@ -105,8 +119,6 @@ public class GameManager : MonoBehaviour
                 nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
             }
         }
-
-        refreshGui();
         
     }
 
@@ -127,7 +139,6 @@ public class GameManager : MonoBehaviour
 
             _player.transform.position = _spawnLocation;
         }
-        refreshGui();
         locationName = " ";
         
     }
@@ -179,14 +190,6 @@ public class GameManager : MonoBehaviour
                data.player.transform.position.z);
         }
         StartCoroutine(LoadNextLevel(nextLevel));
-    }
-
-    public void refreshGui()
-    {
-        if (!_scene.name.Equals("OpeningStory"))
-        {
-            data.level.text = CharacterSheet.charSheet.baseStats.GetStats("level").ToString();
-        }
     }
 
     public string GetCurrentLocation()

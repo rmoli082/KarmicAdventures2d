@@ -14,6 +14,11 @@ public class CharacterSheetEditor : Editor
         if(GUILayout.Button("Print base stats"))
         {
             charSheet.baseStats.GetAllStats();
+            foreach (KeyValuePair<string, int> skill in charSheet.selectedSkills)
+            {
+                Debug.Log($"{skill.Key}   {skill.Value}");
+            }
         }
+        
     }
 }

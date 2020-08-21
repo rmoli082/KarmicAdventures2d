@@ -82,6 +82,7 @@ public class QuestGiver : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1f;
             questDialog.SetActive(false);
         }
     }

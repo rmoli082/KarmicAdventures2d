@@ -185,8 +185,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, 1 << LayerMask.NameToLayer("Enemy"));
         if (hit.collider != null)
         {
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
-            enemy.Fix();
+            RoamerEnemy enemy = hit.collider.GetComponent<RoamerEnemy>();
+            enemy.Die();
         }
     }
 }

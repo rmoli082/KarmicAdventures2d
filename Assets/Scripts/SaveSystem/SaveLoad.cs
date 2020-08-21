@@ -7,10 +7,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveLoad : MonoBehaviour
 {
-   public static void Save<T>(T objectToSave, string key)
-    {
-        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
 
+    public static string path = $"{Application.persistentDataPath}/saves/{CharacterSheet.charSheet.playerName}/";
+
+    public static void Save<T>(T objectToSave, string key)
+    {
         Directory.CreateDirectory(path);
 
         BinaryFormatter formatter = new BinaryFormatter();
@@ -24,8 +25,6 @@ public class SaveLoad : MonoBehaviour
 
     public static T Load<T>(string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
-
         BinaryFormatter formatter = new BinaryFormatter();
         T returnValue = default(T);
         using (FileStream filestream = new FileStream(path + key + ".txt", FileMode.Open))
@@ -38,13 +37,12 @@ public class SaveLoad : MonoBehaviour
 
     public static bool SaveExists(string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName + key + ".txt";
-        return File.Exists(path);
+        string check = path + key + ".txt";
+        return File.Exists(check);
     }
 
     public static void DeleteAllSaveData()
     {
-        string path = Application.persistentDataPath + "/saves/" + CharacterSheet.charSheet.playerName;
         DirectoryInfo directory = new DirectoryInfo(path);
         directory.Delete();
         Directory.CreateDirectory(path);

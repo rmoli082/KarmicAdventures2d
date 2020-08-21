@@ -10,6 +10,7 @@ public class GameEvents : MonoBehaviour
     public static System.Action<string> LocationFound;
     public static System.Action<string> KillSuccessful;
     public static System.Action AwakenEvent;
+    public static System.Action XpAwarded;
 
     public static void OnSaveInitiated()
     {
@@ -39,5 +40,10 @@ public class GameEvents : MonoBehaviour
     public static void OnAwakenEvent()
     {
         AwakenEvent?.Invoke();
+    }
+
+    public static void OnXpAwarded()
+    {
+        XpAwarded?.Invoke();
     }
 }

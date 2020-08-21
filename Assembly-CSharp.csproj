@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\Game Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Characters\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemies\Enemy2.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\OverlandEnemyTrap.cs" />
     <Compile Include="Assets\Scripts\UI\UIAmmoCount.cs" />
     <Compile Include="Assets\Scripts\Game Managers\SceneData.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
@@ -88,7 +88,7 @@
     <Compile Include="Assets\Scripts\UI\SkillsBar.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestButton.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Chest.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemies\Chaser.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\ChaserEnemy.cs" />
     <Compile Include="Assets\Scripts\Quests\LocateQuest.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ItemSave.cs" />
     <Compile Include="Assets\Scripts\Events and Locations\Awaken.cs" />
@@ -119,6 +119,12 @@
     <Compile Include="Assets\Scripts\SaveSystem\CharSheetWrapper.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\NPCCharacterWrapper.cs" />
     <Compile Include="Assets\Scripts\Characters\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\RoamerEnemy.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelUpPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\SkillsPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\DoLevelUp.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\LoadGamePanel.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\LoadGameData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

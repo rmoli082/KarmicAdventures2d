@@ -1,94 +1,63 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// This class handle Enemy behaviour. It make them walk back & forth as long as they aren't fixed, and then just idle
-/// without being able to interact with the player anymore once fixed.
-/// </summary>
 public class Enemy : MonoBehaviour
 {
-	// ====== ENEMY MOVEMENT ========
-	public enum EnemyType {SEEKER, ROAMER}
-	public float speed;
-	public float timeToChange;
-	public bool horizontal;
-	public EnemyType type;
+    public enum EnemyType { CHASER, ROAMER }
+
+    public EnemyType type;
+	public int attack;
+	public int defense;
+	public int magic;
 	public int xpAmount;
 
-	public GameObject smokeParticleEffect;
-	public ParticleSystem fixedParticleEffect;
+    public ParticleSystem fixedParticleEffect;
 
-	public AudioClip hitSound;
-	public AudioClip fixedSound;
-	
-	Rigidbody2D rigidbody2d;
-	float remainingTimeToChange;
-	Vector2 direction = Vector2.right;
-	
-	// ===== ANIMATION ========
-	Animator animator;
-	
-	// ================= SOUNDS =======================
-	AudioSource audioSource;
-	
-	void Start ()
-	{
-		rigidbody2d = GetComponent<Rigidbody2D>();
-		remainingTimeToChange = timeToChange;
+    public AudioClip hitSound;
 
-		direction = horizontal ? Vector2.right : Vector2.down;
+	protected Rigidbody2D rigidbody2d;
+	protected Animator animator;
+	protected AudioSource audioSource;
+	protected Stats baseStats;
 
-		animator = GetComponent<Animator>();
+    private void Awake()
+    {
+		baseStats = new Stats();
 
-		audioSource = GetComponent<AudioSource>();
-	}
-	
-	void Update()
-	{
-		if (type == EnemyType.ROAMER)
-		{
-			remainingTimeToChange -= Time.deltaTime;
+		baseStats.UpdateStats("attack", attack);
+		baseStats.UpdateStats("defense", defense);
+		baseStats.UpdateStats("magic", magic);
+		baseStats.UpdateStats("level", Random.Range(0, CharacterSheet.charSheet.baseStats.GetStats("level") + 3));
+		baseStats.UpdateStats("hp", 2 * (baseStats.GetStats("defense") + baseStats.GetStats("level")));
+		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
+		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
+		baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
 
-			if (remainingTimeToChange <= 0)
-			{
-				remainingTimeToChange += timeToChange;
-				direction *= -1;
-			}
-
-			animator.SetFloat("ForwardX", direction.x);
-			animator.SetFloat("ForwardY", direction.y);
-		}
-	}
-
-	void FixedUpdate()
-	{
-		rigidbody2d.MovePosition(rigidbody2d.position + direction * speed * Time.deltaTime);
-	}
+		baseStats.GetAllStats();
+    }
 
 	void OnCollisionStay2D(Collision2D other)
 	{
-		
+
 		Player player = other.collider.GetComponent<Player>();
-		
-		if(player != null)
+
+		if (player != null)
 			CharacterSheet.charSheet.ChangeHealth(-1);
 	}
 
-	public void Fix()
+
+	public void Die()
 	{
 		Instantiate(fixedParticleEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
 
-		//we don't want that enemy to react to the player or bullet anymore, remove its reigidbody from the simulation
 		rigidbody2d.simulated = false;
 
-		
 		CharacterSheet.charSheet.baseStats.UpdateStats("xp", xpAmount);
-		
+
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
-		audioSource.PlayOneShot(fixedSound);
 		Destroy(this.gameObject);
 		GameEvents.OnKillSuccessful(gameObject.tag);
 	}
-
 }

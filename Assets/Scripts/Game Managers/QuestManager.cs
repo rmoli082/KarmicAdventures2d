@@ -93,13 +93,26 @@ public class QuestManager : MonoBehaviour
 
     public void UpdateQuestUI()
     {
+        int index = 0;
+
+        foreach (Transform child in GameManager.gm.data.questContentFrame.transform)
+        {
+            if (child.GetComponent<QuestButton>() != null)
+                Destroy(child.gameObject);
+        }
+
         foreach (Quest q in currentQuests)
         {
-            if (q.questProgress == Quest.QuestProgress.CURRENT)
+            if (index < currentQuests.Count)
             {
-                CreateButton(q);
+                if (q.questProgress == Quest.QuestProgress.CURRENT)
+                {
+                    CreateButton(q);
+                }
             }
+            index++;   
         }
+        
     }
 
     public Quest.QuestProgress GetQuestStatus(int questID)

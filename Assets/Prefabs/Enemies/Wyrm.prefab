@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 6982084178593964872}
   - component: {fileID: 6982084178593964868}
   - component: {fileID: 6982084178593964869}
-  - component: {fileID: 6982084178593964874}
   - component: {fileID: 6982084178593964871}
   - component: {fileID: 183533452884923571}
   m_Layer: 10
@@ -218,28 +217,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6629238, y: 1.175178}
   m_EdgeRadius: 0
---- !u!114 &6982084178593964874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6982084178593964873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c355cf67d54abee4aae3b97fd7e93987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  timeToChange: 2
-  horizontal: 1
-  type: 1
-  xpAmount: 3
-  smokeParticleEffect: {fileID: 7972057267707664465}
-  fixedParticleEffect: {fileID: 2688776450615711917, guid: 96e9cd9955be74842b5d6b2e427ffe16,
-    type: 3}
-  hitSound: {fileID: 8300000, guid: 683e01d57e63fe749866ca4fd3cc424c, type: 3}
-  fixedSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
 --- !u!95 &6982084178593964871
 Animator:
   serializedVersion: 3

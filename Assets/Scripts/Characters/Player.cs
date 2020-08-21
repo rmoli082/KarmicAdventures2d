@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        GameManager.gm.data.level.text = 0.ToString();
     }
 
     void Update()
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
             CharacterSheet.charSheet.ChangeHealth(1);
             hpReturn = Time.time + hpRegenTime;
         }
-        if (CharacterSheet.charSheet.baseStats.GetStats("currentHP") < CharacterSheet.charSheet.baseStats.GetStats("mp")
+        if (CharacterSheet.charSheet.baseStats.GetStats("currentMP") < CharacterSheet.charSheet.baseStats.GetStats("mp")
            && Time.time >= mpReturn)
         {
             CharacterSheet.charSheet.ChangeMP(1);
