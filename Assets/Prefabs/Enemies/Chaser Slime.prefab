@@ -53,6 +53,8 @@ MonoBehaviour:
   magic: 0
   xpAmount: 2
   aggroDistance: 3
+  numberOfDice: 1
+  damageDice: 4
   fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 683e01d57e63fe749866ca4fd3cc424c, type: 3}

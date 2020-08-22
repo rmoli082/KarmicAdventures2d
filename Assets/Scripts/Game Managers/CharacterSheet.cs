@@ -83,7 +83,7 @@ public class CharacterSheet : MonoBehaviour
 
         baseStats.UpdateStats("currentHP", Mathf.Clamp(baseStats.GetStats("currentHP") + amount, 0, baseStats.GetStats("hp")));
 
-        if (baseStats.GetStats("hp") == 0)
+        if (baseStats.GetStats("currentHP") <= 0)
         {
             Respawn();
         }
@@ -95,8 +95,6 @@ public class CharacterSheet : MonoBehaviour
     {
         baseStats.UpdateStats("currentMP", Mathf.Clamp(baseStats.GetStats("currentMP") + amount, 0, baseStats.GetStats("mp")));
         UIHealthBar.Instance.SetManaValue(baseStats.GetStats("currentMP") / (float)baseStats.GetStats("mp"));
-
-        
     }
 
     public void ChangeXP(int amount)
@@ -177,7 +175,7 @@ public class CharacterSheet : MonoBehaviour
     public void Respawn()
     {
         ChangeHealth(baseStats.GetStats("hp"));
-        transform.position = GameManager.gm.data.respawnPosition.position;
+        GameManager.gm.EnterSubArea(SceneManager.GetActiveScene().name);
     }
 
     void ApplyAdditiveModifiers()
@@ -256,6 +254,7 @@ public class CharacterSheet : MonoBehaviour
 
     void CheckForLevelUp()
     {
+        Debug.Log($"Current XP: {baseStats.GetStats("xp")}");
         if (baseStats.GetStats("level") < Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100))
         {
             baseStats.UpdateStats("level", Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100));

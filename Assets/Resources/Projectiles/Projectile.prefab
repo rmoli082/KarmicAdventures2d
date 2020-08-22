@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: c1901239babfab842a8c1cc21f6b9ec9, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 679ff60a36f0c64408c0db9b4a477f8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,6 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3798fb0019c74c44a1c33a26d74054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaCost: -2
+  diceNumber: 1
+  damageDice: 4
+  projectileHitPrefab: {fileID: 815704136855959780, guid: 17da090cbd3ec504ba4da073aa459073,
+    type: 3}
+  damageAmount: 0
 --- !u!1 &2274725659571682563
 GameObject:
   m_ObjectHideFlags: 0

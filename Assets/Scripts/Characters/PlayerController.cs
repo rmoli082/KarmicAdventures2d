@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -84,7 +83,7 @@ public class PlayerController : MonoBehaviour
         // ============== ATTACKS ======================
 
         if (Input.GetKeyDown(KeyCode.C))
-            CheckMana();
+            LaunchProjectile();
 
         if (Input.GetKeyDown(KeyCode.Z))
             SwordAttack();
@@ -150,23 +149,27 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void CheckMana()
+    bool CheckMana(Projectile p)
     {
-        if (CharacterSheet.charSheet.baseStats.GetStats("currentMP") >= 2)
+        if (p.manaCost < CharacterSheet.charSheet.baseStats.GetStats("currentMP"))
         {
-            LaunchProjectile();
+            return true;
         }
+        else return false;
     }
     void LaunchProjectile()
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 1.1f, Quaternion.identity);
-
         Projectile projectile = projectileObject.GetComponent<Projectile>();
-        projectile.Launch(lookDirection, 300);
+
+        if (CheckMana(projectile))
+        {
+            projectile.Launch(lookDirection, 300);
+
+            animator.SetTrigger("Launch");
+            audioSource.PlayOneShot(shootingSound);
+        }
         
-        animator.SetTrigger("Launch");
-        audioSource.PlayOneShot(shootingSound);
-        CharacterSheet.charSheet.ChangeMP(-2);
     }
     
     // =============== SOUND ==========================
@@ -185,7 +188,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             Enemy enemy = hit.collider.GetComponent<Enemy>();
-            enemy.Die();
+            enemy.Damage(Random.Range(1, 5));
         }
     }
 }

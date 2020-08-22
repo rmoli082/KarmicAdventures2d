@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 	public int magic;
 	public int xpAmount;
 	public float aggroDistance;
+	public int numberOfDice;
+	public int damageDice;
 
     public ParticleSystem fixedParticleEffect;
 
@@ -22,6 +24,9 @@ public class Enemy : MonoBehaviour
 	protected AudioSource audioSource;
 	protected Stats baseStats;
 	protected float aggroDist;
+	protected float damageAmount;
+
+	private int attackBoost;
 
     private void Awake()
     {
@@ -30,7 +35,7 @@ public class Enemy : MonoBehaviour
 		baseStats.UpdateStats("attack", attack);
 		baseStats.UpdateStats("defense", defense);
 		baseStats.UpdateStats("magic", magic);
-		baseStats.UpdateStats("level", Random.Range(0, CharacterSheet.charSheet.baseStats.GetStats("level") + 3));
+		baseStats.UpdateStats("level", Random.Range(1, CharacterSheet.charSheet.baseStats.GetStats("level") + 3));
 		baseStats.UpdateStats("hp", 2 * (baseStats.GetStats("defense") + baseStats.GetStats("level")));
 		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
 		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
@@ -38,27 +43,59 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void OnCollisionStay2D(Collision2D other)
+    protected void OnCollisionStay2D(Collision2D other)
 	{
 
 		Player player = other.collider.GetComponent<Player>();
 
-		if (player != null)
-			CharacterSheet.charSheet.ChangeHealth(-1);
+		if (player != null && !player.isInvincible)
+        {
+			CharacterSheet.charSheet.ChangeHealth(CalculateDamage());
+		}
+			
 	}
 
+	public void Damage(float amount)
+    {
+		baseStats.UpdateStats("currentHP", Mathf.RoundToInt(baseStats.GetStats("currentHP") - amount));
+		if (baseStats.GetStats("currentHP") <= 0)
+        {
+			Die();
+        }
+    }
 
-	public void Die()
+
+	void Die()
 	{
 		Instantiate(fixedParticleEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
 
 		rigidbody2d.simulated = false;
 
+		xpAmount += CalculateDamage();
 		CharacterSheet.charSheet.baseStats.UpdateStats("xp", xpAmount);
+		GameEvents.OnXpAwarded();
 
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
 		Destroy(this.gameObject);
 		GameEvents.OnKillSuccessful(gameObject.tag);
+	}
+
+	int CalculateDamage()
+    {
+		damageAmount = 0;
+		for (int i = 0; i < numberOfDice; i++)
+		{
+			damageAmount += Random.Range(1, damageDice);
+		}
+
+		if (baseStats.GetStats("attack") > 10)
+        {
+			attackBoost = baseStats.GetStats("attack") - 10 / 2;
+        }
+
+		damageAmount += attackBoost * baseStats.GetStats("level") / 2;
+
+		return Mathf.RoundToInt(-damageAmount);
 	}
 }

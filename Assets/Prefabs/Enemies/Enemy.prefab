@@ -349,6 +349,9 @@ MonoBehaviour:
   defense: 3
   magic: 0
   xpAmount: 2
+  aggroDistance: 0
+  numberOfDice: 1
+  damageDice: 6
   fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}

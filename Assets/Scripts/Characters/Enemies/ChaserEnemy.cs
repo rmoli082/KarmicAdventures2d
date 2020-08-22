@@ -27,7 +27,7 @@ public class ChaserEnemy : Enemy
 
 		if (CharacterSheet.charSheet.selectedSkills.ContainsKey("Stealth"))
 		{
-			aggroDist = aggroDistance * (1 - (CharacterSheet.charSheet.selectedSkills["Stealth"] / 200f));
+			aggroDist = aggroDistance * (1 - (CharacterSheet.charSheet.selectedSkills["Stealth"] *0.03f));
 		} 
 		else
 		{
@@ -57,6 +57,7 @@ public class ChaserEnemy : Enemy
 			transform.position = Vector2.MoveTowards(transform.position, originalPosition, step);
 		}
 	}
+
 
 
 }

@@ -17,9 +17,10 @@ MonoBehaviour:
   questType: 3
   questTitle: Awaken the Guards
   questDesc: Awaken the castle guards so you can get past them and into the castle.
-  questProgress: 0
+  questProgress: 1
   questHint: Find an awakening stone and use it here.
   questCompleteText: Yay you did it!
+  questDoneText: 
   nextQuest: 9
   questObjective: find stone and use it.
   xpReward: 30
