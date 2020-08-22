@@ -29,7 +29,6 @@ public class AvatarSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
         CharacterSheet.charSheet.AdditiveModifier("attack", 1, this.avatar.attackUp, 0);
         CharacterSheet.charSheet.AdditiveModifier("defense", 1, this.avatar.defenseUp, 0);
         CharacterSheet.charSheet.AdditiveModifier("magic", 1, this.avatar.magicUp, 0);
-        CharacterSheet.charSheet.CalculateStats();
         CharacterSheet.charSheet.ChangeAvatar(this.avatar);
 
         Player.player.SetAvatar(this.avatar.avatarID);

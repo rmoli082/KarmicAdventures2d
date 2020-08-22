@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244d7589cbc185549868a01a4807683b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mpRegenTime: 2.5
+  mpRegenTime: 3
   hpRegenTime: 5
   timeInvincible: 2
   invincibleTimer: 0

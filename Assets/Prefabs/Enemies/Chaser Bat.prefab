@@ -52,11 +52,11 @@ MonoBehaviour:
   defense: 2
   magic: 0
   xpAmount: 5
+  aggroDistance: 6
   fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
   speed: 2
-  aggroDistOrig: 8
   target: {fileID: 0}
 --- !u!50 &5125469663317308199
 Rigidbody2D:

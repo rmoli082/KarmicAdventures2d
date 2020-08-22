@@ -28,12 +28,14 @@ public class UIHealthBar : MonoBehaviour
 	}
 
 	public void SetHealthValue(float value)
-	{		
+	{
+		healthOriginalSize = 168f;
 		healthBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthOriginalSize * value);
 	}
 
 	public void SetManaValue(float value)
     {
+		manaOriginalSize = 168f;
 		manaBar.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, manaOriginalSize * value);
     }
 }

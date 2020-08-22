@@ -5,7 +5,7 @@ using TMPro;
 
 public class Awaken : MonoBehaviour
 {
-    public enum AwakeningStatus { CRYSALIS, AWAKE}
+    public enum AwakeningStatus { CHRYSALIS, AWAKE}
 
     public int ID;
     public Sprite spriteToLoad;
@@ -28,7 +28,6 @@ public class Awaken : MonoBehaviour
             }
             NPCManager.npcManager.UpdateNPCList(ID, awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
             GameEvents.OnAwakenEvent();
-            Inventory.inventory.RemoveItem(stoneToUse);
             GameManager.gm.ShowHidePanels(false);
             awakeTextBox.text = awakenText;
             this.gameObject.GetComponent<NonPlayerCharacter>().DisplayDialog();

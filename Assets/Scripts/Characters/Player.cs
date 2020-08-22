@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     Transform respawnPosition;
 
+    float regenFormula;
+
     void Awake()
     {
          if (player == null) {
@@ -52,15 +54,33 @@ public class Player : MonoBehaviour
             && Time.time >= hpReturn) 
         {
             CharacterSheet.charSheet.ChangeHealth(1);
-            hpReturn = Time.time + hpRegenTime;
+            if (CharacterSheet.charSheet.selectedSkills.ContainsKey("Stamina"))
+            {
+                regenFormula = 1 - (CharacterSheet.charSheet.selectedSkills["Stamina"] * 0.03f);
+                hpReturn = Time.time + (hpRegenTime * regenFormula);
+            }
+            else
+            {
+                hpReturn = Time.time + hpRegenTime;
+            }
+            
         }
+
         if (CharacterSheet.charSheet.baseStats.GetStats("currentMP") < CharacterSheet.charSheet.baseStats.GetStats("mp")
            && Time.time >= mpReturn)
         {
             CharacterSheet.charSheet.ChangeMP(1);
-            mpReturn = Time.time + mpRegenTime;
+            if (CharacterSheet.charSheet.selectedSkills.ContainsKey("Stamina"))
+            {
+                regenFormula = 1 - (CharacterSheet.charSheet.selectedSkills["Stamina"] * 0.03f);
+                mpReturn = Time.time + (mpRegenTime * regenFormula);
+                Debug.Log(mpRegenTime * regenFormula);
+            }
+            else
+            {
+                mpReturn = Time.time + mpRegenTime;
+            }
         }
-
         CharacterSheet.charSheet.ChangeHealth(0);
     }
     public void SetAvatar(int avatar)

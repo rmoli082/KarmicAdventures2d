@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum EnemyType { CHASER, ROAMER }
+    public enum EnemyType { CHASER, ROAMER, RANGED }
 
     public EnemyType type;
 	public int attack;
 	public int defense;
 	public int magic;
 	public int xpAmount;
+	public float aggroDistance;
 
     public ParticleSystem fixedParticleEffect;
 
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
 	protected Animator animator;
 	protected AudioSource audioSource;
 	protected Stats baseStats;
+	protected float aggroDist;
 
     private void Awake()
     {
@@ -33,11 +35,10 @@ public class Enemy : MonoBehaviour
 		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
 		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
 		baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
-
-		baseStats.GetAllStats();
     }
 
-	void OnCollisionStay2D(Collision2D other)
+
+    void OnCollisionStay2D(Collision2D other)
 	{
 
 		Player player = other.collider.GetComponent<Player>();

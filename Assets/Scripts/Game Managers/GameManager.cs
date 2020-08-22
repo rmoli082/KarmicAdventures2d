@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     public SceneData data;
 
-
     public GameObject[] EnemyTraps;
     public float secondsBetweenSpawning = 5.0f;
 	public float xMinRange = -5.0f;
@@ -132,14 +131,31 @@ public class GameManager : MonoBehaviour
 
         nextSpawnTime = Time.timeSinceLevelLoad + secondsBetweenSpawning;
         _scene = SceneManager.GetActiveScene();
-        if (PlayerPrefs.HasKey("overworldX") && System.Enum.IsDefined(typeof(OVERWORLD), _scene.name)){
-            _spawnLocation.x = PlayerPrefs.GetFloat("overworldX") - 0.5f;
-            _spawnLocation.y = PlayerPrefs.GetFloat("overworldY") - 0.5f;
-            _spawnLocation.z = PlayerPrefs.GetFloat("overworldZ");
 
-            _player.transform.position = _spawnLocation;
+        if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name)){
+            if (System.Enum.IsDefined(typeof(OverlandEnemyTrap.Levels), CharacterSheet.charSheet.GetLastLevel()))
+            {
+                Vector3 spawnPosition = new Vector3();
+                spawnPosition.x = PlayerPrefs.GetFloat("overworldX");
+                spawnPosition.y = PlayerPrefs.GetFloat("overworldY");
+                spawnPosition.z = PlayerPrefs.GetFloat("overworldZ");
+
+                _player.transform.position = spawnPosition;
+            }
+            else
+            {
+                GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+                foreach (GameObject spawn in spawnPoints)
+                {
+                    if (spawn.name == CharacterSheet.charSheet.GetLastLevel())
+                    {
+                        _player.transform.position = spawn.transform.position;
+                    }
+                }
+            }
         }
-        locationName = " ";
+
+        locationName = SceneManager.GetActiveScene().name;
         
     }
 
@@ -176,6 +192,9 @@ public class GameManager : MonoBehaviour
 
     public void EnterSubArea(string nextLevel) 
     {
+        CharacterSheet.charSheet.SetLastLevel(_scene.name);
+        lastLocation = _scene.name;
+
         if (!_scene.name.Equals("OpeningStory"))
         {
             PlayerPrefsManager.SavePlayerState(CharacterSheet.charSheet.baseStats.GetStats("xp"),
@@ -184,6 +203,7 @@ public class GameManager : MonoBehaviour
                 CharacterSheet.charSheet.baseStats.GetStats("attack"), CharacterSheet.charSheet.baseStats.GetStats("defense"),
                 CharacterSheet.charSheet.baseStats.GetStats("magic"), CharacterSheet.charSheet.baseStats.GetStats("special"));
         }
+
         if (System.Enum.IsDefined(typeof(OVERWORLD), _scene.name))
         {
             PlayerPrefsManager.SetPlayerOverworldPosition(data.player.transform.position.x, data.player.transform.position.y,

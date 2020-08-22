@@ -20,10 +20,9 @@ public class CharSheetWrapper
     {
         this.playerName = charSheet.playerName;
         this.currentAvatar = new AvatarSave(CharacterSheet.charSheet.GetAvatar());
-        Debug.Log(currentAvatar.avatarID);
         this.baseStats = charSheet.baseStats;
         this.buffedStats = charSheet.buffedStats;
-        this.derivedStats = charSheet.derivedStats;
+        this.derivedStats = charSheet.secondaryStats;
         this.selectedSkills = charSheet.selectedSkills;
         this.additiveBuffs = charSheet.additiveBuffs;
         this.percentileBuffs = charSheet.percentileBuffs;

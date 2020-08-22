@@ -123,7 +123,6 @@ public class PlayerController : MonoBehaviour
             {
                 TreasureChest tchest = hit.collider.GetComponent<TreasureChest>();
                 Chest chest = hit.collider.GetComponent<Chest>();
-                NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (chest != null)
                 {
                     if (chest.status == Chest.ChestState.OPENED)
@@ -185,7 +184,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, 1 << LayerMask.NameToLayer("Enemy"));
         if (hit.collider != null)
         {
-            RoamerEnemy enemy = hit.collider.GetComponent<RoamerEnemy>();
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
             enemy.Die();
         }
     }

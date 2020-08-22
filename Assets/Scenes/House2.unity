@@ -4061,6 +4061,16 @@ PrefabInstance:
       propertyPath: npc
       value: 
       objectReference: {fileID: 265905709}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.99
+      objectReference: {fileID: 0}
     - target: {fileID: 483759319208647280, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: isQuestGiver
@@ -4076,6 +4086,11 @@ PrefabInstance:
       propertyPath: currentQuest
       value: 
       objectReference: {fileID: 265905707}
+    - target: {fileID: 1320769905385122485, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_text
@@ -4085,6 +4100,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -42.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 84.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429025457821202452, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -148.5049
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -4815,6 +4865,16 @@ PrefabInstance:
       propertyPath: npc
       value: 
       objectReference: {fileID: 313992491}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.08
+      objectReference: {fileID: 0}
     - target: {fileID: 483759319208647280, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: isQuestGiver
@@ -4830,6 +4890,11 @@ PrefabInstance:
       propertyPath: currentQuest
       value: 
       objectReference: {fileID: 313992489}
+    - target: {fileID: 1320769905385122485, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_text
@@ -4840,6 +4905,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone Person (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -78.855
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 157.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429025457821202452, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -74.90489
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -5988,12 +6088,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.92229503
+      value: -0.9222955
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5248213
+      value: 3.5248184
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -21456,6 +21556,16 @@ PrefabInstance:
       propertyPath: npc
       value: 
       objectReference: {fileID: 1397218610}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 270425763494531102, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.85
+      objectReference: {fileID: 0}
     - target: {fileID: 483759319208647280, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: isQuestGiver
@@ -21471,6 +21581,11 @@ PrefabInstance:
       propertyPath: status
       value: 
       objectReference: {fileID: 1397218609}
+    - target: {fileID: 1320769905385122485, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_text
@@ -21480,6 +21595,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone Person (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60.455
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 120.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429025457821202452, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -111.704895
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}

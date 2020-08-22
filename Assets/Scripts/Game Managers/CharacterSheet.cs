@@ -2,17 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class CharacterSheet : MonoBehaviour
 {
     public static CharacterSheet charSheet;
 
+    public enum Statistics { attack, defense, magic, special }
+
     public string playerName;
     public Avatar currentAvatar;
     public Stats baseStats;
     public Stats buffedStats;
-    public Stats derivedStats;
+    public Stats secondaryStats;
     public Dictionary<string, int> selectedSkills;
     public Dictionary<string, Dictionary<int, int>> additiveBuffs;
     public Dictionary<string, Dictionary<int, int>> percentileBuffs;
@@ -22,6 +25,8 @@ public class CharacterSheet : MonoBehaviour
 
     public int statPoints;
     public int skillPoints;
+
+    private string lastLevel;
 
 
     private void Awake()
@@ -44,14 +49,14 @@ public class CharacterSheet : MonoBehaviour
         GameEvents.SaveInitiated += Save;
         GameEvents.LoadInitiated += Load;
         GameEvents.XpAwarded += CheckForLevelUp;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void BuildCharacterSheet(string name, Stats stats, Dictionary<string, int> skills)
     {
         playerName = name;
         baseStats = stats;
-        buffedStats = new Stats();
-        derivedStats = new Stats();
+        buffedStats = stats;
         selectedSkills = skills;
         additiveBuffs = new Dictionary<string, Dictionary<int, int>>();
         percentileBuffs = new Dictionary<string, Dictionary<int, int>>();
@@ -89,7 +94,6 @@ public class CharacterSheet : MonoBehaviour
     public void ChangeMP(int amount)
     {
         baseStats.UpdateStats("currentMP", Mathf.Clamp(baseStats.GetStats("currentMP") + amount, 0, baseStats.GetStats("mp")));
-        Debug.Log(baseStats.GetStats("currentMP"));
         UIHealthBar.Instance.SetManaValue(baseStats.GetStats("currentMP") / (float)baseStats.GetStats("mp"));
 
         
@@ -116,11 +120,11 @@ public class CharacterSheet : MonoBehaviour
 
         modifiersList[modifierID] = value;
         additiveBuffs[stat] = modifiersList;
-        CalculateStats();
         if (duration > 0)
         {
             StartCoroutine(RemoveAdditiveBuff(stat, modifierID, duration));
         }
+        CalculateStats();
     }
 
     public void PercentileModifier(string stat, int modifierID, int value, int duration)
@@ -133,34 +137,47 @@ public class CharacterSheet : MonoBehaviour
 
         modifiersList[modifierID] = value;
         percentileBuffs[stat] = modifiersList;
-        CalculateStats();
         if (duration > 0)
         {
             StartCoroutine(RemovePercentileBuff(stat, modifierID, duration));
         }
-
+        CalculateStats();
     }
 
     public void CalculateStats()
     {
         ApplyAdditiveModifiers();
         ApplyPercentileModifiers();
-        baseStats.UpdateStats("hp", buffedStats.GetStats("defense") + (2 * buffedStats.GetStats("level")));
-        baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * buffedStats.GetStats("level")) + 1);
+        baseStats.UpdateStats("hp", buffedStats.GetStats("defense") + (2 * baseStats.GetStats("level")));
+        baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * baseStats.GetStats("level")) + 1);
     }
 
     public Avatar GetAvatar()
     {
         if (currentAvatar != null)
         {
-            Debug.Log("not null");
             return currentAvatar;
         }
         else
         {
-            Debug.Log("null");
             return (Avatar) Resources.Load("Avatars/NoAvatar.asset");
         }
+    }
+
+    public string GetLastLevel()
+    {
+        return lastLevel;
+    }
+
+    public void SetLastLevel(string sceneName)
+    {
+        lastLevel = sceneName;
+    }
+
+    public void Respawn()
+    {
+        ChangeHealth(baseStats.GetStats("hp"));
+        transform.position = GameManager.gm.data.respawnPosition.position;
     }
 
     void ApplyAdditiveModifiers()
@@ -183,22 +200,40 @@ public class CharacterSheet : MonoBehaviour
             int total = 0;
             foreach (KeyValuePair<int, int> buff in stat.Value)
             {
-                total *= buff.Value;
+                total += buff.Value;
             }
-            buffedStats.UpdateStats(stat.Key, baseStats.GetStats(stat.Key) + total);
+            buffedStats.UpdateStats(stat.Key, Mathf.FloorToInt(baseStats.GetStats(stat.Key) * (1 + (total/100))));
         }
     }
 
-    public void Respawn()
+    public void GetStatsBonus()
     {
-        ChangeHealth(baseStats.GetStats("hpmax"));
-        transform.position = GameManager.gm.data.respawnPosition.position;
+        Dictionary<string, int> stats = baseStats.GetAllStats();
+        foreach (KeyValuePair<string, int> stat in stats)
+        {
+            if (System.Enum.IsDefined(typeof(Statistics), stat.Key))
+                AdditiveModifier(stat.Key, 2, (stat.Value - 10) / 2, 0);
+        }
+        
+    }
+
+    void DoLevelUp()
+    {
+        GameManager.gm.data.levelUpButton.SetActive(true);
+        skillPoints++;
+        GameManager.gm.data.levelUpText.text = $"You have {skillPoints} skill point to spend.";
+
+        if (baseStats.GetStats("level") % 3 == 0)
+        {
+            GameManager.gm.data.levelUpText.text = $"You have {statPoints} stat point and {skillPoints} skill point you can spend.";
+            statPoints++;
+            GameManager.gm.data.statsPanel.SetActive(true);
+        }
     }
 
     void Save()
     {
         SaveLoad.Save<CharSheetWrapper>(new CharSheetWrapper(CharacterSheet.charSheet), "CharacterSheet");
-        Debug.Log("Saved");
     }
 
     void Load()
@@ -210,14 +245,12 @@ public class CharacterSheet : MonoBehaviour
             playerName = wrappedSheet.playerName;
             baseStats = wrappedSheet.baseStats;
             buffedStats = wrappedSheet.buffedStats;
-            derivedStats = wrappedSheet.derivedStats;
+            secondaryStats = wrappedSheet.derivedStats;
             selectedSkills = wrappedSheet.selectedSkills;
             additiveBuffs = wrappedSheet.additiveBuffs;
             percentileBuffs = wrappedSheet.percentileBuffs;
 
             currentAvatar = AvatarDatabase.avatarDb.GetAvatarById(wrappedSheet.currentAvatar.avatarID);
-
-            Debug.Log("Loaded");
         }
     }
 
@@ -231,16 +264,10 @@ public class CharacterSheet : MonoBehaviour
         }
     }
 
-    void DoLevelUp()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameManager.gm.data.levelUpButton.SetActive(true);
-        skillPoints++;
-        if (baseStats.GetStats("level") % 3 == 0)
-        {
-            GameManager.gm.data.levelUpText.text = "You have 1 stat point and 1 skill point you can spend.";
-            statPoints++;
-            GameManager.gm.data.statsPanel.SetActive(true);
-        }
+        GameManager.gm.data.level.text = baseStats.GetStats("level").ToString();
+        Debug.Log(baseStats.GetStats("level"));
     }
 
     IEnumerator RemoveAdditiveBuff (string stat, int buffID, float time)

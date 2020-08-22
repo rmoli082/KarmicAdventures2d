@@ -17,7 +17,6 @@ public class LoadGamePanel : MonoBehaviour
 
         foreach (string dir in directories)
         {
-            Debug.Log($"making button: {dir}");
             CreateButton(dir, contentFrame);
         }
     }
@@ -27,7 +26,7 @@ public class LoadGamePanel : MonoBehaviour
         GameObject b = Instantiate(saveButtonPrefab);
         string[] separators = { path };
         string[] playerName = dir.Split(separators, System.StringSplitOptions.RemoveEmptyEntries);
-        b.GetComponentInChildren<TextMeshProUGUI>().text = playerName[0];
+        b.GetComponentInChildren<TextMeshProUGUI>().text = $"{playerName[0]} \n Click to Load";
         b.transform.SetParent(contentFrame.transform, false);
         return b;
     }

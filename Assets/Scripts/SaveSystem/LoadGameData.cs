@@ -8,7 +8,9 @@ public class LoadGameData : MonoBehaviour
     // Start is called before the first frame update
     public void LoadGame()
     {
-        CharacterSheet.charSheet.playerName = this.GetComponent<TextMeshProUGUI>().text;
+        string[] separators = { " \n Click to Load" };
+        string[] tokens = this.GetComponent<TextMeshProUGUI>().text.Split(separators, System.StringSplitOptions.RemoveEmptyEntries);
+        CharacterSheet.charSheet.playerName = tokens[0];
         GameEvents.OnLoadInitiated();
         GameManager.gm.EnterSubArea(SaveLoad.Load<string>("SceneToLoad"));
     }

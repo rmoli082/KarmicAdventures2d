@@ -2415,6 +2415,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 7502455428374234072, guid: 2e4f3019108c3684d8e60d5fbea09df0,
+        type: 3}
+      propertyPath: avatarList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502455428374234072, guid: 2e4f3019108c3684d8e60d5fbea09df0,
+        type: 3}
+      propertyPath: itemList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7502455428374234072, guid: 2e4f3019108c3684d8e60d5fbea09df0,
+        type: 3}
+      propertyPath: avatarList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c1afd351d06d563c386403aeb6f5e4b4,
+        type: 2}
+    - target: {fileID: 7502455428374234072, guid: 2e4f3019108c3684d8e60d5fbea09df0,
+        type: 3}
+      propertyPath: itemList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a4559f93f62be01c698a8901f5f6e2e1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e4f3019108c3684d8e60d5fbea09df0, type: 3}
 --- !u!1 &1243609157

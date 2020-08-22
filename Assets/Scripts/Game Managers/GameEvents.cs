@@ -27,9 +27,9 @@ public class GameEvents : MonoBehaviour
         InventoryUpdated?.Invoke();
     }
 
-    public static void OnLocationFound(string locationName)
+    public static void OnLocationFound(string location)
     {
-        LocationFound?.Invoke(locationName);
+        LocationFound?.Invoke(location);
     }
 
     public static void OnKillSuccessful(string tag)

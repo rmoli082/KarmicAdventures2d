@@ -30,14 +30,21 @@ public class LevelUpPanel : MonoBehaviour
 
     public void Accept()
     {
-        if (CharacterSheet.charSheet.baseStats.stats.ContainsKey(stat))
+        if (stat.Length > 0)
         {
-            CharacterSheet.charSheet.baseStats.UpdateStats(stat, CharacterSheet.charSheet.baseStats.GetStats(stat) + 1);
+            if (CharacterSheet.charSheet.baseStats.stats.ContainsKey(stat))
+            {
+                CharacterSheet.charSheet.baseStats.UpdateStats(stat, CharacterSheet.charSheet.baseStats.GetStats(stat) + 1);
+            }
+            CharacterSheet.charSheet.statPoints--;
         }
         if (CharacterSheet.charSheet.selectedSkills.ContainsKey(skill))
         {
             CharacterSheet.charSheet.selectedSkills[skill] += 1;
         }
+        CharacterSheet.charSheet.skillPoints--;
         gameObject.SetActive(false);
+        CharacterSheet.charSheet.GetStatsBonus();
+        CharacterSheet.charSheet.CalculateStats();
     }
 }

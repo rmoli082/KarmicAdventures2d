@@ -25,6 +25,10 @@ public class NonPlayerCharacter : MonoBehaviour
             currentQuest.questToGive = bobby.currentQuest;
             talkNotifier.SetActive(bobby.haveSpoken);
             questToken.SetActive(bobby.hasQuest);
+            if (bobby.status == Awaken.AwakeningStatus.AWAKE)
+            {
+                this.gameObject.GetComponent<Awaken>().Awakening(this.GetComponent<Awaken>().stoneToUse.itemID);
+            }
         } 
         else
         {
@@ -45,6 +49,7 @@ public class NonPlayerCharacter : MonoBehaviour
     {
         Time.timeScale = 1f;
         dialogBox.SetActive(false);
-        questToken.SetActive(true);
+        if (isQuestGiver)
+            questToken.SetActive(true);
     }
 }

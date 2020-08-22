@@ -150,8 +150,8 @@ RectTransform:
   m_Father: {fileID: 4429025457821202452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 249.99998, y: -244.465}
   m_SizeDelta: {x: 499.99997, y: 488.93}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -473,10 +473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   status: {fileID: 2069204933}
   currentQuest: {fileID: 4151283663741310670}
-  displayTime: 15
   dialogBox: {fileID: 1320769905385122485}
   talkNotifier: {fileID: 4069663142469471781}
-  isQuestGiver: 1
+  isQuestGiver: 0
   questToken: {fileID: 4151283661995597869}
 --- !u!114 &2069204933
 MonoBehaviour:

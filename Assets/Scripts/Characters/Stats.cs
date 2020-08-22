@@ -26,12 +26,9 @@ public class Stats
             return -1;
     }
 
-    public void GetAllStats()
+    public Dictionary<string, int> GetAllStats()
     {
-        foreach (KeyValuePair<string, int>stat in stats)
-        {
-            Debug.Log($"{stat.Key}   {stat.Value}");
-        }
+        return stats;
     }
 
     public void UpdateStats(string statName, int value)

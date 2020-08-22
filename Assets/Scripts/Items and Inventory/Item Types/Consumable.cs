@@ -19,10 +19,12 @@ public class Consumable : Items
         switch (consumableType)
         {
             case ConsumableType.INCREASE_HP:
-                CharacterSheet.charSheet.baseStats.UpdateStats("mp", CharacterSheet.charSheet.baseStats.GetStats("mp") + amount);
+                CharacterSheet.charSheet.baseStats.UpdateStats("hp", CharacterSheet.charSheet.baseStats.GetStats("hp") + amount);
+                UIHealthBar.Instance.SetManaValue(CharacterSheet.charSheet.baseStats.GetStats("currentMP") / (float)CharacterSheet.charSheet.baseStats.GetStats("mp"));
                 break;
             case ConsumableType.INCREASE_MP:
                 CharacterSheet.charSheet.baseStats.UpdateStats("mp", CharacterSheet.charSheet.baseStats.GetStats("mp") + amount);
+                UIHealthBar.Instance.SetManaValue(CharacterSheet.charSheet.baseStats.GetStats("currentMP") / (float)CharacterSheet.charSheet.baseStats.GetStats("mp"));
                 break;
             case ConsumableType.RESTORE_HP:
                 CharacterSheet.charSheet.ChangeHealth(amount);

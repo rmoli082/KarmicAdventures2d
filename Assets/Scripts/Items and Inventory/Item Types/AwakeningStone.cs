@@ -19,6 +19,7 @@ public class AwakeningStone : Items
                 if (awaken != null)
                 {
                     awaken.Awakening(this.itemID);
+                    Inventory.inventory.RemoveItem(this);
                 }
             }
         }

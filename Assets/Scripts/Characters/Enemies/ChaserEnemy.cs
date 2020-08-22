@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//[RequireComponent(typeof(CharacterController))]
-
 public class ChaserEnemy : Enemy 
 {
 	
 	public float speed = 20.0f;
-	public float aggroDistOrig = 1f;
 	public Transform target;
-	private float aggroDist;
 
 	private Vector3 originalPosition;
 
@@ -28,9 +24,18 @@ public class ChaserEnemy : Enemy
 			animator = GetComponent<Animator>();
 
 			audioSource = GetComponent<AudioSource>();
-		
 
-		aggroDist = aggroDistOrig;
+		if (CharacterSheet.charSheet.selectedSkills.ContainsKey("Stealth"))
+		{
+			aggroDist = aggroDistance * (1 - (CharacterSheet.charSheet.selectedSkills["Stealth"] / 200f));
+		} 
+		else
+		{
+			aggroDist = aggroDistance;
+		}
+
+
+
 		originalPosition = transform.position;
 	}
 	
@@ -39,23 +44,19 @@ public class ChaserEnemy : Enemy
 		if (target == null)
 			return;
 
-		float distance = Vector2.Distance(transform.position,target.position);
+		float distance = Vector2.Distance(transform.position, target.position);
 		float step = speed * Time.deltaTime;
 
-		if(distance < aggroDist)
+		if (distance < aggroDist)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-			aggroDist = aggroDistOrig * 2;
-		} 
-		else if (distance >= aggroDistOrig * 2)
+			aggroDist = aggroDistance * 2;
+		}
+		else if (distance >= aggroDistance * 2)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, originalPosition, step);
 		}
 	}
 
-	public void SetTarget(Transform newTarget)
-	{
-		target = newTarget;
-	}
 
 }
