@@ -17,9 +17,10 @@ MonoBehaviour:
   questType: 0
   questTitle: Destroy the Blight Crystal!
   questDesc: Now all that's left to do is destroy the blight crystal, yeah?
-  questProgress: 0
+  questProgress: 1
   questHint: Destroy the blight crystal
   questCompleteText: You did it!
+  questDoneText: 
   nextQuest: -1
   questObjective: Destroy the blight crystal
   xpReward: 100

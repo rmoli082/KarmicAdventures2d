@@ -16,7 +16,7 @@ public class ItemSave
 
     }
 
-    public ItemSave(Items item)
+    public ItemSave(Item item)
     {
         itemID = item.itemID;
         itemName = item.itemName;

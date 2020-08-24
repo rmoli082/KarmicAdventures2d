@@ -13,9 +13,11 @@ public class CharacterSheet : MonoBehaviour
 
     public string playerName;
     public Avatar currentAvatar;
+    public Weapon currentWeapon;
     public Stats baseStats;
     public Stats buffedStats;
-    public Stats secondaryStats;
+    public int xpAmount;
+    public int level;
     public Dictionary<string, int> selectedSkills;
     public Dictionary<string, Dictionary<int, int>> additiveBuffs;
     public Dictionary<string, Dictionary<int, int>> percentileBuffs;
@@ -63,6 +65,7 @@ public class CharacterSheet : MonoBehaviour
 
         baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
         baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
+
     }
 
     public void ChangeHealth(int amount)
@@ -79,6 +82,11 @@ public class CharacterSheet : MonoBehaviour
             GameManager.gm.data.playerAudioSource.PlayOneShot(hitSound);
 
             Instantiate(hitParticle, Player.player.transform.position + Vector3.up * 0.5f, Quaternion.identity);
+
+            for (int i = 0; i < ((baseStats.GetStats("defense") - 10) / 2); i++)
+            {
+                amount = Mathf.RoundToInt(amount * 0.95f);
+            }
         }
 
         baseStats.UpdateStats("currentHP", Mathf.Clamp(baseStats.GetStats("currentHP") + amount, 0, baseStats.GetStats("hp")));
@@ -99,7 +107,7 @@ public class CharacterSheet : MonoBehaviour
 
     public void ChangeXP(int amount)
     {
-        baseStats.UpdateStats("xp", baseStats.GetStats("xp") + amount);
+        xpAmount += amount;
         GameEvents.OnXpAwarded();
     }
 
@@ -146,8 +154,8 @@ public class CharacterSheet : MonoBehaviour
     {
         ApplyAdditiveModifiers();
         ApplyPercentileModifiers();
-        baseStats.UpdateStats("hp", buffedStats.GetStats("defense") + (2 * baseStats.GetStats("level")));
-        baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * baseStats.GetStats("level")) + 1);
+        baseStats.UpdateStats("hp", buffedStats.GetStats("defense") + (2 * level));
+        baseStats.UpdateStats("mp", buffedStats.GetStats("magic") + (2 * level) + 1);
     }
 
     public Avatar GetAvatar()
@@ -160,6 +168,11 @@ public class CharacterSheet : MonoBehaviour
         {
             return (Avatar) Resources.Load("Avatars/NoAvatar.asset");
         }
+    }
+
+    public void EquipWeapon(Weapon weapon)
+    {
+        currentWeapon = weapon;
     }
 
     public string GetLastLevel()
@@ -175,6 +188,7 @@ public class CharacterSheet : MonoBehaviour
     public void Respawn()
     {
         ChangeHealth(baseStats.GetStats("hp"));
+        ChangeMP(baseStats.GetStats("mp"));
         GameManager.gm.EnterSubArea(SceneManager.GetActiveScene().name);
     }
 
@@ -221,7 +235,7 @@ public class CharacterSheet : MonoBehaviour
         skillPoints++;
         GameManager.gm.data.levelUpText.text = $"You have {skillPoints} skill point to spend.";
 
-        if (baseStats.GetStats("level") % 3 == 0)
+        if (level % 3 == 0)
         {
             GameManager.gm.data.levelUpText.text = $"You have {statPoints} stat point and {skillPoints} skill point you can spend.";
             statPoints++;
@@ -243,7 +257,6 @@ public class CharacterSheet : MonoBehaviour
             playerName = wrappedSheet.playerName;
             baseStats = wrappedSheet.baseStats;
             buffedStats = wrappedSheet.buffedStats;
-            secondaryStats = wrappedSheet.derivedStats;
             selectedSkills = wrappedSheet.selectedSkills;
             additiveBuffs = wrappedSheet.additiveBuffs;
             percentileBuffs = wrappedSheet.percentileBuffs;
@@ -254,19 +267,19 @@ public class CharacterSheet : MonoBehaviour
 
     void CheckForLevelUp()
     {
-        Debug.Log($"Current XP: {baseStats.GetStats("xp")}");
-        if (baseStats.GetStats("level") < Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100))
+        if (level < Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * xpAmount))) / 100))
         {
-            baseStats.UpdateStats("level", Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * baseStats.GetStats("xp")))) / 100));
-            GameManager.gm.data.level.text = baseStats.GetStats("level").ToString();
+            level = Mathf.FloorToInt((50 + (Mathf.Sqrt(625 + 100 * xpAmount))) / 100);
+            GameManager.gm.data.level.text = level.ToString();
             DoLevelUp();
         }
+        
+            GameManager.gm.data.level.text = level.ToString();
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameManager.gm.data.level.text = baseStats.GetStats("level").ToString();
-        Debug.Log(baseStats.GetStats("level"));
+        GameManager.gm.data.level.text = level.ToString();
     }
 
     IEnumerator RemoveAdditiveBuff (string stat, int buffID, float time)

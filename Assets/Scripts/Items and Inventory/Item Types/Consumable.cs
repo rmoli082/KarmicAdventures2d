@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu (fileName = "new Consumable", menuName = "Items/Consumable")]
 [Serializable]
-public class Consumable : Items
+public class Consumable : Item
 {
     public enum ConsumableType { RESTORE_HP, RESTORE_MP, INCREASE_HP, INCREASE_MP }
     [SerializeField]

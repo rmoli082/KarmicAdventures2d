@@ -10,9 +10,9 @@ public class StoneCircle : MonoBehaviour
 
     public void Yes()
     {
-        List<Items> inventory = Inventory.inventory.GetItems();
+        List<Item> inventory = Inventory.inventory.GetItems();
 
-        foreach (Items item in inventory)
+        foreach (Item item in inventory)
         {
             if (item.itemID == 13)
             {

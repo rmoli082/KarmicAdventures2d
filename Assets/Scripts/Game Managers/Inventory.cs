@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
 
     public static Inventory inventory;
     private int wallet = 0;
-    public List<Items> itemList;
+    public List<Item> itemList;
     public List<Avatar> avatarList;
 
     void Awake()
@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
         UpdatePanelSlots();
     }
 
-    public void AddItem(Items item) 
+    public void AddItem(Item item) 
     {
         if (itemList.Count < 24)
         {
@@ -47,29 +47,29 @@ public class Inventory : MonoBehaviour
         UpdatePanelSlots();
     }
 
-    public void AddItems(List<Items> itemList)
+    public void AddItems(List<Item> itemList)
     {
-        foreach (Items item in itemList)
+        foreach (Item item in itemList)
         {
             AddItem(item);
         }
     }
 
-    public void AddItems(Items[] items)
+    public void AddItems(Item[] items)
     {
-        foreach (Items item in items)
+        foreach (Item item in items)
         {
             AddItem(item);
         }
     }
 
-    public void RemoveItem(Items item)
+    public void RemoveItem(Item item)
     {
         itemList.Remove(item);
         UpdatePanelSlots();
     }
 
-    public List<Items> GetItems() {
+    public List<Item> GetItems() {
         return itemList;
     }
 
@@ -129,7 +129,7 @@ public class Inventory : MonoBehaviour
         List<ItemSave> saveList = new List<ItemSave>();
         List<AvatarSave> avatarSaves = new List<AvatarSave>();
 
-        foreach (Items item in itemList)
+        foreach (Item item in itemList)
         {
             saveList.Add(new ItemSave(item));
         }

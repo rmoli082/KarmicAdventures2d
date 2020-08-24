@@ -9,7 +9,7 @@ public class FindItem : Quest
 {
     public int numberNeeded;
     public int numberHeld;
-    public Items itemRequired;
+    public Item itemRequired;
 
     public void RemoveItem()
     {

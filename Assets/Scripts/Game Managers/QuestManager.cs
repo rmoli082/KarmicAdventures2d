@@ -206,7 +206,7 @@ public class QuestManager : MonoBehaviour
             if (quest.questType == Quest.QuestType.FIND_ITEM)
             {
                 FindItem itemQuest = (FindItem)quest;
-                foreach (Items item in Inventory.inventory.itemList)
+                foreach (Item item in Inventory.inventory.itemList)
                 {
                     if (item == itemQuest.itemRequired && itemQuest.questProgress == Quest.QuestProgress.CURRENT)
                     {

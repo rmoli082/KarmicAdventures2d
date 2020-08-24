@@ -35,7 +35,7 @@ public class QuestButton : MonoBehaviour
         }
         if (currentQuest.itemRewards.Length > 0)
         {
-            foreach (Items item in currentQuest.itemRewards)
+            foreach (Item item in currentQuest.itemRewards)
                 rewardsText.Append($"{item.itemName}");
         }
 

@@ -11,7 +11,7 @@ public class TreasureChest : MonoBehaviour
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
     public int coinAmount;
-    public Items[] item;
+    public Item[] item;
 
     Scene _scene;
     int itemChoice;
@@ -29,12 +29,10 @@ public class TreasureChest : MonoBehaviour
             else
             {
                 int id = this.gameObject.GetComponent<Chest>().chestID;
-                Debug.Log("This chestID = " + id);
                 while (ChestManager.chestManager.chestList.ContainsKey(id))
                 {
                     id = Random.Range(1, 193734);
                     this.gameObject.GetComponent<Chest>().chestID = id;
-                    Debug.Log("New chest ID: " + id);
                     this.gameObject.GetComponent<Chest>().status = Chest.ChestState.CLOSED;
                 }
             }

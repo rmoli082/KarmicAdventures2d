@@ -69,7 +69,6 @@ public class QuestGiver : MonoBehaviour
                         break;
                     }
                     questToGive = QuestManager.questManager.GetQuestById(questToGive.nextQuest);
-                    Debug.Log(questToGive.questTitle);
                     QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.AVAILABLE);
                     QuestManager.questManager.AcceptQuest(questToGive);
                     NPCManager.npcManager.UpdateNPCList(npc.status.ID, npc.status.awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);

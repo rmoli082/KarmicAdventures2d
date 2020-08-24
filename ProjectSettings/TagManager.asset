@@ -37,9 +37,9 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Main Camera
   - NPC
-  - Camera
+  - Overlay Camera
   m_SortingLayers:
   - name: Background
     uniqueID: 2766579207

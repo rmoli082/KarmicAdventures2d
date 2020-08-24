@@ -5,7 +5,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "new AwakeningStone", menuName = "Items/AwakeningStone")]
 [Serializable]
-public class AwakeningStone : Items
+public class AwakeningStone : Item
 {
     public Avatar avatarForm;
     public override void Use()

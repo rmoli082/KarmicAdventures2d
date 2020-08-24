@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 /// Handle the projectile launched by the player to fix the robots.
 /// </summary>
 public class Projectile : MonoBehaviour
 {
-    public int manaCost = -2;
+    public int manaCost = 2;
     public int diceNumber = 4;
     public int damageDice = 4;
+    public int numberOfTargets = 1;
+    private int targetsHit;
 
     public GameObject projectileHitPrefab;
 
@@ -42,18 +45,27 @@ public class Projectile : MonoBehaviour
     public void Launch(Vector2 direction, float force)
     {
         rigidbody2d.AddForce(direction * force);
-        CharacterSheet.charSheet.ChangeMP(manaCost);
+        CharacterSheet.charSheet.ChangeMP(-manaCost);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Enemy e = other.gameObject.GetComponent<Enemy>();
             e.Damage(damageAmount);
             Instantiate(projectileHitPrefab, transform.position, Quaternion.identity);
+            targetsHit++;
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            StartCoroutine(EnableCollider(this.gameObject.GetComponent<CircleCollider2D>()));
         }
-            
-        Destroy(gameObject);
+        if (targetsHit == numberOfTargets)
+            Destroy(gameObject);
+    }
+
+    IEnumerator EnableCollider(CircleCollider2D collider2D)
+    {
+        yield return new WaitForSeconds(0.5f);
+        collider2D.enabled = true;
     }
 }

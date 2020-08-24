@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InventorySlotController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-   public Items item;
+   public Item item;
     public Tooltip tooltip;
 
     void Awake()

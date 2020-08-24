@@ -6,7 +6,7 @@ public class ItemDatabase: MonoBehaviour
 {
     public static ItemDatabase itemDb;
 
-    public List<Items> itemDbList;
+    public List<Item> itemDbList;
 
     void Awake() 
     {
@@ -19,12 +19,12 @@ public class ItemDatabase: MonoBehaviour
             Destroy(gameObject);
         }
 
-        itemDbList = new List<Items>(Resources.LoadAll<Items>("Items"));
+        itemDbList = new List<Item>(Resources.LoadAll<Item>("Items"));
     }
 
-    public Items GetItemByID(int itemID)
+    public Item GetItemByID(int itemID)
     {
-        foreach (Items item in itemDbList)
+        foreach (Item item in itemDbList)
         {
                if (item.itemID == itemID)
                {

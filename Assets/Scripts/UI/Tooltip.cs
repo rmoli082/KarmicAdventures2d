@@ -11,7 +11,7 @@ public class Tooltip : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void GenerateTooltip(Items item)
+    public void GenerateTooltip(Item item)
     {
         string tooltipText = $"<b>{item.itemName}</b>\n{item.itemDescription}";
         gameObject.GetComponentInChildren<Text>().text = tooltipText;

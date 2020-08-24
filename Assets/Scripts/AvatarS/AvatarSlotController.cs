@@ -34,6 +34,20 @@ public class AvatarSlotController : MonoBehaviour, IPointerEnterHandler, IPointe
         Player.player.SetAvatar(this.avatar.avatarID);
     }
 
+    public void UnequipAvatar()
+    {
+        AvatarSlotController currentAvatar = GameManager.gm.data.currentAvatar;
+        currentAvatar.avatar = (Avatar)Resources.Load("Avatars/NoAvatar");
+        currentAvatar.UpdateInfo();
+
+        CharacterSheet.charSheet.AdditiveModifier("attack", 1, currentAvatar.avatar.attackUp, 0);
+        CharacterSheet.charSheet.AdditiveModifier("defense", 1, currentAvatar.avatar.defenseUp, 0);
+        CharacterSheet.charSheet.AdditiveModifier("magic", 1, currentAvatar.avatar.magicUp, 0);
+        CharacterSheet.charSheet.ChangeAvatar(currentAvatar.avatar);
+
+        Player.player.SetAvatar(currentAvatar.avatar.avatarID);
+    }
+
    public void UpdateInfo()
    {
        Image displayImage = transform.Find("Image").GetComponent<Image>();

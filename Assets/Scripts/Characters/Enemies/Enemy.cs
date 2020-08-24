@@ -71,8 +71,8 @@ public class Enemy : MonoBehaviour
 
 		rigidbody2d.simulated = false;
 
-		xpAmount += CalculateDamage();
-		CharacterSheet.charSheet.baseStats.UpdateStats("xp", xpAmount);
+		xpAmount -= (CalculateDamage()/2);
+		CharacterSheet.charSheet.ChangeXP(xpAmount);
 		GameEvents.OnXpAwarded();
 
 		audioSource.Stop();

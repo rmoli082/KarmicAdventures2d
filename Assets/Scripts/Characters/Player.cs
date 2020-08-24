@@ -8,15 +8,17 @@ public class Player : MonoBehaviour
 
     public static Player player;
 
+    public GameObject weapon;
+
+    public float timeInvincible = 2.0f;
+    public float invincibleTimer;
+    public bool isInvincible;
+
     public float mpRegenTime;
     public float hpRegenTime;
     
     float hpReturn;
     float mpReturn;
-
-    public float timeInvincible = 2.0f;
-    public float invincibleTimer;
-    public bool isInvincible;
 
     Transform respawnPosition;
 
@@ -38,7 +40,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        GameManager.gm.data.level.text = 0.ToString();
     }
 
     void Update()
@@ -74,7 +75,6 @@ public class Player : MonoBehaviour
             {
                 regenFormula = 1 - (CharacterSheet.charSheet.selectedSkills["Stamina"] * 0.03f);
                 mpReturn = Time.time + (mpRegenTime * regenFormula);
-                Debug.Log(mpRegenTime * regenFormula);
             }
             else
             {
@@ -87,9 +87,14 @@ public class Player : MonoBehaviour
     {
         switch (avatar)
         {
+            case -1:
+                player.GetComponent<SpriteRenderer>().color = Color.white;
+                player.GetComponent<PlayerController>().projectilePrefab = (GameObject)Resources.Load("Projectiles/Projectile");
+                break;
             case 0:
                 player.GetComponent<SpriteRenderer>().color = Color.red;
                 player.GetComponent<PlayerController>().projectilePrefab = (GameObject)Resources.Load("Projectiles/SunProjectile");
+                player.GetComponent<PlayerController>().projectilePrefab.GetComponent<Projectile>().numberOfTargets = Random.Range(2, 5) + ((CharacterSheet.charSheet.buffedStats.GetStats("special") - 10) / 2); ;
                 break;
             case 1:
                 player.GetComponent<SpriteRenderer>().color = new Color(128f, 128f, 128f, 0.5f);

@@ -108,8 +108,6 @@ public class StatsBar : MonoBehaviour
         stats.UpdateStats("hp", stats.GetStats("defense") + (2 * stats.GetStats("level")));
         stats.UpdateStats("mp", stats.GetStats("magic") + (2 * stats.GetStats("level")) + 1);
 
-        Debug.Log($"testing {stats.GetStats("attack")}");
-
         return stats;
     }
 }

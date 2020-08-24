@@ -5030,12 +5030,17 @@ PrefabInstance:
     - target: {fileID: 3691709129646898159, guid: c5a5a3ac64642579faf172707ab2e1e1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3691709129646898159, guid: c5a5a3ac64642579faf172707ab2e1e1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: UnequipAvatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691709129646898159, guid: c5a5a3ac64642579faf172707ab2e1e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AvatarSlotController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4793301968129263822, guid: c5a5a3ac64642579faf172707ab2e1e1,
         type: 3}

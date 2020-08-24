@@ -117,7 +117,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.018262412, y: -0.0411831}
@@ -135,9 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3798fb0019c74c44a1c33a26d74054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaCost: -2
+  manaCost: 2
   diceNumber: 1
   damageDice: 4
+  numberOfTargets: 1
   projectileHitPrefab: {fileID: 815704136855959780, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   damageAmount: 0

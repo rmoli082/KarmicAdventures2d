@@ -20,7 +20,6 @@ public class SaveLoad : MonoBehaviour
             formatter.Serialize(filestream, objectToSave);
         }
 
-        Debug.Log("Saved!");
     }
 
     public static T Load<T>(string key)

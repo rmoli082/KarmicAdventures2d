@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 94.18082, y: 74.233444}
+  m_AnchoredPosition: {x: 2.59, y: 0.84}
   m_SizeDelta: {x: 500, y: 232.6149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7629281220430809099
@@ -557,7 +557,6 @@ GameObject:
   - component: {fileID: 2271779725974154089}
   - component: {fileID: 2271779725974154091}
   - component: {fileID: 2271779725974154085}
-  - component: {fileID: 2271779725974154090}
   - component: {fileID: 2271779725974154084}
   m_Layer: 30
   m_Name: Monster Person
@@ -573,8 +572,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2271779725974154095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -92.657814, y: -72.627945, z: 21.859863}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5526537475555361922}
@@ -685,26 +684,8 @@ MonoBehaviour:
   currentQuest: {fileID: 5526537477031146080}
   dialogBox: {fileID: 2271779725409021357}
   talkNotifier: {fileID: 1756062549663534953}
-  isQuestGiver: 0
+  isQuestGiver: 1
   questToken: {fileID: 5526537475555361923}
---- !u!114 &2271779725974154090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2271779725974154095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554b45c581f480844a4f2a6767080695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questToGive: {fileID: 11400000, guid: 409c444dde586e34ba07f801bb8ccffc, type: 2}
-  npc: {fileID: 0}
-  questDialog: {fileID: 2271779725409021357}
-  questText: {fileID: 2271779725609175577}
-  questType: 1
-  timerDisplay: 5
 --- !u!114 &2271779725974154084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +844,11 @@ PrefabInstance:
       propertyPath: questText
       value: 
       objectReference: {fileID: 2271779725609175577}
+    - target: {fileID: 5995644681442719882, guid: da1872b70e4186840b518251b865cb14,
+        type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 2271779725974154085}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1872b70e4186840b518251b865cb14, type: 3}
 --- !u!114 &5526537477031146080 stripped

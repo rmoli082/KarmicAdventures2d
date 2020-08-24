@@ -15,13 +15,14 @@ public class NPCManager : MonoBehaviour
         if (npcManager == null)
         {
             npcManager = this.GetComponent<NPCManager>();
+            npcList = new Dictionary<int, NPCCharacter>();
         }
         else if  (npcManager != this)
         {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        npcList = new Dictionary<int, NPCCharacter>();
+        
     }
 
     void Start()
@@ -39,7 +40,6 @@ public class NPCManager : MonoBehaviour
     {
         if (npcList.ContainsKey(id))
         {
-            Debug.Log("NPC Found");
             return npcList[id];
         }   
         else

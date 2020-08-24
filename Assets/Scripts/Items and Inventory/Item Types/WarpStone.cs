@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "new Warp Crystal", menuName = "Items/Warp Stone")]
-public class WarpStone : Items
+public class WarpStone : Item
 {
     public string locationName;
     public override void Use()

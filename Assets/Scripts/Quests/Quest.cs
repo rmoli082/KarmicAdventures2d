@@ -23,7 +23,7 @@ public class Quest : ScriptableObject
 
     public int xpReward;
     public int goldReward;
-    public Items[] itemRewards;
+    public Item[] itemRewards;
 
     public void GiveRewards()
     {

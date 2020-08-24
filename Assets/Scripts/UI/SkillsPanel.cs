@@ -12,11 +12,6 @@ public class SkillsPanel : MonoBehaviour
     {
         foreach (SkillsBar.SkillsList skill in System.Enum.GetValues(typeof(SkillsBar.SkillsList)))
         {
-            Debug.Log("testing" + skill.ToString());
-            foreach (KeyValuePair<string, int> pair in CharacterSheet.charSheet.selectedSkills)
-            {
-                Debug.Log(pair.Key);
-            }
             GameObject b = Instantiate(buttonPrefab);
             b.SetActive(false);
             b.transform.SetParent(this.gameObject.transform, false);

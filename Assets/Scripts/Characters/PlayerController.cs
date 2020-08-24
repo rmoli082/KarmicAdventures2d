@@ -160,21 +160,24 @@ public class PlayerController : MonoBehaviour
     void LaunchProjectile()
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 1.1f, Quaternion.identity);
+        projectileObject.SetActive(false);
         Projectile projectile = projectileObject.GetComponent<Projectile>();
 
         if (CheckMana(projectile))
         {
+            projectileObject.SetActive(true);
             projectile.Launch(lookDirection, 300);
 
             animator.SetTrigger("Launch");
             audioSource.PlayOneShot(shootingSound);
         }
+        else
+        {
+            Destroy(projectileObject);
+        }
         
     }
-    
-    // =============== SOUND ==========================
-
-    //Allow to play a sound on the player sound source. used by Collectible
+   
     public void PlaySound(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
@@ -184,11 +187,5 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("Sword");
         audioSource.PlayOneShot(shootingSound);
-        RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, 1 << LayerMask.NameToLayer("Enemy"));
-        if (hit.collider != null)
-        {
-            Enemy enemy = hit.collider.GetComponent<Enemy>();
-            enemy.Damage(Random.Range(1, 5));
-        }
     }
 }
