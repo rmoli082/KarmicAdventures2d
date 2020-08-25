@@ -15,14 +15,16 @@ public class Enemy : MonoBehaviour
 	public int numberOfDice;
 	public int damageDice;
 
-    public ParticleSystem fixedParticleEffect;
+
+	public Stats baseStats;
+
+	public ParticleSystem fixedParticleEffect;
 
     public AudioClip hitSound;
 
 	protected Rigidbody2D rigidbody2d;
 	protected Animator animator;
 	protected AudioSource audioSource;
-	protected Stats baseStats;
 	protected float aggroDist;
 	protected float damageAmount;
 

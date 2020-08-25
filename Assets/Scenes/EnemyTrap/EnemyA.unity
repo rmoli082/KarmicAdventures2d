@@ -2248,6 +2248,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6709516179327704622, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
+        type: 3}
+      propertyPath: m_ScreenX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709516179327704622, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
+        type: 3}
+      propertyPath: m_BiasX
+      value: 0.018000476
+      objectReference: {fileID: 0}
+    - target: {fileID: 6709516179327704622, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
+        type: 3}
+      propertyPath: m_XDamping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6709516179628808626, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
       propertyPath: m_Name
@@ -4024,6 +4039,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156076955312420214, guid: 8de26df92ff4b4d4089bc5d20b06c8a8,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156076955312420214, guid: 8de26df92ff4b4d4089bc5d20b06c8a8,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de26df92ff4b4d4089bc5d20b06c8a8, type: 3}

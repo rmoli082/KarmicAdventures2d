@@ -56,11 +56,14 @@ public class Projectile : MonoBehaviour
             e.Damage(damageAmount);
             Instantiate(projectileHitPrefab, transform.position, Quaternion.identity);
             targetsHit++;
+            if (targetsHit == numberOfTargets)
+            {
+                Destroy(gameObject);
+                return;
+            }
             this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(EnableCollider(this.gameObject.GetComponent<CircleCollider2D>()));
         }
-        if (targetsHit == numberOfTargets)
-            Destroy(gameObject);
     }
 
     IEnumerator EnableCollider(CircleCollider2D collider2D)
