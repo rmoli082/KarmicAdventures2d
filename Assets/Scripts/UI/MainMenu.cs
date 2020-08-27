@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public GameObject loadPanel;
 
     public GameObject loadGameButton;
+    public GameObject exitButton;
 
     public string nextScene;
 
@@ -21,6 +22,11 @@ public class MainMenu : MonoBehaviour
         if (Directory.GetDirectories(path).Length != 0)
         {
             loadGameButton.SetActive(true);
+        }
+
+        if (Application.platform.Equals(RuntimePlatform.WebGLPlayer) || Application.platform.Equals(RuntimePlatform.WindowsEditor))
+        {
+            exitButton.SetActive(false);
         }
     }
 
@@ -43,5 +49,10 @@ public class MainMenu : MonoBehaviour
     public void About()
     {
         aboutPanel.SetActive(true);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

@@ -76,11 +76,11 @@ public class GameManager : MonoBehaviour
             {
                 Inventory.inventory.UpdatePanelSlots();
                 Inventory.inventory.UpdateAvatarSlots();
-                ShowHidePanels(true);
+                SetInventoryActive(true);
             }
             else
             {
-                ShowHidePanels(false);
+                SetInventoryActive(false);
             }
         }
 
@@ -90,10 +90,12 @@ public class GameManager : MonoBehaviour
             {
                 QuestManager.questManager.UpdateQuestUI();
                 data.questPanel.SetActive(true);
+                data.overviewMap.SetActive(false);
             }
             else
             {
                 data.questPanel.SetActive(false);
+                data.overviewMap.SetActive(true);
             }
         }
 
@@ -108,6 +110,18 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 data.levelUpPanel.SetActive(false);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!data.overviewMap.activeSelf)
+            {
+                data.overviewMap.SetActive(true);
+            }
+            else
+            {
+                data.overviewMap.SetActive(false);
             }
         }
 
@@ -178,15 +192,10 @@ public class GameManager : MonoBehaviour
 		spawnedObject.transform.parent = GameObject.FindGameObjectWithTag("EnemyDoor").transform;
     }
 
-    public void ShowHidePanels(bool showPanels)
+    public void SetInventoryActive(bool showPanels)
     {
         data.playerInfo.SetActive(!showPanels);
         data.inventoryCanvas.SetActive(showPanels);
-        data.goldHeader.SetActive(showPanels);
-        data.goldPieces.gameObject.SetActive(showPanels);
-        data.avatarHeader.SetActive(showPanels);
-        data.avatarPanel.SetActive(showPanels);
-        data.currentAvatar.gameObject.SetActive(showPanels);
         data.tooltip.SetActive(showPanels);
     }
 

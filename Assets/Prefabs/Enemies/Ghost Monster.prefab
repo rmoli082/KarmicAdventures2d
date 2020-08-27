@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1936357022}
   - component: {fileID: 1936357024}
   - component: {fileID: 7136751058685118016}
-  - component: {fileID: 936167121121235354}
+  - component: {fileID: 521845201}
   m_Layer: 10
   m_Name: Ghost Monster
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!82 &1936357024
 AudioSource:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.17254925, y: -0.009250879}
   m_Size: {x: 1.3352718, y: 2.6334321}
   m_Direction: 0
---- !u!114 &936167121121235354
+--- !u!114 &521845201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,25 +177,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8575684818433655545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8b2fb59b17bd348871251071146d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: f5399e181ab4b75a79ea2a72ab5c82ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 0
   attack: 3
   defense: 2
   magic: 1
   xpAmount: 4
   aggroDistance: 6
-  numberOfDice: 1
+  numberOfDice: 2
   damageDice: 5
   fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
-  projectilePrefab: {fileID: 540222671576581450, guid: 2eec99fc479f4a64d86d4d5256978ac0,
-    type: 3}
-  target: {fileID: 0}
   speed: 3
-  shotTimer: 2.5
+  target: {fileID: 0}
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0

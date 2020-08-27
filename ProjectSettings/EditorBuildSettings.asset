@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpiritRealm.unity
     guid: c792ff9944ab7304682ec9aed943bdc8
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: a04b4df15349081449651beb57f50a70
   m_configObjects: {}

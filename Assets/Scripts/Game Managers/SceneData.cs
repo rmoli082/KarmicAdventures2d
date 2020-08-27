@@ -7,15 +7,16 @@ using UnityEngine.UI;
 public class SceneData : MonoBehaviour
 {
     public GameObject player;
-    public GameObject inventoryCanvas;
     public GameObject playerInfo;
-    public GameObject goldHeader;
-    public Text goldPieces;
-    public GameObject avatarHeader;
-    public AvatarSlotController currentAvatar;
-    public GameObject avatarPanel;
+    public Animator playerAnimator;
+    public AudioSource playerAudioSource;
+    public Transform respawnPosition;
     public Text level;
-    public GameObject pause;
+    public GameObject inventoryCanvas;
+    public GameObject inventorySlots;
+    public GameObject avatarPanel;
+    public TextMeshProUGUI goldPieces;
+    public AvatarSlotController currentAvatar;
 
     public GameObject questCompletedBox;
     public GameObject questPanel;
@@ -27,17 +28,15 @@ public class SceneData : MonoBehaviour
     public TextMeshProUGUI questDetailsDesc;
     public TextMeshProUGUI questRewards;
 
+    public GameObject pause;
     public GameObject controlsFrame;
     public GameObject warpPopup;
     public GameObject tooltip;
-
-    public Transform respawnPosition;
-
-    public Animator playerAnimator;
-    public AudioSource playerAudioSource;
 
     public GameObject levelUpPanel;
     public TextMeshProUGUI levelUpText;
     public GameObject statsPanel;
     public GameObject levelUpButton;
+
+    public GameObject overviewMap;
 }

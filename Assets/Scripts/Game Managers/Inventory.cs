@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
     public void UpdatePanelSlots()
     {
         int index = 0;
-        foreach (Transform child in GameManager.gm.data.inventoryCanvas.transform)
+        foreach (Transform child in GameManager.gm.data.inventorySlots.transform)
         {
             InventorySlotController slot = child.GetComponent<InventorySlotController>();
 
@@ -98,7 +98,7 @@ public class Inventory : MonoBehaviour
             index++;
         }
 
-        GameManager.gm.data.goldPieces.GetComponent<Text>().text = GetCoins();
+        GameManager.gm.data.goldPieces.text = GetCoins();
         GameEvents.OnInventoryUpdated();
     }
 
