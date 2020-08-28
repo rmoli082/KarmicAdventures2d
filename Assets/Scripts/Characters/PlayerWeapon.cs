@@ -6,10 +6,22 @@ public class PlayerWeapon : MonoBehaviour
 {
     public Weapon weapon;
     public GameObject weaponHitPrefab;
+    public LayerMask layerMask;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public Vector3 attackOffset;
+    public float attackRange = 0.25f;
+
+    Animator animator;
+
+    private void Attack()
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        animator = GetComponent<Animator>();
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Collider2D other = Physics2D.OverlapCircle(pos, attackRange, layerMask);
+        if (other != null)
         {
             int damageAmount = weapon.UseWeapon();
             damageAmount += (CharacterSheet.charSheet.buffedStats.GetStats("attack") - 10) / 2;
@@ -22,10 +34,18 @@ public class PlayerWeapon : MonoBehaviour
                 }
             }
 
-            Enemy e = other.gameObject.GetComponent<Enemy>();
-            e.Damage(damageAmount);
+            other.GetComponent<Enemy>().Damage(damageAmount);
             Instantiate(weaponHitPrefab, other.transform.position, Quaternion.identity);
-
         }
+
     }
+    void OnDrawGizmosSelected()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackOffset.x;
+        pos += transform.up * attackOffset.y;
+
+        Gizmos.DrawWireSphere(pos, attackRange);
+    }
+
 }

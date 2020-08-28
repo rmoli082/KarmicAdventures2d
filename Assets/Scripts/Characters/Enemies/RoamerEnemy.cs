@@ -28,8 +28,9 @@ public class RoamerEnemy : Enemy
 		audioSource = GetComponent<AudioSource>();
 	}
 	
-	void Update()
+	public override void Update()
 	{
+		base.Update();
 		if (type == EnemyType.ROAMER)
 		{
 			remainingTimeToChange -= Time.deltaTime;

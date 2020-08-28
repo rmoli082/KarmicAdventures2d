@@ -38,8 +38,9 @@ public class RangedEnemy : Enemy
 	}
 
 
-		void Update()
+	public override void Update()
 	{
+		base.Update();
 		if (target == null)
 			return;
 

@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
 	protected float damageAmount;
 
 	private int attackBoost;
+	private bool isInvincible;
+	private float invincibleTimer = 1f;
 
     private void Awake()
     {
@@ -42,6 +44,15 @@ public class Enemy : MonoBehaviour
 		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
 		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
 		baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
+    }
+
+    public virtual void Update()
+    {
+		invincibleTimer -= Time.deltaTime;
+		if (invincibleTimer <= 0)
+        {
+			isInvincible = false;
+        }
     }
 
 
@@ -59,7 +70,11 @@ public class Enemy : MonoBehaviour
 
 	public void Damage(float amount)
     {
+		if (isInvincible)
+			return;
+
 		baseStats.UpdateStats("currentHP", Mathf.RoundToInt(baseStats.GetStats("currentHP") - amount));
+		isInvincible = true;
 		if (baseStats.GetStats("currentHP") <= 0)
         {
 			Die();

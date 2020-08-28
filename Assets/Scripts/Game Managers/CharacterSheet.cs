@@ -218,17 +218,6 @@ public class CharacterSheet : MonoBehaviour
         }
     }
 
-    public void GetStatsBonus()
-    {
-        Dictionary<string, int> stats = baseStats.GetAllStats();
-        foreach (KeyValuePair<string, int> stat in stats)
-        {
-            if (System.Enum.IsDefined(typeof(Statistics), stat.Key))
-                AdditiveModifier(stat.Key, 2, (stat.Value - 10) / 2, 0);
-        }
-        
-    }
-
     void DoLevelUp()
     {
         GameManager.gm.data.levelUpButton.SetActive(true);

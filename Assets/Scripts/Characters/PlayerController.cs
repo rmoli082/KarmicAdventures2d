@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
     
-        if (_scene.name.Equals("EnemyA")) 
+        if (System.Enum.IsDefined(typeof(OverlandEnemyTrap.Levels), _scene.name) ||  _scene.name.Equals("DemonRealm")) 
         {
             vertical = 0f; 
         }

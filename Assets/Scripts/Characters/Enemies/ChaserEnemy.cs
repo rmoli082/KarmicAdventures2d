@@ -38,8 +38,9 @@ public class ChaserEnemy : Enemy
 		originalPosition = transform.position;
 	}
 	
-	void Update () 
+	public override void Update () 
 	{
+		base.Update();
 		if (target == null)
 			return;
 
