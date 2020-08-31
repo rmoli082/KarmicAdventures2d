@@ -180,7 +180,7 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void CheckAwakenQuest()
+    void CheckAwakenQuest(string tag)
     {
         foreach (Quest quest in QuestManager.questManager.currentQuests)
         {
@@ -189,7 +189,8 @@ public class QuestManager : MonoBehaviour
                 AwakenQuest awakenQuest = (AwakenQuest)quest;
                 if (quest.questProgress == Quest.QuestProgress.CURRENT)
                 {
-                    awakenQuest.numberAwakened += 1;
+                    if (awakenQuest.tagToAwaken == tag)
+                        awakenQuest.numberAwakened += 1;
                     if (awakenQuest.numberAwakened >= awakenQuest.numberToAwaken)
                     {
                         CompleteQuest(awakenQuest);

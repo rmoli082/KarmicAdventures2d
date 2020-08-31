@@ -18,7 +18,7 @@ MonoBehaviour:
   questTitle: Find a Sun Stone
   questDesc: You must locate a Sun Stone to build up the power to bring your family
     back to life.
-  questProgress: 1
+  questProgress: 5
   questHint: Find a Sun Stone in a treasure chest nearby.
   questCompleteText: Woo you found a sun stone! Good job.
   questDoneText: Use the Sun Stone to unlock the power of your Sun Avatar form. We're

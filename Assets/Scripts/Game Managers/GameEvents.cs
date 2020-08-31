@@ -9,7 +9,7 @@ public class GameEvents : MonoBehaviour
     public static System.Action InventoryUpdated;
     public static System.Action<string> LocationFound;
     public static System.Action<string> KillSuccessful;
-    public static System.Action AwakenEvent;
+    public static System.Action<string> AwakenEvent;
     public static System.Action XpAwarded;
 
     public static void OnSaveInitiated()
@@ -37,9 +37,9 @@ public class GameEvents : MonoBehaviour
         KillSuccessful?.Invoke(tag);
     }
 
-    public static void OnAwakenEvent()
+    public static void OnAwakenEvent(string tag)
     {
-        AwakenEvent?.Invoke();
+        AwakenEvent?.Invoke(tag);
     }
 
     public static void OnXpAwarded()

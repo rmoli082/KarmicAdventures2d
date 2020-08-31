@@ -23924,6 +23924,11 @@ PrefabInstance:
       propertyPath: isQuestGiver
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_text
+      value: I am Error.
+      objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name

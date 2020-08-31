@@ -57,9 +57,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AvatarS\Avatar.cs" />
     <Compile Include="Assets\Scripts\Characters\NonPlayerCharacter.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\WyrmAttack.cs" />
     <Compile Include="Assets\Scripts\Characters\Projectile.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\AvatarSave.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\QuestSave.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\Wyrm.cs" />
     <Compile Include="Assets\Scripts\Game Managers\CharacterSheet.cs" />
     <Compile Include="Assets\Scripts\Game Managers\NPCManager.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\WarpStone.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Assets\Scripts\Characters\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemies\OverlandEnemyTrap.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\WyrmFly.cs" />
     <Compile Include="Assets\Scripts\UI\UIAmmoCount.cs" />
     <Compile Include="Assets\Scripts\Game Managers\SceneData.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemies\RangedEnemy.cs" />
@@ -128,9 +131,6 @@
     <Compile Include="Assets\Scripts\Items and Inventory\TreasureChest.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemies\RoamerEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\Wyrm.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\WyrmAttack.cs" />
-    <Compile Include="Assets\Scripts\Characters\Enemies\Wyrm\WyrmFly.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

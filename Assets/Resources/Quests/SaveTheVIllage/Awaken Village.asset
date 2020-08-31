@@ -29,4 +29,5 @@ MonoBehaviour:
   goldReward: 25
   itemRewards: []
   numberToAwaken: 10
+  tagToAwaken: Villager
   numberAwakened: 0

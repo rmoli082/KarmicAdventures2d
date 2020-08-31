@@ -27,7 +27,7 @@ public class Awaken : MonoBehaviour
                 animatorToEnable.enabled = true;
             }
             NPCManager.npcManager.UpdateNPCList(ID, awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
-            GameEvents.OnAwakenEvent();
+            GameEvents.OnAwakenEvent(this.gameObject.tag);
             GameManager.gm.SetInventoryActive(false);
             awakeTextBox.text = awakenText;
             this.gameObject.GetComponent<NonPlayerCharacter>().DisplayDialog();

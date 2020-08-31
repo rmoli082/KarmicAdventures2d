@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 2069204933}
   m_Layer: 30
   m_Name: Stone Person
-  m_TagString: Untagged
+  m_TagString: Villager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

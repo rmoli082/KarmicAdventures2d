@@ -8,5 +8,6 @@ using UnityEngine;
 public class AwakenQuest : Quest
 {
     public int numberToAwaken;
+    public string tagToAwaken;
     public int numberAwakened;
 }

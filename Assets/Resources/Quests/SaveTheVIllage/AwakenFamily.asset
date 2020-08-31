@@ -18,7 +18,7 @@ MonoBehaviour:
   questTitle: Awaken your family
   questDesc: Great! Now that you have the Stone of Awakening and have learned your
     Sun Avatar form, perform the ritual of awakening to return the 3 of us to life!
-  questProgress: 1
+  questProgress: 3
   questHint: While wearing the Sun Avatar form, use the Stone of Awakening from your
     inventory to awaken all 3 family members.
   questCompleteText: Congratulations, you've brought us back to life!
@@ -30,4 +30,5 @@ MonoBehaviour:
   goldReward: 15
   itemRewards: []
   numberToAwaken: 3
+  tagToAwaken: Family
   numberAwakened: 0

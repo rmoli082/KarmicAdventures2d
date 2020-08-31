@@ -5783,12 +5783,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42013302
+      value: -1.5508239
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5251215
+      value: 3.5244486
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -9234,12 +9234,12 @@ PrefabInstance:
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
@@ -11548,6 +11548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Family
       objectReference: {fileID: 0}
     - target: {fileID: 4151283663741310670, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -15540,6 +15545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stone Person (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Family
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -20716,12 +20726,12 @@ PrefabInstance:
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
@@ -26340,6 +26350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone Person (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Family
+      objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -26977,6 +26992,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 321089251}
+    - target: {fileID: 3468792509797828417, guid: 37f56917fe8bbfc42bc998b7fca76b27,
+        type: 3}
+      propertyPath: aggroDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3468792509797828422, guid: 37f56917fe8bbfc42bc998b7fca76b27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32814,7 +32834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114619646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006425768, y: 6.2402244, z: -10}
+  m_LocalPosition: {x: -0.006425619, y: 6.240225, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33673,12 +33693,12 @@ PrefabInstance:
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: 2.14
       objectReference: {fileID: 0}
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}

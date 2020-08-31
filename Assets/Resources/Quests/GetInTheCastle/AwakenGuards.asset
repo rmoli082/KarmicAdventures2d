@@ -18,13 +18,14 @@ MonoBehaviour:
   questTitle: Awaken the Guards
   questDesc: Awaken the castle guards so you can get past them and into the castle.
   questProgress: 1
-  questHint: Find an awakening stone and use it here.
+  questHint: Find an Obsidian Crystal to shatter the monster stasis.
   questCompleteText: Yay you did it!
   questDoneText: 
-  nextQuest: 9
+  nextQuest: -1
   questObjective: find stone and use it.
   xpReward: 30
   goldReward: 10
   itemRewards: []
   numberToAwaken: 2
+  tagToAwaken: Guard
   numberAwakened: 0

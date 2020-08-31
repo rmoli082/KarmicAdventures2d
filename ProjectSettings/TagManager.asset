@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - EnemyDoor
   - Slime
+  - Villager
+  - Family
+  - Guard
+  - Shopkeeper
   layers:
   - Default
   - TransparentFX
