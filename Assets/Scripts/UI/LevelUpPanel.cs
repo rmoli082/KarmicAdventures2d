@@ -44,6 +44,5 @@ public class LevelUpPanel : MonoBehaviour
         }
         CharacterSheet.charSheet.skillPoints--;
         gameObject.SetActive(false);
-        Debug.Log($"{skill} {CharacterSheet.charSheet.selectedSkills[skill]}");
     }
 }

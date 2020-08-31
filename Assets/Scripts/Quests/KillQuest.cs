@@ -9,5 +9,5 @@ public class KillQuest : Quest
 {
     public int killsRequired;
     public int killsCompleted;
-    public GameObject killTarget;
+    public string killTargetTag;
 }

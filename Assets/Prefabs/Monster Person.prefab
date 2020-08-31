@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d950830031d2b949ab94e02d15d34c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  status: {fileID: 2271779725974154084}
+  awaken: {fileID: 2271779725974154084}
   currentQuest: {fileID: 5526537477031146080}
   dialogBox: {fileID: 2271779725409021357}
   talkNotifier: {fileID: 1756062549663534953}

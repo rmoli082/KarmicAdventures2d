@@ -8,7 +8,7 @@
 /// </summary>
 public class NonPlayerCharacter : MonoBehaviour
 {
-    public Awaken status;
+    public Awaken awaken;
     public QuestGiver currentQuest;
     public GameObject dialogBox;
     public GameObject talkNotifier;
@@ -18,16 +18,18 @@ public class NonPlayerCharacter : MonoBehaviour
 
     void Start()
     {
-        NPCManager.NPCCharacter bobby = NPCManager.npcManager.GetNPC(status.ID);
+        NPCManager.NPCCharacter bobby = new NPCManager.NPCCharacter();
+        bobby = NPCManager.npcManager.GetNPC(awaken.ID);
         if (bobby != null)
         {
-            status.awakeningStatus = bobby.status;
+            awaken.awakeningStatus = bobby.status;
             currentQuest.questToGive = bobby.currentQuest;
+            questToken.GetComponentInChildren<QuestGiver>().questType = bobby.currentQuest.questType;
             talkNotifier.SetActive(bobby.haveSpoken);
             questToken.SetActive(bobby.hasQuest);
             if (bobby.status == Awaken.AwakeningStatus.AWAKE)
             {
-                this.gameObject.GetComponent<Awaken>().Awakening(this.GetComponent<Awaken>().stoneToUse.itemID);
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = awaken.spriteToLoad;
             }
         } 
         else
@@ -41,8 +43,9 @@ public class NonPlayerCharacter : MonoBehaviour
     public void DisplayDialog()
     {
         dialogBox.SetActive(true);
+        Time.timeScale = 0f;
         talkNotifier.SetActive(false);
-        NPCManager.npcManager.UpdateNPCList(status.ID, status.awakeningStatus, currentQuest.questToGive, talkNotifier.activeSelf, questToken.activeSelf);
+        NPCManager.npcManager.UpdateNPCList(awaken.ID, awaken.awakeningStatus, currentQuest.questToGive, talkNotifier.activeSelf, questToken.activeSelf);
     }
 
     public void CloseDialog()

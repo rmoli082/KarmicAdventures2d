@@ -168,7 +168,7 @@ public class QuestManager : MonoBehaviour
             if (quest.questType == Quest.QuestType.KILL)
             {
                 KillQuest killQuest = (KillQuest) quest;
-                if (killQuest.killTarget.tag == tag && quest.questProgress == Quest.QuestProgress.CURRENT)
+                if (killQuest.killTargetTag == tag && quest.questProgress == Quest.QuestProgress.CURRENT)
                 {
                     killQuest.killsCompleted += 1;
                     if (killQuest.killsCompleted >= killQuest.killsRequired)

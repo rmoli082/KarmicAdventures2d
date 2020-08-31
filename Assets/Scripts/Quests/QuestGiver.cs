@@ -11,11 +11,10 @@ public class QuestGiver : MonoBehaviour
     public TextMeshProUGUI questText;
     public Quest.QuestType questType;
     public float timerDisplay = 5f;
-    private float currentTimer;
 
     void Awake()
     {
-        if (NPCManager.npcManager.GetNPC(npc.status.ID) == null)
+        if (NPCManager.npcManager.GetNPC(npc.awaken.ID) == null)
             questToGive.questProgress = Quest.QuestProgress.AVAILABLE;
     }
 
@@ -58,6 +57,10 @@ public class QuestGiver : MonoBehaviour
                     {
                         LocateQuest quest = (LocateQuest)questToGive;
                     }
+                    if (questType == Quest.QuestType.AWAKEN)
+                    {
+                        AwakenQuest quest = (AwakenQuest)questToGive;
+                    }
                     QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.DONE);
                     break;
                 case Quest.QuestProgress.DONE:
@@ -71,7 +74,7 @@ public class QuestGiver : MonoBehaviour
                     questToGive = QuestManager.questManager.GetQuestById(questToGive.nextQuest);
                     QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.AVAILABLE);
                     QuestManager.questManager.AcceptQuest(questToGive);
-                    NPCManager.npcManager.UpdateNPCList(npc.status.ID, npc.status.awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
+                    questType = questToGive.questType;
                     break;
                 default:
                     break;
@@ -84,5 +87,7 @@ public class QuestGiver : MonoBehaviour
             Time.timeScale = 1f;
             questDialog.SetActive(false);
         }
+
+        NPCManager.npcManager.UpdateNPCList(npc.awaken.ID, npc.awaken.awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
     }
 }

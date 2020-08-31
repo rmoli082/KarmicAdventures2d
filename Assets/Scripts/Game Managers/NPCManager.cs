@@ -78,6 +78,8 @@ public class NPCManager : MonoBehaviour
         public bool haveSpoken;
         public bool hasQuest;
 
+        public NPCCharacter() { }
+
         public NPCCharacter(Awaken.AwakeningStatus status, Quest currentQuest, bool haveSpoken, bool hasQuest)
         {
             this.status = status;

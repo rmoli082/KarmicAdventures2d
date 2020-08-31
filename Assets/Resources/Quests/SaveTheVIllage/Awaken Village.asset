@@ -26,7 +26,7 @@ MonoBehaviour:
   nextQuest: -1
   questObjective: find stones and awaken 10 villagers
   xpReward: 100
-  goldReward: 25
+  goldReward: 100
   itemRewards: []
   numberToAwaken: 10
   tagToAwaken: Villager
