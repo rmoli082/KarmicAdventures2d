@@ -139,7 +139,7 @@ MonoBehaviour:
   diceNumber: 1
   damageDice: 4
   numberOfTargets: 1
-  projectileHitPrefab: {fileID: 815704136855959780, guid: 17da090cbd3ec504ba4da073aa459073,
+  projectileHitPrefab: {fileID: 4367407365149435408, guid: dd1473d67e7f3b84dbc3dc6a584f9f0e,
     type: 3}
   damageAmount: 0
 --- !u!1 &2274725659571682563

@@ -188,7 +188,7 @@ MonoBehaviour:
   aggroDistance: 6
   numberOfDice: 2
   damageDice: 5
-  fixedParticleEffect: {fileID: 3032662816014629373, guid: 17da090cbd3ec504ba4da073aa459073,
+  fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
   speed: 3

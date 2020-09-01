@@ -54,7 +54,8 @@ public class Projectile : MonoBehaviour
         {
             Enemy e = other.gameObject.GetComponent<Enemy>();
             e.Damage(damageAmount);
-            Instantiate(projectileHitPrefab, transform.position, Quaternion.identity);
+            GameObject project = Instantiate(projectileHitPrefab, transform.position, Quaternion.identity);
+            project.transform.parent = e.transform;
             targetsHit++;
             if (targetsHit == numberOfTargets)
             {
