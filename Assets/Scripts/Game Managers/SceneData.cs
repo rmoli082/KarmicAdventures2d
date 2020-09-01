@@ -39,4 +39,6 @@ public class SceneData : MonoBehaviour
     public GameObject levelUpButton;
 
     public GameObject overviewMap;
+
+    public GameObject karmaAwardedDisplay;
 }

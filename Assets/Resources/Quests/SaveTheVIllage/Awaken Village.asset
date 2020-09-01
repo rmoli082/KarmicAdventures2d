@@ -28,6 +28,8 @@ MonoBehaviour:
   xpReward: 100
   goldReward: 100
   itemRewards: []
+  posKarmaAwarded: 15
+  negKarmaAwarded: 0
   numberToAwaken: 10
   tagToAwaken: Villager
   numberAwakened: 0

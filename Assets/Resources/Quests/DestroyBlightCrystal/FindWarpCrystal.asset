@@ -18,7 +18,7 @@ MonoBehaviour:
   questTitle: Locate a Warp Crystal
   questDesc: A warp crystal is needed for the ritual to access the Immaterial Realm.
     So you should find one.
-  questProgress: 5
+  questProgress: 1
   questHint: Find a warp crystal.
   questCompleteText: You did it! You found a warp crystal.
   questDoneText: Good job, yeah?

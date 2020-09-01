@@ -17,8 +17,8 @@ MonoBehaviour:
   questType: 2
   questTitle: Locate a Stone Circle
   questDesc: You need to do the ritual in a stone circle to ascend to the Immaterial
-    Realms. So find a stone circle, yeah?
-  questProgress: 5
+    Realms. So find a stone circle and then come see me, yeah?
+  questProgress: 1
   questHint: You'll need to go to a cemetery to find a stone circle, yeah?
   questCompleteText: You did it,  yeah?
   questDoneText: Ready for the next bit, yeah?

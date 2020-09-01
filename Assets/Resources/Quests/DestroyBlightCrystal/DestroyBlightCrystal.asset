@@ -20,12 +20,14 @@ MonoBehaviour:
   questProgress: 1
   questHint: Destroy the blight crystal
   questCompleteText: You did it!
-  questDoneText: 
+  questDoneText: You're a superstar, yeah?
   nextQuest: -1
   questObjective: Destroy the blight crystal
   xpReward: 100
   goldReward: 25
   itemRewards: []
+  posKarmaAwarded: 15
+  negKarmaAwarded: 0
   killsRequired: 1
   killsCompleted: 0
-  killTarget: {fileID: 0}
+  killTargetTag: 

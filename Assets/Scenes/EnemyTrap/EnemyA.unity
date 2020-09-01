@@ -677,6 +677,16 @@ PrefabInstance:
       propertyPath: overviewMap
       value: 
       objectReference: {fileID: 854078209}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: respawnPosition
+      value: 
+      objectReference: {fileID: 1703411784}
+    - target: {fileID: 1225103924446291114, guid: 27b4aac720bc02461a26d559d09f0d60,
+        type: 3}
+      propertyPath: karmaAwardedDisplay
+      value: 
+      objectReference: {fileID: 854078219}
     - target: {fileID: 1575762944404959180, guid: 27b4aac720bc02461a26d559d09f0d60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2352,6 +2362,12 @@ MonoBehaviour:
 --- !u!1 &854078218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4232780355685862625, guid: 47b8588441cee67f4875df90e1dfacc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 854078200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &854078219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8414137837007279621, guid: 47b8588441cee67f4875df90e1dfacc9,
     type: 3}
   m_PrefabInstance: {fileID: 854078200}
   m_PrefabAsset: {fileID: 0}

@@ -11,6 +11,7 @@ public class GameEvents : MonoBehaviour
     public static System.Action<string> KillSuccessful;
     public static System.Action<string> AwakenEvent;
     public static System.Action XpAwarded;
+    public static System.Action KarmaAwarded;
 
     public static void OnSaveInitiated()
     {
@@ -45,5 +46,10 @@ public class GameEvents : MonoBehaviour
     public static void OnXpAwarded()
     {
         XpAwarded?.Invoke();
+    }
+
+    public static void OnKarmaAwarded()
+    {
+        KarmaAwarded?.Invoke();
     }
 }

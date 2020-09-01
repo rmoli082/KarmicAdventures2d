@@ -29,6 +29,8 @@ MonoBehaviour:
   xpReward: 25
   goldReward: 15
   itemRewards: []
+  posKarmaAwarded: 5
+  negKarmaAwarded: 0
   numberToAwaken: 3
   tagToAwaken: Family
   numberAwakened: 0

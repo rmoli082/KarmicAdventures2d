@@ -4596,6 +4596,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8460299265426366070}
     m_Modifications:
+    - target: {fileID: 3691709129646898159, guid: c5a5a3ac64642579faf172707ab2e1e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AvatarSlotController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691709129646898159, guid: c5a5a3ac64642579faf172707ab2e1e1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnequipAvatar
+      objectReference: {fileID: 0}
     - target: {fileID: 4793301968129263822, guid: c5a5a3ac64642579faf172707ab2e1e1,
         type: 3}
       propertyPath: m_LocalPosition.x

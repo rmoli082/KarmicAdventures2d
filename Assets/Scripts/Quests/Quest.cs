@@ -24,10 +24,14 @@ public class Quest : ScriptableObject
     public int xpReward;
     public int goldReward;
     public Item[] itemRewards;
+    public int posKarmaAwarded = 0;
+    public int negKarmaAwarded = 0;
 
     public void GiveRewards()
     {
         CharacterSheet.charSheet.ChangeXP(xpReward);
+        CharacterSheet.charSheet.ChangePosKarma(posKarmaAwarded);
+        CharacterSheet.charSheet.ChangeNegKarma(negKarmaAwarded);
         Inventory.inventory.AddCoins(goldReward);
         Inventory.inventory.AddItems(itemRewards);
     }

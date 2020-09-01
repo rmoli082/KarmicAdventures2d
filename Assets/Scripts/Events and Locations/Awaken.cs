@@ -15,6 +15,7 @@ public class Awaken : MonoBehaviour
     public TextMeshProUGUI awakeTextBox;
     public string awakenText;
     public NonPlayerCharacter npc;
+    public int posKarmaAwarded = 2;
 
     public void Awakening(int itemID)
     {
@@ -33,6 +34,7 @@ public class Awaken : MonoBehaviour
             awakeTextBox.text = awakenText;
             this.gameObject.GetComponent<NonPlayerCharacter>().DisplayDialog();
             Time.timeScale = 0f;
+            CharacterSheet.charSheet.ChangePosKarma(posKarmaAwarded);
         }
     }
 

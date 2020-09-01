@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         GameEvents.LocationFound += SetCurrentLocation;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        GameEvents.KarmaAwarded += PopupKarmaDisplay;
         setupDefaults();
     }
 
@@ -244,9 +245,21 @@ public class GameManager : MonoBehaviour
         setupDefaults();
     }
 
+    void PopupKarmaDisplay()
+    {
+        data.karmaAwardedDisplay.SetActive(true);
+        StartCoroutine(PulldownPopup(data.karmaAwardedDisplay));
+    }
+
     IEnumerator LoadNextLevel(string nextLevel)
     {
         yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(nextLevel);
+    }
+
+    IEnumerator PulldownPopup(GameObject popup)
+    {
+        yield return new WaitForSeconds(2.0f);
+        popup.SetActive(false);
     }
 }

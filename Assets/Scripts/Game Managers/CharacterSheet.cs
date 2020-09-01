@@ -25,8 +25,13 @@ public class CharacterSheet : MonoBehaviour
     public GameObject hitParticle;
     public AudioClip hitSound;
 
+    // levelup points
     public int statPoints;
     public int skillPoints;
+
+    // Karma police
+    public int posKarma;
+    public int negKarma;
 
     private string lastLevel;
 
@@ -114,6 +119,28 @@ public class CharacterSheet : MonoBehaviour
     public void ChangeAvatar(Avatar avatar)
     {
         currentAvatar = avatar;
+    }
+
+    public void ChangePosKarma(int amount)
+    {
+        posKarma += amount;
+        GameEvents.OnKarmaAwarded();
+    }
+
+    public void ChangeNegKarma(int amount)
+    {
+        negKarma += amount;
+        GameEvents.OnKarmaAwarded();
+    }
+
+    public int GetPosKarma()
+    {
+        return posKarma;
+    }
+
+    public int GetNegKarma()
+    {
+        return negKarma;
     }
 
     public void AdditiveModifier(string stat, int modifierID, int value, int duration)
