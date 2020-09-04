@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9887db1205889ea498f3c7bfbba3fd80, type: 3}
   m_Name: WarpCrystal
   m_EditorClassIdentifier: 
-  itemID: 13
-  itemName: Warp Stone
+  itemID: 32
+  itemName: Warp Crystal
   itemDescription: Use this to warp to another dimension
   itemIcon: {fileID: 21300000, guid: c5fd13ac81777e84ba1fd5910f59a2e0, type: 3}
   locationName: Stone Circle

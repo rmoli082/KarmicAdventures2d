@@ -11,11 +11,8 @@ public class PlayerWeapon : MonoBehaviour
     public Vector3 attackOffset;
     public float attackRange = 0.25f;
 
-    Animator animator;
-
     private void Attack()
     {
-        animator = GetComponent<Animator>();
         Vector3 pos = transform.position;
         pos += transform.right * attackOffset.x;
         pos += transform.up * attackOffset.y;
@@ -34,8 +31,19 @@ public class PlayerWeapon : MonoBehaviour
                 }
             }
 
-            other.GetComponent<Enemy>().Damage(damageAmount);
             Instantiate(weaponHitPrefab, other.transform.position, Quaternion.identity);
+
+            if (other.GetComponent<Enemy>().CompareTag("BlightCrystal"))
+            {
+                other.GetComponent<BlightCrystal>().CrystalHit();
+            }
+            else
+            {
+                other.GetComponent<Enemy>().Damage(damageAmount);
+            }
+            
+
+            
         }
 
     }

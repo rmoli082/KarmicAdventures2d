@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum EnemyType { CHASER, ROAMER, RANGED }
+    public enum EnemyType { CHASER, ROAMER, RANGED, BOSS }
 
     public EnemyType type;
 	public int attack;
@@ -49,14 +49,14 @@ public class Enemy : MonoBehaviour
     public virtual void Update()
     {
 		invincibleTimer -= Time.deltaTime;
-		if (invincibleTimer <= 0)
+		if (invincibleTimer < 0)
         {
 			isInvincible = false;
         }
     }
 
 
-    protected void OnCollisionStay2D(Collision2D other)
+    protected virtual void OnCollisionStay2D(Collision2D other)
 	{
 
 		Player player = other.collider.GetComponent<Player>();
@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-	void Die()
+	protected void Die()
 	{
 		Instantiate(fixedParticleEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
 

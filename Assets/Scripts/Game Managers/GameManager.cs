@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PulldownPopup(GameObject popup)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSecondsRealtime(2.0f);
         popup.SetActive(false);
     }
 }

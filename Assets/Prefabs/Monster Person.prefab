@@ -706,6 +706,7 @@ MonoBehaviour:
   awakeTextBox: {fileID: 2271779725609175577}
   awakenText: Thank you for awakening me!
   npc: {fileID: 2271779725974154085}
+  posKarmaAwarded: 2
 --- !u!1001 &2271779725469371114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,6 +850,11 @@ PrefabInstance:
       propertyPath: npc
       value: 
       objectReference: {fileID: 2271779725974154085}
+    - target: {fileID: 5995644681442719885, guid: da1872b70e4186840b518251b865cb14,
+        type: 3}
+      propertyPath: m_text
+      value: '!! Click for Quest !!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da1872b70e4186840b518251b865cb14, type: 3}
 --- !u!114 &5526537477031146080 stripped

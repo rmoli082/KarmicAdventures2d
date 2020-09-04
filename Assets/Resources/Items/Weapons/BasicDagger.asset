@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BasicDagger
   m_EditorClassIdentifier: 
   itemID: 100
-  itemName: Small Sword
-  itemDescription: a small sword you keep in your sash
+  itemName: Basic Dagger
+  itemDescription: a small dagger you keep in your sash
   itemIcon: {fileID: 7846737668191744368, guid: 31e1cec54e778fd32883394e874e0903,
     type: 3}
   weaponID: 0

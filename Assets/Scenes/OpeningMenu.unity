@@ -5243,6 +5243,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2142181029960677098, guid: 16c3adb9529a7204ea90676f89c891dc,
+        type: 3}
+      propertyPath: hitParticle
+      value: 
+      objectReference: {fileID: 4367407365149435408, guid: 17da090cbd3ec504ba4da073aa459073,
+        type: 3}
     - target: {fileID: 4229832532113170690, guid: 16c3adb9529a7204ea90676f89c891dc,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,6 +11,8 @@ TagManager:
   - Family
   - Guard
   - Shopkeeper
+  - Weapon
+  - BlightCrystal
   layers:
   - Default
   - TransparentFX

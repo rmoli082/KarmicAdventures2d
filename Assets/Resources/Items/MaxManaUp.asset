@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f2e2b6831b3f2efa36fac47d377f56, type: 3}
   m_Name: MaxManaUp
   m_EditorClassIdentifier: 
-  itemID: 16
+  itemID: 28
   itemName: Max Mana Up
   itemDescription: Increases mana by a small amount
   itemIcon: {fileID: 7432125196744552032, guid: 51429f9a16e6fa5eb9e0b58c25250114,

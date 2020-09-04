@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Wyrm : MonoBehaviour
+public class Wyrm : Enemy
 {
-	public int attack;
-	public int defense;
-	public int magic;
-	public int xpAmount;
-	public float aggroDistance;
-	public int numberOfDice;
-	public int damageDice;
-
-	public Stats baseStats;
+	public float fireAttackTime = 10;
 
 	public Transform player;
 	public bool isFlipped;
+
+	private float fireTimer = 0;
 
 	private void Awake()
 	{
@@ -30,22 +24,32 @@ public class Wyrm : MonoBehaviour
 		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
 		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
 		baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
+		animator = GetComponent<Animator>();
 	}
 
-    private void Update()
+    public override void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) >= 4.0f)
+		base.Update();
+
+		fireTimer -= Time.deltaTime;
+
+		if (Vector2.Distance(transform.position, player.position) >= 4.0f)
         {
 			GetComponent<Animator>().SetBool("isRunning", true);
 			float speed = 3.0f;
-			Vector2 target = new Vector2(player.position.x, transform.position.y);
+			Vector2 target = new Vector2(player.position.x - 1.5f, transform.position.y);
 			transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         }
-		else
+		else if (Vector2.Distance(transform.position, player.position) <= 1.5f)
         {
-			GetComponent<Animator>().SetBool("isRunning", false);
-			GetComponent<Animator>().SetTrigger("FireAttack");
-		}
+			if (animator.GetBool("isRunning"))
+				animator.SetBool("isRunning", false);
+			if (fireTimer < 0)
+            {
+				animator.SetTrigger("FireAttack");
+				fireTimer = Time.time + fireAttackTime;
+			}
+        }
     }
 
     public void LookAtPlayer()

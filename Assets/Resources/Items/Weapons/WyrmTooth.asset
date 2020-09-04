@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6765094352c51a44db207d838c22dd32, type: 3}
   m_Name: WyrmTooth
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemName: 
-  itemDescription: 
-  itemIcon: {fileID: 0}
-  weaponID: 0
-  attackDiceNumber: 0
-  attackDiceAmount: 0
+  itemID: 102
+  itemName: Wyrm Tooth
+  itemDescription: A fang pulled from the mouth of a wyrm
+  itemIcon: {fileID: 4289186416015635464, guid: 1a0f1a46da5f54e12859fa42bb0c742f,
+    type: 3}
+  weaponID: 2
+  attackDiceNumber: 2
+  attackDiceAmount: 6

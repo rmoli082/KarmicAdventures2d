@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4165e8cb8e9a014c88cb3439407f92a, type: 3}
   m_Name: ObsidianCrystal
   m_EditorClassIdentifier: 
-  itemID: 654
+  itemID: 1
   itemName: Obsidian Crystal
   itemDescription: An awakening stone used to bring monsters back to human form.
   itemIcon: {fileID: 4510603483635507151, guid: 31e1cec54e778fd32883394e874e0903,
