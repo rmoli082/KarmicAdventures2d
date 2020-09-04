@@ -6,11 +6,8 @@ using UnityEngine;
 /// </summary>
 public class EnemyProjectile : MonoBehaviour
 {
-    public int manaCost = 2;
     public int diceNumber = 4;
     public int damageDice = 4;
-    public int numberOfTargets = 1;
-    private int targetsHit;
 
     public GameObject projectileHitPrefab;
 
@@ -42,27 +39,15 @@ public class EnemyProjectile : MonoBehaviour
         damageAmount += ((enemy.baseStats.GetStats("magic") - 10) / 2);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("player") && !Player.player.isInvincible)
         {
-            CharacterSheet.charSheet.ChangeHealth((damageAmount));
-            Instantiate(projectileHitPrefab, transform.position, Quaternion.identity);
-            targetsHit++;
-            if (targetsHit == numberOfTargets)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            StartCoroutine(EnableCollider(this.gameObject.GetComponent<CircleCollider2D>()));
+            Debug.Log("Check");
+            CharacterSheet.charSheet.ChangeHealth(-damageAmount);
         }
-        
+
+            Destroy(gameObject);
     }
 
-    IEnumerator EnableCollider(CircleCollider2D collider2D)
-    {
-        yield return new WaitForSeconds(0.5f);
-        collider2D.enabled = true;
-    }
 }

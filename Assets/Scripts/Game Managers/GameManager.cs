@@ -204,6 +204,7 @@ public class GameManager : MonoBehaviour
     {
         CharacterSheet.charSheet.SetLastLevel(_scene.name);
         lastLocation = _scene.name;
+        SetCurrentLocation(nextLevel);
 
         if (!_scene.name.Equals("OpeningStory"))
         {
@@ -229,15 +230,7 @@ public class GameManager : MonoBehaviour
 
     void SetCurrentLocation(string location)
     {
-        if (locationName.Equals(" ") || !locationName.Equals(location))
-        {
-            lastLocation = locationName;
-            locationName = location;
-        } else if (locationName.Equals(location))
-        {
-            locationName = lastLocation;
-            lastLocation = location;
-        }
+        locationName = location;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

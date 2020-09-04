@@ -7,6 +7,7 @@ public class ChaserEnemy : Enemy
 	public Transform target;
 
 	private Vector3 originalPosition;
+	private bool isFlipped = false;
 
 	void Start () 
 	{
@@ -44,6 +45,8 @@ public class ChaserEnemy : Enemy
 		if (target == null)
 			return;
 
+		LookAtPlayer();
+
 		float distance = Vector2.Distance(transform.position, target.position);
 		float step = speed * Time.deltaTime;
 
@@ -55,6 +58,25 @@ public class ChaserEnemy : Enemy
 		else if (distance >= aggroDistance * 2)
 		{
 			transform.position = Vector2.MoveTowards(transform.position, originalPosition, step);
+		}
+	}
+
+	private void LookAtPlayer()
+	{
+		Vector3 flipped = transform.localScale;
+		flipped.z *= -1f;
+
+		if (transform.position.x > target.position.x && isFlipped)
+		{
+			transform.localScale = flipped;
+			transform.Rotate(0f, 180f, 0f);
+			isFlipped = false;
+		}
+		else if (transform.position.x < target.position.x && !isFlipped)
+		{
+			transform.localScale = flipped;
+			transform.Rotate(0f, 180f, 0f);
+			isFlipped = true;
 		}
 	}
 

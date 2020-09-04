@@ -1,88 +1,121 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 
 public class Wyrm : Enemy
 {
-	public float fireAttackTime = 10;
+    public enum States { Hover, FireAttack, ClawAttack, Charge}
 
-	public Transform player;
-	public bool isFlipped;
+    public Transform target;
+    public float speed = 3f;
+    public GameObject projectilePrefab;
+    public int burstAmount;
 
-	private float fireTimer = 0;
+    private States currentState = States.Hover;
+    private States lastState;
 
-	private void Awake()
-	{
-		baseStats = new Stats();
+    private float fireTimer = 10;
+    private float clawTimer = 5;
+    private bool isFlipped = false;
+    private int shotCounter = 0;
+    private Vector3 direction;
 
-		baseStats.UpdateStats("attack", attack);
-		baseStats.UpdateStats("defense", defense);
-		baseStats.UpdateStats("magic", magic);
-		//baseStats.UpdateStats("level", Random.Range(1, CharacterSheet.charSheet.baseStats.GetStats("level") + 3));
-		baseStats.UpdateStats("hp", 2 * (baseStats.GetStats("defense") + baseStats.GetStats("level")));
-		baseStats.UpdateStats("mp", 2 * (baseStats.GetStats("magic") + baseStats.GetStats("level")));
-		baseStats.UpdateStats("currentHP", baseStats.GetStats("hp"));
-		baseStats.UpdateStats("currentMP", baseStats.GetStats("mp"));
-		animator = GetComponent<Animator>();
-	}
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+    }
 
     public override void Update()
     {
-		base.Update();
+        base.Update();
 
-		fireTimer -= Time.deltaTime;
+        lastState = currentState;
+        float distance = Vector2.Distance(this.transform.position, target.transform.position);
 
-		if (Vector2.Distance(transform.position, player.position) >= 4.0f)
+        fireTimer += Time.deltaTime;
+        clawTimer += Time.deltaTime;
+
+        switch (currentState)
         {
-			GetComponent<Animator>().SetBool("isRunning", true);
-			float speed = 3.0f;
-			Vector2 target = new Vector2(player.position.x - 1.5f, transform.position.y);
-			transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        }
-		else if (Vector2.Distance(transform.position, player.position) <= 1.5f)
-        {
-			if (animator.GetBool("isRunning"))
-				animator.SetBool("isRunning", false);
-			if (fireTimer < 0)
-            {
-				animator.SetTrigger("FireAttack");
-				fireTimer = Time.time + fireAttackTime;
-			}
+            case States.Hover:
+                if (distance > 6)
+                {
+                    SwitchState(States.Charge);
+                }
+                else if (distance < 4 && distance > 2 && fireTimer > 10)
+                {
+                    SwitchState(States.FireAttack);
+                }
+                else if (distance < 2 && clawTimer > 5)
+                {
+                    SwitchState(States.ClawAttack);
+                }
+                break;
+            case States.FireAttack:
+                fireTimer = 0;
+                InvokeRepeating(nameof(LaunchProjectile), 0f, 1f);
+                SwitchState(States.Hover);
+                break;
+            case States.ClawAttack:
+                clawTimer = 0;
+                animator.SetTrigger(currentState.ToString());
+                SwitchState(States.Hover);
+                animator.ResetTrigger(lastState.ToString());
+                break;
+            case States.Charge:
+                float step = speed * Time.deltaTime;
+                LookAtPlayer();
+                animator.SetBool("isRunning", true);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+                if (distance < 4)
+                    SwitchState(States.Hover);
+                break;
         }
     }
 
-    public void LookAtPlayer()
-	{
-		Vector3 flipped = transform.localScale;
-		flipped.z *= -1f;
-
-		if (transform.position.x > player.position.x && isFlipped)
-		{
-			transform.localScale = flipped;
-			transform.Rotate(0f, 180f, 0f);
-			isFlipped = false;
-		}
-		else if (transform.position.x < player.position.x && !isFlipped)
-		{
-			transform.localScale = flipped;
-			transform.Rotate(0f, 180f, 0f);
-			isFlipped = true;
-		}
-	}
-
-	public int CalculateFireDamage()
+    private void SwitchState(States state)
     {
-		int damageAmount = 0;
-
-		for (int i = 0; i < numberOfDice; i++)
-        {
-			damageAmount += Random.Range(1, damageDice + 1);
-        }
-
-		damageAmount += Mathf.RoundToInt((baseStats.GetStats("attack") - 10) / 2f);
-		damageAmount += Mathf.RoundToInt(baseStats.GetStats("magic") / 2 * 0.3f);
-
-		return damageAmount;
+        animator.SetBool("isRunning", false);
+        lastState = currentState;
+        currentState = state;
+        Debug.Log(state.ToString());
     }
+
+    private void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > target.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < target.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
+    }
+
+    private void LaunchProjectile()
+    {
+            direction = Player.player.transform.position - transform.position;
+            direction.Normalize();
+            GameObject projectile = Instantiate(projectilePrefab, rigidbody2d.position, Quaternion.identity);
+            projectile.transform.parent = this.transform;
+            EnemyProjectile ep = projectile.GetComponent<EnemyProjectile>();
+            ep.Launch(this, direction, 300);
+        shotCounter++;
+        if (shotCounter == burstAmount)
+        {
+            CancelInvoke();
+        }
+    }
+
 }

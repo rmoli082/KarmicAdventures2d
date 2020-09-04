@@ -12,22 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029aac060f5841f4aa5237326aeb2190, type: 3}
   m_Name: KillSlimes
   m_EditorClassIdentifier: 
-  questID: 0
-  questLine: 
+  questID: 10
+  questLine: Storm the Castle
   questType: 0
-  questTitle: 
-  questDesc: 
-  questProgress: 0
-  questHint: 
-  questCompleteText: 
-  questDoneText: 
-  nextQuest: 0
-  questObjective: 
-  xpReward: 0
+  questTitle: Do Our Dirty Work For Us
+  questDesc: Hah. You're so gullible. If you want in, you're going to have to do
+    some of our work for us. There's some slimes taking over the city. Kill a bunch
+    of them for us and *snort* we'll let you in.
+  questProgress: 1
+  questHint: Kill 7 slimes
+  questCompleteText: Wow. I didn't think you'd actually do it. You're pretty persistent.
+  questDoneText: We're still not letting you in though.
+  nextQuest: 11
+  questObjective: Kill some slimes
+  xpReward: 35
   goldReward: 0
   itemRewards: []
   posKarmaAwarded: 0
   negKarmaAwarded: 0
-  killsRequired: 0
+  killsRequired: 7
   killsCompleted: 0
-  killTargetTag: 
+  killTargetTag: Slime

@@ -171,9 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  attack: 150
-  defense: 150
-  magic: 150
+  attack: 15
+  defense: 15000
+  magic: 13
   xpAmount: 50
   aggroDistance: 0
   numberOfDice: 0
@@ -188,6 +188,9 @@ MonoBehaviour:
   - {fileID: 3468792509797828416, guid: 37f56917fe8bbfc42bc998b7fca76b27, type: 3}
   - {fileID: 8575684818433655545, guid: 676b2f4fe813ee47c80bea53ccc314f7, type: 3}
   hitsToBreak: 3
+  projectilePrefab: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  battleTrigger: 0
 --- !u!58 &3859674894259070010
 CircleCollider2D:
   m_ObjectHideFlags: 0

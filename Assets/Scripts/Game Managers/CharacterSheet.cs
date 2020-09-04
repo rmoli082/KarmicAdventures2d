@@ -216,7 +216,8 @@ public class CharacterSheet : MonoBehaviour
     {
         ChangeHealth(baseStats.GetStats("hp"));
         ChangeMP(baseStats.GetStats("mp"));
-        GameManager.gm.EnterSubArea(SceneManager.GetActiveScene().name);
+        transform.position = GameManager.gm.data.respawnPosition.position;
+        // GameManager.gm.EnterSubArea(SceneManager.GetActiveScene().name);
     }
 
     void ApplyAdditiveModifiers()

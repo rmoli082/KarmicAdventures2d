@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 540222671576581452}
   - component: {fileID: 540222671576581451}
   - component: {fileID: -4177796344584557726}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: EnemyProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.018262412, y: -0.0411831}
@@ -136,9 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 2
-  diceNumber: 4
+  diceNumber: 2
   damageDice: 4
-  numberOfTargets: 1
   projectileHitPrefab: {fileID: 4367407365149435408, guid: dd1473d67e7f3b84dbc3dc6a584f9f0e,
     type: 3}
   damageAmount: 0
@@ -152,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2155533793811792652}
   - component: {fileID: 3824290392624409629}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

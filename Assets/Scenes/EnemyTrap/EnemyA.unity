@@ -1256,23 +1256,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
+        type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -17.010489
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 7.5937195
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -1.3705087
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -16.939304
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
@@ -1287,22 +1292,22 @@ PrefabInstance:
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 7.6331053
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 7.333089
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 7.371808
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830261, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -1.3715873
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7098525411444830262, guid: bf57653743c25e75ca8c96179a9b293c,
         type: 3}
@@ -1819,7 +1824,7 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6294913
+      value: 2.629176
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -1869,22 +1874,22 @@ PrefabInstance:
     - target: {fileID: 3360882792392601738, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601738, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 1
+      value: 0.50784975
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601738, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 1
+      value: 0.85465664
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601738, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0.9716981
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601738, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -3677,21 +3682,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1571315455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3360882792392601740, guid: 1333ed6d1143ace238588e5dea344ae5,
-    type: 3}
-  m_PrefabInstance: {fileID: 800896415}
-  m_PrefabAsset: {fileID: 0}
---- !u!45 &1571315456
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571315455}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 91644f71de98ff64cbc5b5f4a9825480, type: 2}
 --- !u!1 &1597759328
 GameObject:
   m_ObjectHideFlags: 0

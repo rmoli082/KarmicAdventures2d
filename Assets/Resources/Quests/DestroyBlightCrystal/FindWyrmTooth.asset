@@ -19,7 +19,7 @@ MonoBehaviour:
   questDesc: The blight crystal is well protected and can only be damaged by a wyrm
     tooth. Use the warp stone in a stone circle to travel to the Immaterial Realms
     to slay a wyrm.
-  questProgress: 1
+  questProgress: 3
   questHint: Kill a wyrm and take his tooth
   questCompleteText: You're brave, yeah. You killed a wyrm.
   questDoneText: Woot, woot, yeah?
@@ -28,6 +28,8 @@ MonoBehaviour:
   xpReward: 50
   goldReward: 10
   itemRewards: []
+  posKarmaAwarded: 0
+  negKarmaAwarded: 0
   numberNeeded: 1
   numberHeld: 0
   itemRequired: {fileID: 11400000, guid: 707b04ebc93745c44bc4dc72296203e9, type: 2}
