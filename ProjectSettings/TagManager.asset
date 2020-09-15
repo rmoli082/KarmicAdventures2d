@@ -15,6 +15,7 @@ TagManager:
   - BlightCrystal
   - SceneData
   - Environment
+  - choiceButton
   layers:
   - Default
   - TransparentFX

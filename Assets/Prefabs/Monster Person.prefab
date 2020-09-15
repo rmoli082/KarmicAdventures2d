@@ -244,8 +244,10 @@ GameObject:
   - component: {fileID: 2271779725204328385}
   - component: {fileID: 2271779725204328387}
   - component: {fileID: 2271779725204328384}
+  - component: {fileID: 8551289858281223778}
+  - component: {fileID: 291562274963410514}
   m_Layer: 30
-  m_Name: Image
+  m_Name: DisplayBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,8 +270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 32.5, y: -80}
+  m_SizeDelta: {x: 185, y: 64.70511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2271779725204328387
 CanvasRenderer:
@@ -309,6 +311,46 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8551289858281223778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271779725204328390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &291562274963410514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271779725204328390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 35
+    m_Right: 35
+    m_Top: 28
+    m_Bottom: 28
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &2271779725409021357
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,10 +482,10 @@ RectTransform:
   m_Father: {fileID: 2271779725204328385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 342.5, y: -148.66}
+  m_SizeDelta: {x: 615, y: 241.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2271779725609175576
 CanvasRenderer:
@@ -502,10 +544,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.45
+  m_fontSize: 32
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -556,8 +598,7 @@ GameObject:
   - component: {fileID: 2271779725974154094}
   - component: {fileID: 2271779725974154089}
   - component: {fileID: 2271779725974154091}
-  - component: {fileID: 2271779725974154085}
-  - component: {fileID: 2271779725974154084}
+  - component: {fileID: 4600093963186335928}
   m_Layer: 30
   m_Name: Monster Person
   m_TagString: Untagged
@@ -668,7 +709,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.37338448, y: 0.79278374}
   m_Size: {x: 0.7984276, y: 1.222271}
   m_Direction: 0
---- !u!114 &2271779725974154085
+--- !u!114 &4600093963186335928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -680,33 +721,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d950830031d2b949ab94e02d15d34c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awaken: {fileID: 2271779725974154084}
-  currentQuest: {fileID: 5526537477031146080}
+  ID: 0
+  npcName: 
+  awakeningStatus: 0
   dialogBox: {fileID: 2271779725409021357}
+  displayBoard: {fileID: 0}
+  dialogText: {fileID: 2271779725609175577}
+  initialDialog: 
   talkNotifier: {fileID: 1756062549663534953}
-  isQuestGiver: 1
+  isQuestGiver: 0
   questToken: {fileID: 5526537475555361923}
---- !u!114 &2271779725974154084
+  buttonPrefab: {fileID: 6262723050875449728, guid: 78188f78f74a8a34db9c6a56a1c53d94,
+    type: 3}
+  spriteToLoad: {fileID: 21300042, guid: c1dbff5bcb29cdd4bbb8de3a29f2328c, type: 3}
+  animatorToEnable: {fileID: 0}
+  stoneToUse: {fileID: 11400000, guid: 90cd04e253ad807488228eda3ba151b1, type: 2}
+  posKarmaAwarded: 2
+--- !u!114 &5666839524069335318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2271779725974154095}
+  m_GameObject: {fileID: 5526537477031146082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e7b23900eac674195de2055ced86c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 2996d868f3d157841a9f6e7015612670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 25
-  spriteToLoad: {fileID: 21300050, guid: c1dbff5bcb29cdd4bbb8de3a29f2328c, type: 3}
-  animatorToEnable: {fileID: 0}
-  stoneToUse: {fileID: 11400000, guid: 90cd04e253ad807488228eda3ba151b1, type: 2}
-  awakeningStatus: 0
-  awakeTextBox: {fileID: 2271779725609175577}
-  awakenText: Thank you for awakening me!
-  npc: {fileID: 2271779725974154085}
-  posKarmaAwarded: 2
+  npc: {fileID: 4600093963186335928}
+  questToGive: {fileID: 0}
+  questType: 0
 --- !u!1001 &2271779725469371114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,6 +759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2271779725974154088}
     m_Modifications:
+    - target: {fileID: 5995644680156159540, guid: da1872b70e4186840b518251b865cb14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5995644680771325544, guid: da1872b70e4186840b518251b865cb14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,26 +899,21 @@ PrefabInstance:
         type: 3}
       propertyPath: npc
       value: 
-      objectReference: {fileID: 2271779725974154085}
+      objectReference: {fileID: 0}
     - target: {fileID: 5995644681442719885, guid: da1872b70e4186840b518251b865cb14,
         type: 3}
       propertyPath: m_text
       value: '!! Click for Quest !!'
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5995644681442719882, guid: da1872b70e4186840b518251b865cb14, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da1872b70e4186840b518251b865cb14, type: 3}
---- !u!114 &5526537477031146080 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5995644681442719882, guid: da1872b70e4186840b518251b865cb14,
+--- !u!1 &5526537477031146082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5995644681442719880, guid: da1872b70e4186840b518251b865cb14,
     type: 3}
   m_PrefabInstance: {fileID: 2271779725469371114}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554b45c581f480844a4f2a6767080695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &5526537475555361922 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5995644680771325544, guid: da1872b70e4186840b518251b865cb14,

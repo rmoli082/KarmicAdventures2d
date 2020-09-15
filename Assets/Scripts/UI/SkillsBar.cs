@@ -97,10 +97,11 @@ public class SkillsBar : MonoBehaviour
 
     public Dictionary<string, int> GetSkills()
     {
-        Dictionary<string, int> skills = new Dictionary<string, int>();
-
-        skills[firstSkill] = 1;
-        skills[secondSkill] = 1;
+        Dictionary<string, int> skills = new Dictionary<string, int>
+        {
+            [firstSkill] = 1,
+            [secondSkill] = 1
+        };
 
         return skills;
     }

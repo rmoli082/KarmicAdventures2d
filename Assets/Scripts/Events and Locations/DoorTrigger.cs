@@ -8,7 +8,7 @@ public class DoorTrigger : MonoBehaviour
     public string loadLevel;
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player"){
+        if (other.CompareTag("Player")){
             GameManager.gm.EnterSubArea(loadLevel);
         }
     }

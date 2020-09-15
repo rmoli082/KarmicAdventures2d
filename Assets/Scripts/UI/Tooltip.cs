@@ -20,7 +20,7 @@ public class Tooltip : MonoBehaviour
 
     public void GenerateTooltip(Avatar avatar)
     {
-        string tooltiptext = $"<b>{avatar.avatarName}</b>\n{avatar.avatarDescription}\n\nAttack Up:{avatar.attackUp.ToString()}\nDefense Up:{avatar.defenseUp.ToString()}\nMagic Up:{avatar.magicUp.ToString()}";
+        string tooltiptext = $"<b>{avatar.avatarName}</b>\n{avatar.avatarDescription}\n\nAttack Up:{avatar.attackUp}\nDefense Up:{avatar.defenseUp}\nMagic Up:{avatar.magicUp}";
         gameObject.GetComponentInChildren<Text>().text = tooltiptext;
         gameObject.SetActive(true);
     }

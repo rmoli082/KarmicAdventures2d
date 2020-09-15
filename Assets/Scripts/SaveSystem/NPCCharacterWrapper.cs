@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [Serializable]
 public class NPCCharacterWrapper
 {
-    public Awaken.AwakeningStatus status;
+    public NonPlayerCharacter.AwakeningStatus status;
     public int currentQuest;
     public bool haveSpoken;
     public bool hasQuest;

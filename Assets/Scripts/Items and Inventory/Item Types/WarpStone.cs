@@ -10,10 +10,8 @@ public class WarpStone : Item
     {
        if (GameManager.gm.GetCurrentLocation().Equals(locationName))
         {
-            Debug.Log("First test passed");
             if (QuestManager.questManager.GetQuestStatus(6) == Quest.QuestProgress.CURRENT)
             {
-                Debug.Log("I'm in");
                 Inventory.inventory.RemoveItem(this);
                 GameManager.gm.EnterSubArea("WyrmBattle");
             }

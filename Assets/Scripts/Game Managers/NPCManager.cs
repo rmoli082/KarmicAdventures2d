@@ -31,9 +31,28 @@ public class NPCManager : MonoBehaviour
         GameEvents.LoadInitiated += Load;
     }
 
-    public void UpdateNPCList(int id, Awaken.AwakeningStatus status, Quest currentQuest, bool haveSpoken, bool hasQuest)
+    public void UpdateNPCList(int id, NonPlayerCharacter.AwakeningStatus status)
     {
-        npcList[id] = new NPCCharacter(status, currentQuest, haveSpoken, hasQuest);
+        NPCCharacter npc = GetNPC(id);
+        npc.status = status;
+        npcList[id] = npc;
+    }
+
+    public void UpdateNPCList(int id, Quest currentQuest, bool haveSpoken, bool hasQuest)
+    {
+        NPCCharacter npc = GetNPC(id);
+        npc.currentQuest = currentQuest;
+        npc.haveSpoken = haveSpoken;
+        npc.hasQuest = hasQuest;
+        npcList[id] = npc;
+    }
+
+    public void UpdateNPCList(int id, bool haveSpoken, bool hasQuest)
+    {
+        NPCCharacter npc = GetNPC(id);
+        npc.haveSpoken = haveSpoken;
+        npc.hasQuest = hasQuest;
+        npcList[id] = npc;
     }
 
     public NPCCharacter GetNPC(int id)
@@ -43,7 +62,17 @@ public class NPCManager : MonoBehaviour
             return npcList[id];
         }   
         else
-            return null;
+            return new NPCCharacter();
+    }
+
+    public bool HasNPC(int id)
+    {
+        if (npcList.ContainsKey(id))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     void Save()
@@ -73,14 +102,20 @@ public class NPCManager : MonoBehaviour
     [Serializable]
     public class NPCCharacter
     {
-        public Awaken.AwakeningStatus status;
+        public NonPlayerCharacter.AwakeningStatus status;
         public Quest currentQuest;
         public bool haveSpoken;
         public bool hasQuest;
 
-        public NPCCharacter() { }
+        public NPCCharacter() 
+        {
+            this.status = NonPlayerCharacter.AwakeningStatus.is_stone;
+            this.currentQuest = null;
+            this.haveSpoken = false;
+            this.hasQuest = false;
+        }
 
-        public NPCCharacter(Awaken.AwakeningStatus status, Quest currentQuest, bool haveSpoken, bool hasQuest)
+        public NPCCharacter(NonPlayerCharacter.AwakeningStatus status, Quest currentQuest, bool haveSpoken, bool hasQuest)
         {
             this.status = status;
             this.currentQuest = currentQuest;

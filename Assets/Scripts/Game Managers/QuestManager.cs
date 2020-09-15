@@ -40,7 +40,6 @@ public class QuestManager : MonoBehaviour
     public void AcceptQuest(Quest quest)
     {
         currentQuests.Add(quest);
-        int index = currentQuests.IndexOf(quest);
         SetQuestStatus(quest.questID, Quest.QuestProgress.CURRENT);
     }
 

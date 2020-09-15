@@ -10,7 +10,7 @@ public class TimedObjectDestructor : MonoBehaviour
 	// Use this for initialization
 	void Awake () {
 		// invote the DestroyNow funtion to run after timeOut seconds
-		Invoke ("DestroyNow", timeOut);
+		Invoke (nameof(DestroyNow), timeOut);
 	}
 	
 

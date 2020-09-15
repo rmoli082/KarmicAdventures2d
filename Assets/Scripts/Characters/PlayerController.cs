@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = rigidbody2d.position;
         
-        position = position + currentInput * speed * Time.deltaTime;
+        position += currentInput * speed * Time.deltaTime;
         
         rigidbody2d.MovePosition(position);
     }

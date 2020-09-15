@@ -37,7 +37,6 @@ public class InventorySlotController : MonoBehaviour, IPointerEnterHandler, IPoi
 
    public void Use() 
    {
-       PlayerController player = GameManager.gm.data.player.GetComponent<PlayerController>();
        if (item)
        {
            item.Use();

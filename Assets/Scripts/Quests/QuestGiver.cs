@@ -1,24 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class QuestGiver : MonoBehaviour
 {
-    public Quest questToGive;
     public NonPlayerCharacter npc;
-    public GameObject questDialog;
-    public TextMeshProUGUI questText;
+
+    public Quest questToGive;
     public Quest.QuestType questType;
-    public float timerDisplay = 5f;
 
     void Awake()
     {
-        if (NPCManager.npcManager.GetNPC(npc.awaken.ID) == null)
+        if (NPCManager.npcManager.GetNPC(npc.ID) == null)
             questToGive.questProgress = Quest.QuestProgress.AVAILABLE;
     }
 
-    
     public void GiveQuest()
     {
         QuestManager.questManager.AcceptQuest(questToGive);
@@ -26,24 +22,26 @@ public class QuestGiver : MonoBehaviour
 
     public void DisplayDialog()
     {
-        if (!questDialog.activeSelf)
+        if (!npc.dialogBox.activeSelf)
         {
             Quest.QuestProgress statusTest = questToGive.questProgress;
-            
+
             Time.timeScale = 0f;
+
+            GameManager.gm.data.overviewMap.SetActive(false);
 
             switch (statusTest)
             {
                 case Quest.QuestProgress.AVAILABLE:
-                    questText.text = questToGive.questDesc;
+                    npc.dialogText.text = questToGive.questDesc;
                     GiveQuest();
                     break;
                 case Quest.QuestProgress.CURRENT:
                 case Quest.QuestProgress.ACCEPTED:
-                    questText.text = questToGive.questDesc;
+                    npc.dialogText.text = questToGive.questDesc;
                     break;
                 case Quest.QuestProgress.COMPLETED:
-                    questText.text = questToGive.questCompleteText;
+                    npc.dialogText.text = questToGive.questCompleteText;
                     if (questType == Quest.QuestType.FIND_ITEM)
                     {
                         FindItem quest = (FindItem)questToGive;
@@ -64,11 +62,12 @@ public class QuestGiver : MonoBehaviour
                     QuestManager.questManager.SetQuestStatus(questToGive.questID, Quest.QuestProgress.DONE);
                     break;
                 case Quest.QuestProgress.DONE:
-                    questText.text = questToGive.questDoneText;
+                    npc.dialogText.text = questToGive.questDoneText;
                     questToGive.GiveRewards();
                     if (questToGive.nextQuest == -1)
                     {
                         this.gameObject.GetComponent<NonPlayerCharacter>().questToken.SetActive(false);
+                        npc.isQuestGiver = false;
                         break;
                     }
                     questToGive = QuestManager.questManager.GetQuestById(questToGive.nextQuest);
@@ -80,14 +79,22 @@ public class QuestGiver : MonoBehaviour
                     break;
             }
 
-            questDialog.SetActive(true);
+            Button button = Instantiate(npc.buttonPrefab, npc.displayBoard.transform) as Button;
+            button.GetComponentInChildren<TextMeshProUGUI>().text = "Click to dismiss";
+            button.onClick.AddListener(delegate
+            {
+                npc.CloseDialog();
+            });
+
+            npc.dialogBox.SetActive(true); 
         }
         else
         {
             Time.timeScale = 1f;
-            questDialog.SetActive(false);
+            npc.dialogBox.SetActive(false);
+            GameManager.gm.data.overviewMap.SetActive(true);
         }
 
-        NPCManager.npcManager.UpdateNPCList(npc.awaken.ID, npc.awaken.awakeningStatus, npc.currentQuest.questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
+        NPCManager.npcManager.UpdateNPCList(npc.ID, questToGive, npc.talkNotifier.activeSelf, npc.questToken.activeSelf);
     }
 }

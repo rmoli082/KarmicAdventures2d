@@ -1,10 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-/// <summary>
-/// This class handle Enemy behaviour. It make them walk back & forth as long as they aren't fixed, and then just idle
-/// without being able to interact with the player anymore once fixed.
-/// </summary>
 public class RoamerEnemy : Enemy
 {
 	// ====== ENEMY MOVEMENT ========

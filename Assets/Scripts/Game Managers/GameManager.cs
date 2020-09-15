@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         GameEvents.LocationFound += SetCurrentLocation;
         SceneManager.sceneLoaded += OnSceneLoaded;
         GameEvents.KarmaAwarded += PopupKarmaDisplay;
-        setupDefaults();
+        SetupDefaults();
     }
 
     // Update is called once per frame
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void setupDefaults() {
+    void SetupDefaults() {
         if (_player == null) {
             _player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        setupDefaults();
+        SetupDefaults();
     }
 
     void PopupKarmaDisplay()

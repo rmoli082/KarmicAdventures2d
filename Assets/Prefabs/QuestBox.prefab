@@ -168,7 +168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6.86, y: -2.27}
+  m_AnchoredPosition: {x: 6.8599854, y: -2.2700043}
   m_SizeDelta: {x: 500, y: 232.6149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5995644680771325549
@@ -375,10 +375,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5995644681442719880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554b45c581f480844a4f2a6767080695, type: 3}
+  m_Script: {fileID: 11500000, guid: 2996d868f3d157841a9f6e7015612670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questToGive: {fileID: 11400000, guid: a58db16660fc34646830fe85c24fdd0a, type: 2}
-  questDialog: {fileID: 0}
-  questText: {fileID: 0}
-  questType: 1
+  npc: {fileID: 0}
+  questToGive: {fileID: 0}
+  questType: 0
