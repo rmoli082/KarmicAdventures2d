@@ -86,7 +86,7 @@ public class QuestGiver : MonoBehaviour
                 npc.CloseDialog();
             });
 
-            npc.dialogBox.SetActive(true); 
+            npc.dialogBox.SetActive(true);
         }
         else
         {

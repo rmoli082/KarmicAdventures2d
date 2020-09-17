@@ -58,14 +58,14 @@ public class NonPlayerCharacter : MonoBehaviour
             NPCManager.npcManager.UpdateNPCList(ID, awakeningStatus);
             GameEvents.OnAwakenEvent(this.gameObject.tag);
             GameManager.gm.SetInventoryActive(false);
-            CharacterSheet.charSheet.ChangePosKarma(posKarmaAwarded);
+            CharacterSheet.charSheet.ChangeSpiritKarma(posKarmaAwarded);
             DisplayDialog();
         }
     }
 
     public void DisplayDialog()
     {
-        DialogManager.dialogManager.GetNPCDialog(this, displayBoard, dialogText);
+        DialogManager.dialogManager.GetNPCDialog(this);
         GameManager.gm.data.overviewMap.SetActive(false);
         dialogBox.SetActive(true);
         Time.timeScale = 0f;

@@ -13,14 +13,14 @@ public class DialogManager : MonoBehaviour
 
     public Button choiceButtonPrefab;
 
-    private Story _inkStory;
+    private Story _mainStory;
     private GameObject displayBoard;
     private TextMeshProUGUI dialogText;
     private NonPlayerCharacter npc;
 
     void Awake()
     {
-        _inkStory = new Story(storyJson.text);
+        _mainStory = new Story(storyJson.text);
 
         if (dialogManager == null)
         {
@@ -33,18 +33,24 @@ public class DialogManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void GetNPCDialog(NonPlayerCharacter npc, GameObject displayBoard, TextMeshProUGUI dialogText)
+    void Start()
     {
-        this.displayBoard = displayBoard;
-        this.dialogText = dialogText;
+        GameEvents.SaveInitiated += Save;
+        GameEvents.LoadInitiated += Load;
+    }
+
+    public void GetNPCDialog(NonPlayerCharacter npc)
+    {
+        this.displayBoard = npc.displayBoard;
+        this.dialogText = npc.dialogText;
         this.npc = npc;
-        _inkStory.ChoosePathString($"{this.npc.npcName}.{this.npc.awakeningStatus}");
+        _mainStory.ChoosePathString($"{this.npc.npcName}.{this.npc.awakeningStatus}");
         RefreshView();
     }
 
     void OnClickChoiceButton(Choice choice)
     {
-        _inkStory.ChooseChoiceIndex(choice.index);
+        _mainStory.ChooseChoiceIndex(choice.index);
         RefreshView();
     }
 
@@ -58,17 +64,17 @@ public class DialogManager : MonoBehaviour
             }
         }
 
-        while (_inkStory.canContinue)
+        while (_mainStory.canContinue)
         {
-            string text = _inkStory.Continue();
+            string text = _mainStory.Continue();
             dialogText.text = text;
         }
 
-        if (_inkStory.currentChoices.Count > 0)
+        if (_mainStory.currentChoices.Count > 0)
         {
-            for (int i = 0; i < _inkStory.currentChoices.Count; ++i)
+            for (int i = 0; i < _mainStory.currentChoices.Count; ++i)
             {
-                Choice choice = _inkStory.currentChoices[i];
+                Choice choice = _mainStory.currentChoices[i];
                 Button button = Instantiate(choiceButtonPrefab, displayBoard.transform) as Button;
                 button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
                 button.onClick.AddListener(delegate
@@ -86,6 +92,16 @@ public class DialogManager : MonoBehaviour
                 npc.CloseDialog();
             });
         }
+    }
+
+    void Save()
+    {
+        SaveLoad.Save<string>(_mainStory.state.ToJson(), "StoryState");
+    }
+
+    void Load()
+    {
+        _mainStory.state.LoadJson(SaveLoad.Load<string>("StoryState"));
     }
 
 }

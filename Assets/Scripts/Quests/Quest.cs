@@ -30,8 +30,8 @@ public class Quest : ScriptableObject
     public void GiveRewards()
     {
         CharacterSheet.charSheet.ChangeXP(xpReward);
-        CharacterSheet.charSheet.ChangePosKarma(posKarmaAwarded);
-        CharacterSheet.charSheet.ChangeNegKarma(negKarmaAwarded);
+        CharacterSheet.charSheet.ChangeSpiritKarma(posKarmaAwarded);
+        CharacterSheet.charSheet.ChangeDemonKarma(negKarmaAwarded);
         Inventory.inventory.AddCoins(goldReward);
         Inventory.inventory.AddItems(itemRewards);
     }

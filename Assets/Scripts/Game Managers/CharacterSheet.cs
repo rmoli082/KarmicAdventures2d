@@ -30,8 +30,8 @@ public class CharacterSheet : MonoBehaviour
     public int skillPoints;
 
     // Karma police
-    public int posKarma;
-    public int negKarma;
+    public int spiritKarma;
+    public int demonKarma;
 
     private string lastLevel;
 
@@ -121,26 +121,26 @@ public class CharacterSheet : MonoBehaviour
         currentAvatar = avatar;
     }
 
-    public void ChangePosKarma(int amount)
+    public void ChangeSpiritKarma(int amount)
     {
-        posKarma += amount;
+        spiritKarma += amount;
         GameEvents.OnKarmaAwarded();
     }
 
-    public void ChangeNegKarma(int amount)
+    public void ChangeDemonKarma(int amount)
     {
-        negKarma += amount;
+        demonKarma += amount;
         GameEvents.OnKarmaAwarded();
     }
 
-    public int GetPosKarma()
+    public int GetSpiritKarma()
     {
-        return posKarma;
+        return spiritKarma;
     }
 
-    public int GetNegKarma()
+    public int GetDemonKarma()
     {
-        return negKarma;
+        return demonKarma;
     }
 
     public void AdditiveModifier(string stat, int modifierID, int value, int duration)
