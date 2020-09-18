@@ -48,6 +48,16 @@ public class DialogManager : MonoBehaviour
         RefreshView();
     }
 
+    public int GetSpiritKarma()
+    {
+        return (int)_mainStory.variablesState["spiritKarma"];
+    }
+
+    public int GetDemonKarma()
+    {
+        return (int)_mainStory.variablesState["demonKarma"];
+    }
+
     void OnClickChoiceButton(Choice choice)
     {
         _mainStory.ChooseChoiceIndex(choice.index);
@@ -68,6 +78,11 @@ public class DialogManager : MonoBehaviour
         {
             string text = _mainStory.Continue();
             dialogText.text = text;
+            List<string> tags = _mainStory.currentTags;
+            if (tags.Contains("GiveQuest"))
+            {
+                npc.isQuestGiver = true;
+            }
         }
 
         if (_mainStory.currentChoices.Count > 0)

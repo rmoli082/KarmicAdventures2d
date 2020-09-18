@@ -30,10 +30,11 @@ public class CharacterSheet : MonoBehaviour
     public int skillPoints;
 
     // Karma police
-    public int spiritKarma;
-    public int demonKarma;
+    public int spiritKarma, spentSpiritKarma, demonKarma, spentDemonKarma = 0;
 
     private string lastLevel;
+    private int totalSpiritKarma;
+    private int totalDemonKarma;
 
 
     private void Awake()
@@ -135,12 +136,14 @@ public class CharacterSheet : MonoBehaviour
 
     public int GetSpiritKarma()
     {
-        return spiritKarma;
+        totalSpiritKarma = spiritKarma + DialogManager.dialogManager.GetSpiritKarma() - spentSpiritKarma;
+        return totalSpiritKarma;
     }
 
     public int GetDemonKarma()
     {
-        return demonKarma;
+        totalDemonKarma = demonKarma + DialogManager.dialogManager.GetDemonKarma() - spentDemonKarma;
+        return totalDemonKarma;
     }
 
     public void AdditiveModifier(string stat, int modifierID, int value, int duration)

@@ -1234,8 +1234,7 @@ PrefabInstance:
     - target: {fileID: 2460259880218793395, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_text
-      value: The Wizard Saints are behind this for sure. To think we used to worship
-        them!
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -27082,7 +27081,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (1)
+      value: Villager_10
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -27138,6 +27137,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -34266,7 +34275,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (2)
+      value: Villager_11
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -34306,12 +34315,12 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.06
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.61
+      value: 3.34
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -34357,6 +34366,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
