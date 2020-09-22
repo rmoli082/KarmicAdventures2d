@@ -95,7 +95,10 @@ public class Enemy : MonoBehaviour
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
 		Destroy(this.gameObject);
-		GameEvents.OnKillSuccessful(gameObject.tag);
+		List<string> tags = (List<string>)gameObject.GetComponent<CustomTags>().GetTags();
+		tags.Add(gameObject.tag);
+		
+		GameEvents.OnKillSuccessful(tags);
 	}
 
 	int CalculateDamage()

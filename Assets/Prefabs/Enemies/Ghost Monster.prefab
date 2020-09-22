@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1936357024}
   - component: {fileID: 7136751058685118016}
   - component: {fileID: 521845201}
+  - component: {fileID: 4543415056745603279}
   m_Layer: 10
   m_Name: Ghost Monster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,6 +194,21 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
   speed: 3
   target: {fileID: 0}
+--- !u!114 &4543415056745603279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575684818433655545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Ghost
+  - Undead
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0

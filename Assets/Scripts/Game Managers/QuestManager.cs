@@ -160,21 +160,25 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void CheckKillQuest(string tag)
+    void CheckKillQuest(List<string> tags)
     {
         foreach (Quest quest in QuestManager.questManager.currentQuests)
         {
             if (quest.questType == Quest.QuestType.KILL)
             {
                 KillQuest killQuest = (KillQuest) quest;
-                if (killQuest.killTargetTag == tag && quest.questProgress == Quest.QuestProgress.CURRENT)
+                foreach (string tag in tags)
                 {
-                    killQuest.killsCompleted += 1;
-                    if (killQuest.killsCompleted >= killQuest.killsRequired)
+                    if (killQuest.killTargetTag == tag && quest.questProgress == Quest.QuestProgress.CURRENT)
                     {
-                        CompleteQuest(killQuest);
+                        killQuest.killsCompleted += 1;
+                        if (killQuest.killsCompleted >= killQuest.killsRequired)
+                        {
+                            CompleteQuest(killQuest);
+                        }
                     }
                 }
+                
             }
         }
     }

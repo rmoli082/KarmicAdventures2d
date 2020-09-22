@@ -6669,7 +6669,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (2)
+      value: Villager_21
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -6761,6 +6761,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
 --- !u!4 &398251387 stripped
@@ -6779,12 +6789,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9222941
+      value: -0.9222955
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5248191
+      value: 3.5248215
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -11114,7 +11124,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (3)
+      value: Villager_22
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -11205,6 +11215,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -24664,7 +24684,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person
+      value: Villager_19
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -24755,6 +24775,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -35141,7 +35171,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (1)
+      value: Villager_20
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -35232,6 +35262,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: Villager_20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}

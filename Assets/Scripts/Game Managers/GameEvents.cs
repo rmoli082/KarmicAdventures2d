@@ -8,7 +8,7 @@ public class GameEvents : MonoBehaviour
     public static System.Action LoadInitiated;
     public static System.Action InventoryUpdated;
     public static System.Action<string> LocationFound;
-    public static System.Action<string> KillSuccessful;
+    public static System.Action<List<string>> KillSuccessful;
     public static System.Action<string> AwakenEvent;
     public static System.Action XpAwarded;
     public static System.Action KarmaAwarded;
@@ -33,9 +33,9 @@ public class GameEvents : MonoBehaviour
         LocationFound?.Invoke(location);
     }
 
-    public static void OnKillSuccessful(string tag)
+    public static void OnKillSuccessful(List<string> tags)
     {
-        KillSuccessful?.Invoke(tag);
+        KillSuccessful?.Invoke(tags);
     }
 
     public static void OnAwakenEvent(string tag)
