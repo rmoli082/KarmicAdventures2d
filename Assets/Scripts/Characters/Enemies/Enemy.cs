@@ -25,6 +25,10 @@ public class Enemy : MonoBehaviour
 
     public AudioClip hitSound;
 
+	public Item[] itemDrops;
+	public int coinAmount;
+	public LootBox lootboxPrefab;
+
 	protected Rigidbody2D rigidbody2d;
 	protected Animator animator;
 	protected AudioSource audioSource;
@@ -35,7 +39,8 @@ public class Enemy : MonoBehaviour
 	private bool isInvincible;
 	private float invincibleTimer = 1f;
 
-    private void Awake()
+
+    protected virtual void Awake()
     {
 		baseStats = new Stats();
 
@@ -97,10 +102,17 @@ public class Enemy : MonoBehaviour
 
 		audioSource.Stop();
 		audioSource.PlayOneShot(hitSound);
-		Destroy(this.gameObject);
+		
 		List<string> tags = (List<string>)gameObject.GetComponent<CustomTags>().GetTags();
 		tags.Add(gameObject.tag);
-		
+
+		if (Random.Range(0, 3) == 1 || GetComponent<CustomTags>().HasTag("Wyrm"))
+        {
+			LootBox box = Instantiate(lootboxPrefab, gameObject.transform.position, Quaternion.identity);
+			box.CreateLootbox(itemDrops, coinAmount);
+        }
+
+		Destroy(this.gameObject);
 		GameEvents.OnKillSuccessful(tags);
 	}
 

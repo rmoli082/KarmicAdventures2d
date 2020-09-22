@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
+  m_Name: FavourForGeorge
+  m_EditorClassIdentifier: 
+  questID: 115
+  questLine: Favours
+  questType: 1
+  questTitle: Favour for George
+  questDesc: My wife Martha's been feuding with Brenda from down the way for a while
+    now. Lately though, I've been giving her a potion so she's forgetting to cause
+    trouble for a while, but I've ran out of slime goo. I need you to get me 3
+  questProgress: 1
+  questHint: Kill some slimes to harvest 3 goos
+  questCompleteText: Thank god you got it for me.
+  questDoneText: I need to brew some more potion right away.
+  nextQuest: -1
+  questObjective: find 3 goos
+  xpReward: 25
+  goldReward: 50
+  itemRewards: []
+  posKarmaAwarded: 2
+  negKarmaAwarded: 0
+  numberNeeded: 3
+  numberHeld: 0
+  itemRequired: {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}

@@ -30,4 +30,4 @@ MonoBehaviour:
   negKarmaAwarded: 0
   killsRequired: 1
   killsCompleted: 0
-  killTargetTag: 
+  killTargetTag: BlightCrystal

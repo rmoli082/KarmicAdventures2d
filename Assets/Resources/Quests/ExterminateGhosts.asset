@@ -15,8 +15,8 @@ MonoBehaviour:
   questID: 110
   questLine: On the Hunt
   questType: 0
-  questTitle: Exterminate Some Ghosts
-  questDesc: Kill 7 Ghosts
+  questTitle: Exterminate Some Ghosts for Jack
+  questDesc: Kill 7 ghosts for me.
   questProgress: 1
   questHint: Kill 7 Ghost Monsters
   questCompleteText: You did it. Thanks so  much. Here's your reward.

@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 6982084178593964871}
   - component: {fileID: 183533452884923571}
   - component: {fileID: 8593416216759114733}
+  - component: {fileID: 1445175787356820673}
   m_Layer: 10
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: Zombie
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +353,30 @@ MonoBehaviour:
   aggroDistance: 0
   numberOfDice: 1
   damageDice: 6
+  speed: 2
+  oldSpeed: 0
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
-  speed: 2
+  itemDrops:
+  - {fileID: 11400000, guid: f295201d49861f7469408db796221327, type: 2}
+  coinAmount: 0
+  lootboxPrefab: {fileID: 8185277190968721106, guid: 5b61b76723da79c47be9a73e42c69ecc,
+    type: 3}
   timeToChange: 2
   horizontal: 1
+--- !u!114 &1445175787356820673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982084178593964873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Undead
+  - Zombie

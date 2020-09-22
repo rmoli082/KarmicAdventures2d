@@ -33,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
 
             Instantiate(weaponHitPrefab, other.transform.position, Quaternion.identity);
 
-            if (other.GetComponent<Enemy>().CompareTag("BlightCrystal"))
+            if (other.GetComponent<CustomTags>().CompareTag("BlightCrystal"))
             {
                 other.GetComponent<BlightCrystal>().CrystalHit();
             }

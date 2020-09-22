@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1936357022}
   - component: {fileID: 1936357023}
   - component: {fileID: 1936357024}
+  - component: {fileID: 4272061295565944834}
   m_Layer: 10
   m_Name: Chaser Slime
-  m_TagString: Slime
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,10 +56,25 @@ MonoBehaviour:
   aggroDistance: 3
   numberOfDice: 1
   damageDice: 4
+  speed: 1
+  oldSpeed: 0
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 683e01d57e63fe749866ca4fd3cc424c, type: 3}
-  speed: 1
+  itemDrops:
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: 8a540587b5dc83f4086381f5c1f5dde6, type: 2}
+  - {fileID: 11400000, guid: be7e7e4993b44c74ba83e2f88c2404d2, type: 2}
+  - {fileID: 11400000, guid: 8060439099f5bcb4ca8a42444f12699b, type: 2}
+  coinAmount: 0
+  lootboxPrefab: {fileID: 8185277190968721106, guid: 5b61b76723da79c47be9a73e42c69ecc,
+    type: 3}
   target: {fileID: 0}
 --- !u!50 &1936357022
 Rigidbody2D:
@@ -193,6 +209,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4272061295565944834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575684818433655545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Chaser
+  - Slime
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0

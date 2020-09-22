@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5125469663317308199}
   - component: {fileID: 5125469663317308185}
   - component: {fileID: 6830599625093307491}
+  - component: {fileID: -3351557892648275710}
   m_Layer: 10
   m_Name: Chaser Bat
   m_TagString: Untagged
@@ -55,10 +56,26 @@ MonoBehaviour:
   aggroDistance: 6
   numberOfDice: 2
   damageDice: 4
+  speed: 2
+  oldSpeed: 0
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
-  speed: 2
+  itemDrops:
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: 43bbbd17050e0e544a842961fdfa40ea, type: 2}
+  - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
+  - {fileID: 11400000, guid: 8060439099f5bcb4ca8a42444f12699b, type: 2}
+  - {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f, type: 2}
+  coinAmount: 0
+  lootboxPrefab: {fileID: 8185277190968721106, guid: 5b61b76723da79c47be9a73e42c69ecc,
+    type: 3}
   target: {fileID: 0}
 --- !u!50 &5125469663317308199
 Rigidbody2D:
@@ -193,6 +210,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.02456808, y: 0.0069020987}
   m_Size: {x: 1.2680998, y: 1.2680998}
   m_Direction: 0
+--- !u!114 &-3351557892648275710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468792509797828416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Chaser
+  - Bat
+  - Flying
 --- !u!1 &3468792510286288288
 GameObject:
   m_ObjectHideFlags: 0

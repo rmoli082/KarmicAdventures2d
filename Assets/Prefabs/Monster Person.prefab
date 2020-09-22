@@ -725,9 +725,8 @@ MonoBehaviour:
   npcName: 
   awakeningStatus: 0
   dialogBox: {fileID: 2271779725409021357}
-  displayBoard: {fileID: 0}
+  displayBoard: {fileID: 2271779725204328390}
   dialogText: {fileID: 2271779725609175577}
-  initialDialog: 
   talkNotifier: {fileID: 1756062549663534953}
   isQuestGiver: 0
   questToken: {fileID: 5526537475555361923}
@@ -763,6 +762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 5666839524069335318}
+    - target: {fileID: 5995644680156159540, guid: da1872b70e4186840b518251b865cb14,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayDialog
       objectReference: {fileID: 0}
     - target: {fileID: 5995644680771325544, guid: da1872b70e4186840b518251b865cb14,
         type: 3}

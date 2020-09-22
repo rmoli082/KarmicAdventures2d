@@ -16,19 +16,19 @@ MonoBehaviour:
   questLine: Save the Village!
   questType: 3
   questTitle: Awaken the villagers
-  questDesc: Find enough Stones of Awakening to return some villagers back to life.
+  questDesc: Awaken 10 villagers from their stone crysalis.
   questProgress: 1
-  questHint: Find 10 stones of awakening and restore the remaining 10 villagers to
-    human form.
+  questHint: Find 10 stones of awakening and restore 10 villagers to human form.
   questCompleteText: You did it!
-  questDoneText: Enough villagers have been awakened to find some way to bring the
-    rest of them back. Thank you so much.
+  questDoneText: Some villagers may provide information, treasure, or quests upon
+    awakening.  So while I only needed 10 people to help me protect the village,
+    you should keep awakening others to help you in your quest.
   nextQuest: -1
   questObjective: find stones and awaken 10 villagers
   xpReward: 100
   goldReward: 100
   itemRewards: []
-  posKarmaAwarded: 15
+  posKarmaAwarded: 20
   negKarmaAwarded: 0
   numberToAwaken: 10
   tagToAwaken: Villager

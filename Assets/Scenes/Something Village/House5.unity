@@ -4180,7 +4180,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_14
+      value: Jack
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -4286,7 +4286,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_14
+      value: Jack
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -22543,7 +22543,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_13
+      value: Brenda
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -22619,7 +22619,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_13
+      value: Brenda
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}

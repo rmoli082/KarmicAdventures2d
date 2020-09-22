@@ -20,7 +20,7 @@ MonoBehaviour:
     gambling match, but now I want it back. I never knew who the mysterious stranger
     was who won, but I know you'll find him and get Folly back for me.
   questProgress: 1
-  questHint: Find the mysterious stranger and steal back Brenda's sword named Folly.
+  questHint: Find the "mysterious stranger" and steal back Brenda's sword named Folly.
   questCompleteText: Oh my word. You got Folly back for me. I thought for sure you'd
     be dead.
   questDoneText: Here's your reward, as promised.
@@ -28,7 +28,8 @@ MonoBehaviour:
   questObjective: Steal Folly back.
   xpReward: 30
   goldReward: 5
-  itemRewards: []
+  itemRewards:
+  - {fileID: 0}
   posKarmaAwarded: 0
   negKarmaAwarded: 3
   numberNeeded: 1

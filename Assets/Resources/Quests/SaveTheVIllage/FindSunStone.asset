@@ -16,19 +16,22 @@ MonoBehaviour:
   questLine: Save the Village
   questType: 1
   questTitle: Find a Sun Stone
-  questDesc: You must locate a Sun Stone to build up the power to bring your family
-    back to life.
+  questDesc: You must go next door to Claudius' house and locate a rare object known
+    as a Sun Stone.
   questProgress: 1
-  questHint: Find a Sun Stone in a treasure chest nearby.
-  questCompleteText: Woo you found a sun stone! Good job.
-  questDoneText: Use the Sun Stone to unlock the power of your Sun Avatar form. We're
-    nearly there, son.
+  questHint: Find a Sun Stone in a treasure chest in a house nearby.
+  questCompleteText: Excellent. You've located the Sun Stone Claudius had hidden
+    away.
+  questDoneText: Use the Sun Stone and unlock the power of your Sun Avatar form.
+    We're nearly there, son.
   nextQuest: 2
   questObjective: find a sun stone
   xpReward: 25
   goldReward: 5
   itemRewards:
   - {fileID: 11400000, guid: 13385410fca69211c89364e311d7c0ea, type: 2}
+  posKarmaAwarded: 0
+  negKarmaAwarded: 0
   numberNeeded: 1
   numberHeld: 0
   itemRequired: {fileID: 11400000, guid: 13385410fca69211c89364e311d7c0ea, type: 2}

@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6765094352c51a44db207d838c22dd32, type: 3}
-  m_Name: Destiny
+  m_Name: DaggerOfShock
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemName: 
-  itemDescription: 
+  itemID: 104
+  itemName: Dagger of Shock
+  itemDescription: A small sword that has small sparks crackling across the surface
   itemIcon: {fileID: 0}
-  weaponID: 0
-  attackDiceNumber: 0
-  attackDiceAmount: 0
-  effect: 0
-  attackBoost: 0
+  weaponID: 4
+  attackDiceNumber: 6
+  attackDiceAmount: 2
+  effect: 3
+  weaponAttack: 0
+  weaponMagic: 0
+  weaponSpecial: 0
+  attackBoost: 2
   defenseBoost: 0
   magicBoost: 0
   specialBoost: 0

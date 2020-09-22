@@ -85,9 +85,10 @@ GameObject:
   - component: {fileID: 3859674894259070013}
   - component: {fileID: 3859674894259070010}
   - component: {fileID: 3859674894259070012}
+  - component: {fileID: -4300709307744857344}
   m_Layer: 10
   m_Name: Blight Crystal
-  m_TagString: BlightCrystal
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +179,8 @@ MonoBehaviour:
   aggroDistance: 0
   numberOfDice: 0
   damageDice: 0
+  speed: 5
+  oldSpeed: 0
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
@@ -228,3 +231,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4300709307744857344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859674894259070009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - BlightCrystal

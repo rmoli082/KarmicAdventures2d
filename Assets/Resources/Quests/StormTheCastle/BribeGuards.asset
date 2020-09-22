@@ -30,6 +30,6 @@ MonoBehaviour:
   itemRewards: []
   posKarmaAwarded: 0
   negKarmaAwarded: 0
-  numberNeeded: 1
+  numberNeeded: 2
   numberHeld: 0
   itemRequired: {fileID: 11400000, guid: d001fe0e9728bee4ab09355e979c9706, type: 2}

@@ -140,12 +140,17 @@ So it's true! It is possible for the power within the Avatar Stones to be releas
 +[No more questions]
     If you think of anything else, come find me. Find Gaius. He might be able to tell you more. -> DONE
 
-=== Villager_3 ===
+=== George ===
 =is_stone
-{~Has the Blight reached us now?|This is the work of the Wizard Saints, I know it.|The Wizard Saints are responsible for this. You watch..|Happy birthday! It is your birthday today, right? Or did I get that wrong too...} ->DONE
+Claudius and Gaius are experts on this. They'll know what to do. ->DONE
 
 =is_awake
-{~The Blight is going to take us all. Mark my words boy, mark my words.|I'm sorry this had to happen on your birthday. Strange. It's also the anniversary of God Emperor's death.} -> DONE
+Can I get you to do something for me?
++[Consider it done]
+#GiveQuest
+    Thanks, son. -> DONE
++[Maybe later]
+    You know where I'll be -> DONE
     
 === Martha ===
 =is_stone
@@ -423,3 +428,9 @@ Thank you for saving me! I'm so glad to be free of that monstrous form. I'll reo
         Moro Storm-Tamer has been worshipped like a god for many centuries. There are many and more myths and legends surrounding him than there are truths at this point. Moro encourages these myths to protect himself. From what, I don't know. You can probably assume <i>most</i> things you hear about him to be false, at least to some degree. -> opts
 *[No further questions]
     Good luck on your travels. You'll need it. -> DONE
+    
+=== Castle_Guard ===
+=is_stone
+There's no getting by us. Nope. Not at all. *sob* Change us back and we'll let you through -> DONE
+=is_awake
+Well. That worked like a charm. Still not getting through though -> DONE

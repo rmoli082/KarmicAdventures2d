@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="new Weapon", menuName ="Items/Weapon")]
-public class Weapon : Item
+public class Weapon: Item
 {
     public enum SpellEffect { NONE, FROST, FIRE, SHOCK, UNDEAD, HOLY}
 
@@ -31,6 +31,7 @@ public class Weapon : Item
         weaponStats.UpdateStats("magic", weaponMagic);
         weaponStats.UpdateStats("special", weaponSpecial);
     }
+
 
     public override void Use()
     {

@@ -21948,7 +21948,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_3
+      value: George
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -22040,10 +22040,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questToGive
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c5e75c29713e1c42988970d72e7b696,
+        type: 2}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_3
+      value: George
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}

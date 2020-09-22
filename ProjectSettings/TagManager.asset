@@ -18,6 +18,12 @@ TagManager:
   - choiceButton
   - Ghost
   - Undead
+  - Chaser
+  - Bat
+  - Flying
+  - Zombie
+  - Dragon
+  - Wyrm
   layers:
   - Default
   - TransparentFX

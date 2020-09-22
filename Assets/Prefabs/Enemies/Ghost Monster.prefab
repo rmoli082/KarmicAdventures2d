@@ -189,10 +189,26 @@ MonoBehaviour:
   aggroDistance: 6
   numberOfDice: 2
   damageDice: 5
+  speed: 3
+  oldSpeed: 0
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4ecf2abcdd2987b4ab2773ac82a0f2de, type: 3}
-  speed: 3
+  itemDrops:
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: c92a51d169eea194d92fa628362a359f, type: 2}
+  - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
+  - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
+  - {fileID: 11400000, guid: 2da2aae6f56b7cf408b038803f6e10ec, type: 2}
+  - {fileID: 11400000, guid: e0a9ecf23053e8d4c84ae02ce29e2661, type: 2}
+  coinAmount: 0
+  lootboxPrefab: {fileID: 8185277190968721106, guid: 5b61b76723da79c47be9a73e42c69ecc,
+    type: 3}
   target: {fileID: 0}
 --- !u!114 &4543415056745603279
 MonoBehaviour:
@@ -209,6 +225,7 @@ MonoBehaviour:
   tags:
   - Ghost
   - Undead
+  - Flying
 --- !u!1 &8575684818516152345
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class TreasureChest : Chest
         base.Awake();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         _scene = SceneManager.GetActiveScene();
         if (_scene.name == "EnemyA")
@@ -32,12 +32,12 @@ public class TreasureChest : Chest
             }
             else
             {
-                int id = this.gameObject.GetComponent<Chest>().chestID;
+                int id = this.chestID;
                 while (ChestManager.chestManager.chestList.ContainsKey(id))
                 {
                     id = Random.Range(1, 193734);
-                    this.gameObject.GetComponent<Chest>().chestID = id;
-                    this.gameObject.GetComponent<Chest>().status = Chest.ChestState.CLOSED;
+                    this.chestID = id;
+                    this.status = Chest.ChestState.CLOSED;
                 }
             }
             coinAmount = Random.Range(5, 11);

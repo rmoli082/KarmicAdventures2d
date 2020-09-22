@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 
 public class Wyrm : Enemy
@@ -21,10 +20,16 @@ public class Wyrm : Enemy
     private int shotCounter = 0;
     private Vector3 direction;
 
+    protected override void Awake()
+    {
+        base.Awake(); 
+    }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Update()

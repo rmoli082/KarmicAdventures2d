@@ -11,7 +11,7 @@ public class QuestLockedChest : TreasureChest
         base.Awake();
     }
 
-    private void Start()
+    protected override void Start()
     {
         dialogBox.SetActive(false);
         if (item.Length != 0)
