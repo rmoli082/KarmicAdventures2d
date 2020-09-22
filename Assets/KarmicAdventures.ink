@@ -2,6 +2,8 @@ VAR spiritKarma = 0
 VAR demonKarma = 0
 VAR gold = 0
 
+-> Gaius.is_awake
+
 == function alter(ref x, y)
     ~ x = x + y
 
@@ -40,10 +42,14 @@ Oh, my son. Thank you so much for freeing me. We don't have much time and you mu
 +(stones)[Tell me about the avatar stones!]
     Stories say that when God Emperor Magnus died, his power didn't die with him - it left his body in search of a new host. The power entered the first living creature it encountered - a tiny mouse. The mouse wasn't strong enough to contain this great power, and it exploded - shattering God Emperor's power in the process. Every avatar stone is a piece of that shattered power that you can unlock, take within you and use. 
     ++[How many avatar stones are there?] 
-        There are 12 avatar stones altogether, as best as anyone can tell. There could be more, there could be less, it's hard to say. Very little is known about the circumstances surrounding the death of God Emperor Magnus, but there are a few people who've located these avatar stones and they've studied them, and they all agree that his power split into 12 pieces.-> stones
+        There are 12 avatar stones altogether, as best as anyone can tell. There could be more, there could be less, it's hard to say. Very little is known about the circumstances surrounding the death of God Emperor Magnus, but there are a few people who've located a few of these avatar stones and they've studied them, and they all agree that his power split into 12 pieces.
+        +++[Who are these people?]
+            I do not know the names of many, but seek out Claudius. He'll help you with more. -> stones
     ++[What kind of powers will they give?] 
-        No one can say for sure, exactly. God Emperor Magnus was extremely powerful, and even a small piece of his power would eclipse almost any other sorceror in the Eternal Kingdoms. A few people have located some of these avatar stones, but no one has been able to access the power within until you just did.-> stones
-    ++ -> opts
+        No one can say for sure, exactly. God Emperor Magnus was extremely powerful, and even a small piece of his power would eclipse almost any other sorceror in the Eternal Kingdoms. A few people have located some of these avatar stones, but no one has been able to access the power within until you just did.
+        +++[Who are these people?]
+            I do not know the names of many, but seek out Claudius. He'll be able to help you with more. -> stones
+    ++ [No further questions] -> opts
 +[What do you know about the Wizard Saints?]
     Not much, my son. The Wizard Saints are very powerful, quite nearly immortal beings. The Wizard Saint Moro Storm-Tamer lives in the castle nearby. It's said that he can control storms and even causes the seasons to change. When Moro's angry, it's said that crops will fail and the harvest will be poor. We try very hard not to anger him. -> opts
 +[No more questions] 
@@ -104,36 +110,49 @@ You're a mean jerk, you know that? I'm glad you're going away and it's just goin
 =is_awake
 {~Thanks for saving me!|My memories are slowly coming back. I didn't even know they were going.|All my strength is returning. It feels good to be alive again. Thank you.|If only the God Emperor was alive, we wouldn't have needed you to rescue us.} -> DONE
 
-=== Villager_2 ===
+== Villager_1 ===
+=is_stone
+This is all Claudius' fault. He's been messing about with things he shouldn't be again. Mark my words, when the dust settles, he'll be behind it all. Hmpf. ->DONE
+
+=is_awake
+Well, it seems I was wrong. It wasn't Claudius' fault at all. This time. I'm sure it'll be his fault next time. -> DONE
+
+=== Claudius ===
+=is_stone
+I, Claudius.. No, I am Error. No... Who am I? ->DONE
+
+=is_awake
+So it's true! It is possible for the power within the Avatar Stones to be released and contained. I always knew! And to think, it's you who manages to do it.
+- (opts)
++[What do you mean "to think it's me who manages to do it"?]
+    Well as I'm sure you know, you were born the very night that God Emperor Magnus died. Ever since you were a child, it was obvious that the old magic lived inside you and that you were strong in it. Your father and I long suspected that your birth and the God Emperor's death have caused your fates to be linked. -> opts
++[What can you tell me about the power of the Avatar Stones?]
+    I've studied these stones for years. I've only come across two in my entire life, one which I kept and you've recently found, and one went to another, Gaius. Gaius and I studied these stones for years. The best we could determine was that the stone in my possession was filled with a fire that burned hotter than the sun. It seems we were correct. We never could determine the power inside the one Gaius found. All we could tell was that it too was a great power. -> opts
++[How did you determine there were 12 stones?]
+    - (subopts)
+    Gaius and I conducted many experiments, magical and otherwise when we were trying to unlock its mysteries. The stone carried with it a feeling of incompleteness, a sense of being one part of a whole. When we found the second stone, we got a flash of some sort of memory of being split into 12 pieces before exploding outwards. There could be more, there could be less. But if that memory's accurate, there are 12 Avatar stones altogether.
+        ++[Why do you call them Avatar stones?]
+            We believed that when a person was able to unlock the power within these stones, it would transform them into that piece of the God Emperor's power - an avatar of the God Emperor himself. -> subopts
+        ++[A memory?]
+            The essence that we draw upon that we call "magic" flows within all of us to varying degrees. This essence is as alive as you and I are. It also possesses a memory of sorts - flashes of information for those who are sensitive to it. -> subopts
+        ++[No more questions] 
+            OK. -> subopts
++[No more questions]
+    If you think of anything else, come find me. Find Gaius. He might be able to tell you more. -> DONE
+
+=== Villager_3 ===
 =is_stone
 {~Has the Blight reached us now?|This is the work of the Wizard Saints, I know it.|The Wizard Saints are responsible for this. You watch..|Happy birthday! It is your birthday today, right? Or did I get that wrong too...} ->DONE
 
 =is_awake
 {~The Blight is going to take us all. Mark my words boy, mark my words.|I'm sorry this had to happen on your birthday. Strange. It's also the anniversary of God Emperor's death.} -> DONE
-
-=== Villager_3 ===
+    
+=== Martha ===
 =is_stone
-{~Oh woe is me. Terrible things are happening all over the world | Ever since God Emperor Magnus died, the world is falling apart. | God is dead and this is our reward!} ->DONE
+Things are getting all mixed up in my head. It's only just happened and already I feel like I'm forgetting. Where's Folly? -> DONE
 
 =is_awake
-All this hullaballoo on your birthday, of all days. It's also the anniversary of God Emperor Magnus dying. Do you think the two are related? Is that why you were spared this horrible fate?
-*[What do you know about God Emperor Magnus?]
-    Not very much. I know he was a powerful wizard and lived for over 1000 years. We all thought he was immortal up to the very minute of his death. -> positive
-*[My birthday and God Emperor's death day are the same?]
-    Yes it is. 18 years ago today, God Emperor Magnus died and you were born. Uncanny coincidence, isn't it? -> positive
-*[I'm awesome, that's why I was spared this horrible fate.]
-    If you say so, buddy. -> DONE
-    
-- (positive)
-*[If the Emperor is immortal, how did he die?]
-    There's the rub: No one knows. Some say if he was a true god, he couldn't die. But did he die of old age finally? Did someone find some way to murder him? Some say he didn't die, he just returned to the spirit world. It's a mystery to us all, but the Emperor is gone all the same.  ->DONE
-    
-=== Villager_4 ===
-=is_stone
-Things are getting all mixed up in my head. It's only just happened and already I feel like I'm forgetting. -> DONE
-
-=is_awake
-Thank you so much for saving me. You went to all this trouble for me. And on your birthday! -> DONE
+Thank you so much for saving me. You went to all this trouble for me. And on your birthday! I should go check on Folly. I'm sure Brenda was behind this. -> DONE
 
 === Villager_5 ===
 =is_stone
@@ -157,6 +176,13 @@ Over 1000 years ago, God Emperor Magnus and the 8 Wizard Saints fought back an e
     
 === Villager_6 ===
 =is_stone
+I was just setting the table this morning for breakfast when something happened and now I'm stuck. Or was it yesterday morning? -> DONE
+
+=is_awake
+I've heard that over in the next town over, people have been turned into monsters, not statues. The Shopkeeper told me yesterday. -> DONE
+    
+=== Villager_7 ===
+=is_stone
 We used to worship the Wizard Saints, and look at what they've done to us now. -> DONE
 
 =is_awake
@@ -166,13 +192,6 @@ The Wizard Saints may be bad, but you're not. I'll gladly worship you now.
 *[I like how that sounds.]
 *[Get some friends and worship me together!] {Give_Demon_Karma(1)}
 - You may not be <i>the</i> saviour, but you're definitely MY saviour. -> DONE
-
-=== Villager_7 ===
-=is_stone
-I was just setting the table this morning for breakfast when something happened and now I'm stuck. Or was it yesterday morning? -> DONE
-
-=is_awake
-I've heard that over in the next town over, people have been turned into monsters, not statues. The Shopkeeper told me yesterday. -> DONE
 
 === Villager_8 ===
 =is_stone
@@ -205,7 +224,7 @@ Thank you so much for saving me. I can't ever thank you enough. Is there any way
     **[What can you tell me about the Wizard Saint Moro?]
         Moro is very much the most feared of the Wizard Saints. If anyone were to have murdered the God Emperor, it would have been Moro. It has been said that he has a power to rival the God Emperor's himself. He's ambitious enough to want to replace Magnus on the throne and become the new God Emperor. But it looks like his plan backfired. The Kingdoms are in ruin. -> sub_opts
     **[I have no further questions]
-        Ok. -> is_awake
+        Ok. -> DONE
 *[I accept all major credit cards, debit, and cold hard CASH]
     Well, I uh. You see. We're uh. We're very poor and don't have much. But if you insist I will gladly give you some of our gold.
     **[Haha, I was just kidding.]
@@ -224,7 +243,7 @@ I'm so glad you saved me. You're a good friend. -> DONE
 
 === Villager_12 ===
 =is_stone
-The Blight has finally reached our little town. Damn the Wizard Saints to hell. -> DONE
+The Blight has finally reached our little town. Damn the Wizard Saints to hell. I hope Gaius and Claudius are OK. They'll know what to do. -> DONE
 
 =is_awake
 Thank you so much for helping me. Want some advice?
@@ -233,13 +252,13 @@ Thank you so much for helping me. Want some advice?
 *[No]
     Well I'm going to give it to you anyway. Go home. Now. You'll never kill Moro. He'll kill you first for sure. -> DONE
 
-=== Villager_13 ===
+=== Brenda ===
 =is_stone
 You're never going to find the potion I hid in the armoire, thief!
 *[I'm not a thief! I'm going to help you!]
-    Well thank heavens for that! -> is_awake
+    Well thank heavens for that! -> DONE
 *(thief)[What else are you hiding, lady?]
-    There's a health potion in the grain sack by the sink. {Give_Demon_Karma(1)} -> is_awake
+    There's a health potion in the grain sack by the sink. {Give_Demon_Karma(1)} -> DONE
     
 =is_awake
 {
@@ -258,7 +277,7 @@ Considering you stole from us, I didn't think you'd bother to help me. I guess y
 Thanks so much for saving me. I was sure you would turn out to be a thief though. -> DONE
         }
 
-=== Villager_14 ===
+=== Jack ===
 =is_stone
 There are so many ghosts flying around the village these days. I'm scared of ghosts. -> DONE
 
@@ -272,10 +291,97 @@ Thanks so much for freeing me. Do you think you can do me a huge favour?
     
 === Villager_15 ===
 =is_stone
-It's getting harder and harder to think. -> DONE
+Ma's raised us alone since we was kids ever since Da' ran off.
+->DONE
+
+=is_awake
+Thanks, mister!
+->DONE
+
+=== Villager_16 ===
+=is_stone
+Oh dear, I bet those kids are running around creating a terrible mess. I can't see or hear anything like this!
+->DONE
+
+=is_awake
+Oh thank goodness you saved me. I felt like my mind and my memories were slipping away.
+->DONE
+    
+=== Villager_17 ===
+=is_stone
+It's getting harder and harder to think. Claudius? Gaius? Is that you?-> DONE
 
 =is_awake
 Thank you so much. It was horrible being stuck in that state. -> DONE
+
+=== Gaius ===
+=is_stone
+Can you hear me boy? Over here. Come closer. Hello? Can you hear me? I have something important to tell you. ->DONE
+
+=is_awake
+Oh thank heavens I'm free.
+{Claudius.is_awake: 
++(opts)[Gaius, is it? I have a lot of questions for you.]
+    I'll bet you do my boy, I'll bet you do. I'm sure I've got answers to questions you haven't even dreamed up yet. But we have little time and I can only answer a few.
+    ++[Claudius tells me you found an Avatar stone?]
+        I did. Many, many years ago. Claudius and I were never able to determine what power it contained inside. The power always seemed to be shifting and elusive. I hid the stone a long time ago, some place it would be safe.
+        ***[Where'd you hide it?]
+            If you head over to the pond in the middle of town and look around, you'll find it there. -> opts
+    ++[How did you and Claudius determine there were 12 stones?]
+        I'm sure Claudius told you about how magic has its own memory? I am able to read these memories from objects and can get information about the magic, its caster and so on. I was able to glean next to no information from the individual Avatar stones, but I kept getting a sense there used to be one, but now there are 12 of them. This... sense of 12-ness was pervasive. -> opts
+    ++[We're done here.]
+        Good luck on your travels, boy. You'll need it. -> DONE
+}
+{Gaius.is_stone && not Claudius.is_awake:
++[You said you have some information for me?] -> information
+    
+}
+{not Gaius.is_stone && not Claudius.is_awake:
+<> There's a lot I have to tell you, if you've ears to hear it.
++[I've got ears for it, old man. Speak.] -> information
++[I don't have time for this right now, I'll come back later.]
+    As you wish. But be sure you do come back. -> DONE
+}
+=information
+I can see that you've discovered at least one Avatar stone. I can tell you a bit about them if you'd like...
+    ++[I very much would like. What do you know?]
+        Many years ago, I discovered an Avatar stone along with my friend Claudius. We studied this stone for years until we found a second one. We could never tell much about the stones, they were a mystery to us no matter what we did to get to the secrets within. We discovered one stone held a fire more powerful than the sun. The other gave us nothing. We decided that it would be best to split up the stones, as they would be dangerous in the wrong hands. Claudius kept one, and I the other. I hid this stone years ago.
+        -(stones_talk)
+        +++[How do you know there are 12 stones?]
+            It may shock you to learn that magic has its own memory.I am able to read these memories from objects and can get information about the magic, its caster and so on. I was able to glean next to no information from the individual Avatar stones, but I kept getting a sense there used to be one, but now there are 12 of them. This... sense of 12-ness was pervasive. -> stones_talk
+        +++[Where did you hide the stone?]
+            If you head over to the pond in the middle of town and look around, you'll find it there. -> stones_talk
+        +++[Can you tell me anything at all about the other stone's power?]
+            The power always seemed to be shifting and elusive - as if it was constantly shifting. Despite how much power the stone obviously contained, the power felt faint, as if it were masked. I do not know if this was a property of the stone itself, or the power inside. -> stones_talk
+        +++[I've got no other questions right now]
+            Good luck on your travels, boy. You'll need it. -> DONE
+
+=== Villager_19 ===
+=is_stone
+Hi, I'm Billy! No you're Billy! What's a billy? Is it a cat? Am I a cat?
+->DONE
+
+=is_awake
+Wow that was really scary. Thank you for saving me.
+->DONE
+
+=== Villager_20 ===
+=is_stone
+Oh, Gaius. I hope you're not stuck like this too. You'll know what to do. You always do.
+->DONE
+
+=is_awake
+Oh my dear boy. Thank you so much for saving me. I can't even begin to describe it.
+->DONE
+
+=== Villager_21 ===
+=is_stone
+The Wizard Saints can't be behind this. They don't have this kind of power. But no, it can't be.
+->DONE
+
+=is_awake
+This isn't the work of the Wizard Saints. I'm sure of that now. There's a greater evil at work here than even those bastards.
+->DONE
 
 === Shopkeeper ===
 =is_stone

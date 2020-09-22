@@ -5,7 +5,6 @@ public class RoamerEnemy : Enemy
 {
 	// ====== ENEMY MOVEMENT ========
 	
-	public float speed;
 	public float timeToChange;
 	public bool horizontal;
 	

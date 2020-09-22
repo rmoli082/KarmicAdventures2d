@@ -7,7 +7,6 @@ public class RangedEnemy : Enemy
 	public GameObject projectilePrefab;
 	public Transform target;
 
-	public int speed;
 	public float shotTimer = 1.5f;
 
 	void Start()

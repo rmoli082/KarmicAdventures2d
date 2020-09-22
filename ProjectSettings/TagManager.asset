@@ -16,6 +16,8 @@ TagManager:
   - SceneData
   - Environment
   - choiceButton
+  - Ghost
+  - Undead
   layers:
   - Default
   - TransparentFX

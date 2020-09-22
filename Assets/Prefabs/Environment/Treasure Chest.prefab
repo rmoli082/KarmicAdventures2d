@@ -187,7 +187,6 @@ GameObject:
   - component: {fileID: 7461413929606324949}
   - component: {fileID: 7461413929606324951}
   - component: {fileID: 7461413929606324950}
-  - component: {fileID: 913093154}
   m_Layer: 30
   m_Name: Treasure Chest
   m_TagString: Untagged
@@ -300,25 +299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 0
+  status: 0
   dialogBox: {fileID: 7461413929035772258}
   dialogText: {fileID: 7461413930239705732}
   coinAmount: 10
   item:
   - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
---- !u!114 &913093154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7461413929606324946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 3
-  status: 1
 --- !u!1 &7461413930239705730
 GameObject:
   m_ObjectHideFlags: 0

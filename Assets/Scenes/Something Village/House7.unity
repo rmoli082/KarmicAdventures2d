@@ -6669,7 +6669,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_21
+      value: Villager_20
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -6769,7 +6769,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_21
+      value: Villager_20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -11124,7 +11124,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_22
+      value: Villager_21
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -11224,7 +11224,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_22
+      value: Villager_21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -15237,6 +15237,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a4559f93f62be01c698a8901f5f6e2e1,
         type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324951, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_IsTrigger
@@ -15245,26 +15255,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 913093154, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
---- !u!1 &913093153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7461413929606324946, guid: 6c1a57c8f5ab16182ba10596c61e2892,
-    type: 3}
-  m_PrefabInstance: {fileID: 913093152}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &913093154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913093153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 22
-  status: 1
 --- !u!1 &915335296
 GameObject:
   m_ObjectHideFlags: 0
@@ -19671,7 +19661,6 @@ GameObject:
   - component: {fileID: 1160842424}
   - component: {fileID: 1160842423}
   - component: {fileID: 1160842426}
-  - component: {fileID: 1160842425}
   m_Layer: 30
   m_Name: Bookshelf - ChestID 24
   m_TagString: Untagged
@@ -19723,20 +19712,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1160842425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160842422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 24
-  status: 1
 --- !u!114 &1160842426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19749,6 +19724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 24
+  status: 1
   dialogBox: {fileID: 2021341010}
   dialogText: {fileID: 1551639235}
   coinAmount: 12
@@ -21294,7 +21271,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227476723}
-  - component: {fileID: 1227476722}
   - component: {fileID: 1227476721}
   m_Layer: 30
   m_Name: Dishrack (1) - ChestID 23
@@ -21315,26 +21291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 23
+  status: 1
   dialogBox: {fileID: 68203650}
   dialogText: {fileID: 1655778166}
   coinAmount: 0
   item:
   - {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f, type: 2}
   - {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1, type: 2}
---- !u!114 &1227476722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227476720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 23
-  status: 1
 --- !u!4 &1227476723
 Transform:
   m_ObjectHideFlags: 0
@@ -21847,7 +21811,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1244493853}
   - component: {fileID: 1244493852}
-  - component: {fileID: 1244493855}
   - component: {fileID: 1244493854}
   m_Layer: 30
   m_Name: Sacks - ChestID 25
@@ -21913,24 +21876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 25
+  status: 1
   dialogBox: {fileID: 354358557}
   dialogText: {fileID: 724997095}
   coinAmount: 5
   item: []
---- !u!114 &1244493855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244493851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 25
-  status: 1
 --- !u!1 &1245551646
 GameObject:
   m_ObjectHideFlags: 0
@@ -24684,7 +24635,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_19
+      value: Gaius
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -24784,7 +24735,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_19
+      value: Gaius
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -35171,7 +35122,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_20
+      value: Villager_19
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -35271,7 +35222,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_20
+      value: Villager_19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}

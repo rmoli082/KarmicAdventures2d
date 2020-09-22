@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
   m_Name: Brother
   m_EditorClassIdentifier: 
-  questID: 0
-  questLine: 
+  questID: 100
+  questLine: Best Bro Ever
   questType: 0
-  questTitle: 
-  questDesc: 
-  questProgress: 0
-  questHint: 
-  questCompleteText: 
-  questDoneText: 
-  nextQuest: 0
-  questObjective: 
-  xpReward: 0
+  questTitle: You're the best, bro
+  questDesc: Like I said, I lost my thing and I need you to find it.
+  questProgress: 1
+  questHint: My thing is lost. Find it.
+  questCompleteText: You found my thing, yay!
+  questDoneText: Here's the reward I'm giving you for finding my thing.
+  nextQuest: -1
+  questObjective: Find your brother's thing.
+  xpReward: 25
   goldReward: 0
   itemRewards: []
-  posKarmaAwarded: 0
+  posKarmaAwarded: 5
   negKarmaAwarded: 0
-  numberNeeded: 0
+  numberNeeded: 1
   numberHeld: 0
-  itemRequired: {fileID: 0}
+  itemRequired: {fileID: 11400000, guid: 61c0b62039a8eed4caad24349096d1c9, type: 2}

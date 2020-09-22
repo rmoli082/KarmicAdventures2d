@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ChaserEnemy : Enemy 
 {
-	public float speed = 20.0f;
 	public Transform target;
 
 	private Vector3 originalPosition;

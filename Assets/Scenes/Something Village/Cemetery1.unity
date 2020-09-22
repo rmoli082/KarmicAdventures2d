@@ -37537,6 +37537,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a4559f93f62be01c698a8901f5f6e2e1,
         type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8514993515866802668, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: chestID
@@ -101547,7 +101557,7 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6999984
+      value: -6.7000012
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -128687,6 +128697,16 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1995958291}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8514993515866802668, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: chestID

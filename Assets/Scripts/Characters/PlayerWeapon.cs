@@ -20,7 +20,7 @@ public class PlayerWeapon : MonoBehaviour
         Collider2D other = Physics2D.OverlapCircle(pos, attackRange, layerMask);
         if (other != null)
         {
-            int damageAmount = weapon.UseWeapon(other.GetComponent<Enemy>());
+            int damageAmount = weapon.UseWeapon(this, other.GetComponent<Enemy>());
             damageAmount += (CharacterSheet.charSheet.buffedStats.GetStats("attack") - 10) / 2;
 
             if (CharacterSheet.charSheet.selectedSkills.ContainsKey("Weaponmaster"))

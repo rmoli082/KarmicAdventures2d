@@ -9407,7 +9407,6 @@ GameObject:
   - component: {fileID: 671442931}
   - component: {fileID: 671442932}
   - component: {fileID: 671442935}
-  - component: {fileID: 671442934}
   - component: {fileID: 671442933}
   m_Layer: 30
   m_Name: obj_misk_atlas_497 - ChestID 2
@@ -9495,25 +9494,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 2
+  status: 1
   dialogBox: {fileID: 68203650}
   dialogText: {fileID: 1655778166}
   coinAmount: 0
   item:
   - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
---- !u!114 &671442934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671442930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 2
-  status: 1
 --- !u!61 &671442935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11549,7 +11536,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person
+      value: Dad
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -13067,14 +13054,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 913093154, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
-      propertyPath: chestID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324946, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_Name
-      value: Treasure Chest - ChestID 0
+      value: Treasure Chest
       objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324948, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
@@ -13173,6 +13156,11 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1539188857}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324951, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_IsTrigger
@@ -15020,7 +15008,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1037275195}
   - component: {fileID: 1037275197}
-  - component: {fileID: 1037275196}
   - component: {fileID: 1037275198}
   m_Layer: 30
   m_Name: Bookshelf (2) - ChestID 1
@@ -15047,20 +15034,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1037275196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037275194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 1
-  status: 1
 --- !u!114 &1037275197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15073,6 +15046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 1
+  status: 1
   dialogBox: {fileID: 1982426597}
   dialogText: {fileID: 362949395}
   coinAmount: 9
@@ -15613,7 +15588,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (1)
+      value: Mom
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -26377,7 +26352,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (2)
+      value: Brother
       objectReference: {fileID: 0}
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -26473,6 +26448,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questToGive
+      value: 
+      objectReference: {fileID: 11400000, guid: f1f1f92ddbd4ca0409f01d4ed0aebe54,
+        type: 2}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}

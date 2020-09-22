@@ -2438,6 +2438,16 @@ PrefabInstance:
       propertyPath: coinAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
 --- !u!1001 &332005699
@@ -3242,7 +3252,7 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2199991
+      value: -1.220001
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -5198,7 +5208,7 @@ PrefabInstance:
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000009536743
+      value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
@@ -14515,6 +14525,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d001fe0e9728bee4ab09355e979c9706,
         type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
 --- !u!4 &1799786980 stripped

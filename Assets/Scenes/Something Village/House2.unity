@@ -4950,7 +4950,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_2
+      value: Villager_1
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -5050,7 +5050,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_2
+      value: Villager_1
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -9916,7 +9916,6 @@ GameObject:
   - component: {fileID: 671442931}
   - component: {fileID: 671442932}
   - component: {fileID: 671442935}
-  - component: {fileID: 671442934}
   - component: {fileID: 671442933}
   m_Layer: 30
   m_Name: Grain Sack - ChestID 4
@@ -10004,25 +10003,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 4
+  status: 1
   dialogBox: {fileID: 68203650}
   dialogText: {fileID: 1655778166}
   coinAmount: 5
   item:
   - {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f, type: 2}
---- !u!114 &671442934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671442930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 4
-  status: 1
 --- !u!61 &671442935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13682,6 +13669,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 13385410fca69211c89364e311d7c0ea,
         type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c1a57c8f5ab16182ba10596c61e2892, type: 3}
 --- !u!1 &915335296
@@ -21726,7 +21723,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_3
+      value: Claudius
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -21821,7 +21818,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_3
+      value: Claudius
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}

@@ -6,15 +6,19 @@ using UnityEngine.UI;
 using System.Text;
 using TMPro;
 
-public class TreasureChest : MonoBehaviour
+public class TreasureChest : Chest
 {
-    public GameObject dialogBox;
-    public TextMeshProUGUI dialogText;
     public int coinAmount;
     public Item[] item;
 
+    protected int itemChoice;
+
     Scene _scene;
-    int itemChoice;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     void Start()
     {
@@ -45,7 +49,7 @@ public class TreasureChest : MonoBehaviour
         }
     }
 
-    public void DisplayDialog() {
+    public override void DisplayDialog() {
         StringBuilder message = new StringBuilder();
         message.Append("Chest opened.\n You receive:\n");
         if (coinAmount > 0)
@@ -62,7 +66,7 @@ public class TreasureChest : MonoBehaviour
         dialogBox.SetActive (true);
     }
 
-    public void GetTreasure() {
+    public override void GetTreasure() {
 
         Inventory.inventory.AddCoins(coinAmount);
         if (item.Length > 0) {

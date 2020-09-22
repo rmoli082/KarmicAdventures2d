@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa51cb4d6e365594da7c9a3113a7fe66, type: 3}
+  m_Name: BrendasFolly
+  m_EditorClassIdentifier: 
+  questID: 105
+  questLine: Once A Thief...
+  questType: 1
+  questTitle: Brenda's Folly
+  questDesc: A long time ago, I came across a very powerful sword. I lost it in a
+    gambling match, but now I want it back. I never knew who the mysterious stranger
+    was who won, but I know you'll find him and get Folly back for me.
+  questProgress: 1
+  questHint: Find the mysterious stranger and steal back Brenda's sword named Folly.
+  questCompleteText: Oh my word. You got Folly back for me. I thought for sure you'd
+    be dead.
+  questDoneText: Here's your reward, as promised.
+  nextQuest: -1
+  questObjective: Steal Folly back.
+  xpReward: 30
+  goldReward: 5
+  itemRewards: []
+  posKarmaAwarded: 0
+  negKarmaAwarded: 3
+  numberNeeded: 1
+  numberHeld: 0
+  itemRequired: {fileID: 11400000, guid: df9a6f7a5f1bcf140a1f46313702c032, type: 2}

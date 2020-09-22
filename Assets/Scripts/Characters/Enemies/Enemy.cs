@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
 	public int numberOfDice;
 	public int damageDice;
 
+	public float speed = 7.0f;
+	public float oldSpeed = 0f;
+
 
 	public Stats baseStats;
 

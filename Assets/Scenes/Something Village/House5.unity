@@ -3481,7 +3481,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Villager_15
+      value: Villager_11
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -3521,7 +3521,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -3541,12 +3541,12 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
-      value: Villager_15
+      value: Villager_11
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: ID
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -4255,7 +4255,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -4281,12 +4281,17 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: ID
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: npcName
       value: Villager_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: isQuestGiver
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -10659,7 +10664,6 @@ GameObject:
   - component: {fileID: 671442931}
   - component: {fileID: 671442932}
   - component: {fileID: 671442935}
-  - component: {fileID: 671442934}
   - component: {fileID: 671442933}
   m_Layer: 30
   m_Name: Grain Sack - ChestID 16
@@ -10747,25 +10751,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 16
+  status: 1
   dialogBox: {fileID: 68203650}
   dialogText: {fileID: 1655778166}
   coinAmount: 0
   item:
   - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
---- !u!114 &671442934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671442930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 16
-  status: 1
 --- !u!61 &671442935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14440,6 +14432,16 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 1539188857}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: chestID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324951, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_IsTrigger
@@ -21181,10 +21183,10 @@ Transform:
   m_LocalPosition: {x: -5.02, y: 6.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 211094205}
   - {fileID: 1479337579}
   - {fileID: 1391394135}
   - {fileID: 246162149}
-  - {fileID: 211094205}
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22581,7 +22583,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -22598,10 +22600,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questToGive
+      value: 
+      objectReference: {fileID: 11400000, guid: 6faf4e807019e2547a003aaab5a29ef1,
+        type: 2}
+    - target: {fileID: 5785828043240480275, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: questType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: ID
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -24014,7 +24027,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -24034,7 +24047,7 @@ PrefabInstance:
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: ID
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -25875,6 +25888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaser Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 8575684818433655545, guid: 647c674ffdfbe7f48895f66315a4f781,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8575684818433655551, guid: 647c674ffdfbe7f48895f66315a4f781,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25932,6 +25950,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 647c674ffdfbe7f48895f66315a4f781, type: 3}
+--- !u!1 &1567178350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8575684818433655545, guid: 647c674ffdfbe7f48895f66315a4f781,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567178349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1567178351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567178350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 655ba24c03ad0504fb81799abeda867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Slime
 --- !u!1 &1584722909
 GameObject:
   m_ObjectHideFlags: 0
@@ -26750,16 +26788,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 936167121121235354, guid: 676b2f4fe813ee47c80bea53ccc314f7,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 321089251}
-    - target: {fileID: 8575684818433655544, guid: 676b2f4fe813ee47c80bea53ccc314f7,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 321089251}
     - target: {fileID: 8575684818433655545, guid: 676b2f4fe813ee47c80bea53ccc314f7,
         type: 3}
       propertyPath: m_Name
@@ -36068,7 +36096,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2146074439}
   - component: {fileID: 2146074438}
-  - component: {fileID: 2146074437}
   - component: {fileID: 2146074436}
   m_Layer: 30
   m_Name: Armoire - ChestID 15
@@ -36089,6 +36116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61d1e3f4eb1556f79713cbacc679c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestID: 15
+  status: 1
   dialogBox: {fileID: 750958762}
   dialogText: {fileID: 1725678290}
   coinAmount: 0
@@ -36097,20 +36126,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4559f93f62be01c698a8901f5f6e2e1, type: 2}
   - {fileID: 11400000, guid: e10670fbbf7c79b4791b0571d869050f, type: 2}
   - {fileID: 11400000, guid: ba55507f6e5df649b9f9852edb26fcbf, type: 2}
---- !u!114 &2146074437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146074435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 15
-  status: 1
 --- !u!61 &2146074438
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6765094352c51a44db207d838c22dd32, type: 3}
-  m_Name: new Weapon
+  m_Name: Folly
   m_EditorClassIdentifier: 
-  itemID: 0
-  itemName: 
-  itemDescription: 
-  itemIcon: {fileID: 0}
-  weaponID: 0
-  attackDiceNumber: 0
-  attackDiceAmount: 0
+  itemID: 103
+  itemName: Folly
+  itemDescription: A powerful sword that shimmers with a holy light.
+  itemIcon: {fileID: 7640443993981339788, guid: d63932905cadea6b28dcb1b55f92bf8b,
+    type: 3}
+  weaponID: 3
+  attackDiceNumber: 8
+  attackDiceAmount: 2
+  effect: 5
+  attackBoost: 2
+  defenseBoost: 2
+  magicBoost: 3
+  specialBoost: 1

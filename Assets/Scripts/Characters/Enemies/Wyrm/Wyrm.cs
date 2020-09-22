@@ -9,7 +9,6 @@ public class Wyrm : Enemy
     public enum States { Hover, FireAttack, ClawAttack, Charge}
 
     public Transform target;
-    public float speed = 3f;
     public GameObject projectilePrefab;
     public int burstAmount;
 
