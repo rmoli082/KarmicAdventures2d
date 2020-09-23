@@ -1581,7 +1581,7 @@ PrefabInstance:
     - target: {fileID: 2271779725974154088, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2271779725974154088, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
@@ -1601,7 +1601,22 @@ PrefabInstance:
     - target: {fileID: 2271779725974154095, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
       propertyPath: m_Name
-      value: Monster Person
+      value: ForestDweller
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271779725974154095, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: m_TagString
+      value: Villager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: ID
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f380c38557ecda478c187916883a968, type: 3}
@@ -3252,12 +3267,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.220001
+      value: 3.1399999
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 3.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -5208,12 +5223,12 @@ PrefabInstance:
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000009536743
+      value: 0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.98
+      value: -3.3000002
       objectReference: {fileID: 0}
     - target: {fileID: 7817587730044465692, guid: 36e3ac60917141bd5b73175fb7caa78d,
         type: 3}
@@ -5401,7 +5416,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (1)
+      value: ForestDweller_1
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -5441,12 +5456,12 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.75
+      value: 32.9
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.12
+      value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -5476,7 +5491,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -5492,6 +5507,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -6305,7 +6330,7 @@ PrefabInstance:
     - target: {fileID: 2271779725974154088, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2271779725974154088, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
@@ -6325,7 +6350,17 @@ PrefabInstance:
     - target: {fileID: 2271779725974154095, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
       propertyPath: m_Name
-      value: Monster Person (1)
+      value: ForestDweller_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: ID
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f380c38557ecda478c187916883a968, type: 3}
@@ -10837,12 +10872,12 @@ PrefabInstance:
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.22
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7851511048547055114, guid: 9817bd4e00ad08590b2b018238936afe,
         type: 3}
@@ -11696,12 +11731,12 @@ PrefabInstance:
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000019073486
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.98
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 6709516179628808637, guid: 1e54a84fa82f5e246bcbef5c288ed5ad,
         type: 3}
@@ -13728,7 +13763,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (3)
+      value: ForestDweller_3
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -13803,7 +13838,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -13819,6 +13854,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -14198,7 +14243,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person
+      value: ForestDweller_5
       objectReference: {fileID: 0}
     - target: {fileID: 4152321616427694027, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -14289,6 +14334,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -15783,7 +15838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969272433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2199981, y: 7, z: -11.361452}
+  m_LocalPosition: {x: 3.1399996, y: 7, z: -11.361452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1486144353}
@@ -16551,7 +16606,7 @@ PrefabInstance:
     - target: {fileID: 3304416037311734611, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_Name
-      value: Stone Person (2)
+      value: ForestDweller_4
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -16591,7 +16646,7 @@ PrefabInstance:
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5191595054464268685, guid: f93d503fe4e6085449db6c0a39e713d9,
         type: 3}
@@ -16607,6 +16662,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: npcName
+      value: ForestDweller_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962729146283976629, guid: f93d503fe4e6085449db6c0a39e713d9,
+        type: 3}
+      propertyPath: ID
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93d503fe4e6085449db6c0a39e713d9, type: 3}
@@ -16719,11 +16784,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 679137233}
+  - {fileID: 399600213}
   - {fileID: 2030993003}
   - {fileID: 1090409857}
   - {fileID: 1502276774}
-  - {fileID: 399600213}
-  - {fileID: 679137233}
   - {fileID: 1996279694}
   m_Father: {fileID: 0}
   m_RootOrder: 8

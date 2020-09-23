@@ -429,8 +429,39 @@ Thank you for saving me! I'm so glad to be free of that monstrous form. I'll reo
 *[No further questions]
     Good luck on your travels. You'll need it. -> DONE
     
+=== Shopkeeper_Graveyard ===
+=is_stone
+You found me here too, if you can't see. I'm a fast and sneaky little bugger, if you ccan't tell. Maybe one day I'll tell you how I got here before you, if you can't see. -> DONE
+
+=is_awake
+During the daytime, I run my market shop. In the evenings, I have to work at the cemetery. It's getting harder and harder to make ends meet. -> DONE
+    
 === Castle_Guard ===
 =is_stone
 There's no getting by us. Nope. Not at all. *sob* Change us back and we'll let you through -> DONE
 =is_awake
 Well. That worked like a charm. Still not getting through though -> DONE
+
+=== ForestDweller ===
+=is_stone
+There's a dark energy coming from the northeast corner of the forest. Can't you feel it? -> DONE
+
+=== ForestDweller_1 ===
+=is_stone
+Things are getting very weird since God Emperor Magnus died. I didn't even know he could die. I thought he was immortal... -> DONE
+
+=== ForestDweller_2 ===
+=is_stone
+There's a haunted house in the forest. It's getting more and more haunted every day. Have you seen its eerie green glow yet?<br><br>Stay away from it. Stay very far away from it.-> DONE
+
+=== ForestDweller_3 ===
+=is_stone
+There are so many monsters in the forest these days. I want to run away, but for some reason I can't. What's wrong with my legs? -> DONE
+
+=== ForestDweller_4 ===
+=is_stone
+You're a wizard, aren't you? I can tell.-> DONE
+
+=== ForestDweller_5 ===
+=is_stone
+I'm just a simple hermit living in the forest. Why is this happening to me? What's going on? -> DONE

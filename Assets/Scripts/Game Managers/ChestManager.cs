@@ -6,7 +6,7 @@ public class ChestManager : MonoBehaviour
 {
    public static ChestManager chestManager;
 
-   public Dictionary<int, Chest.ChestState> chestList = new Dictionary<int, Chest.ChestState>();
+   public Dictionary<int, TreasureChest.ChestState> chestList = new Dictionary<int, TreasureChest.ChestState>();
 
    void Awake() 
    {
@@ -28,20 +28,20 @@ public class ChestManager : MonoBehaviour
         GameEvents.LoadInitiated += Load;
     }
 
-    public void UpdateChest(int chestID, Chest.ChestState status)
+    public void UpdateChest(int chestID, TreasureChest.ChestState status)
    {
        chestList[chestID] = status;
    }
 
     void Save()
     {
-        SaveLoad.Save<Dictionary<int, Chest.ChestState>>(chestList, "Chests");
+        SaveLoad.Save<Dictionary<int, TreasureChest.ChestState>>(chestList, "Chests");
     }
 
     void Load()
     {
         chestList.Clear();
-        chestList = SaveLoad.Load<Dictionary<int, Chest.ChestState>>("Chests");
+        chestList = SaveLoad.Load<Dictionary<int, TreasureChest.ChestState>>("Chests");
     }
 
 }

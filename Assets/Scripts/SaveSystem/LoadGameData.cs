@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LoadGameData : MonoBehaviour
 {
-    // Start is called before the first frame update
     public void LoadGame()
     {
         string[] separators = { " \n Click to Load" };

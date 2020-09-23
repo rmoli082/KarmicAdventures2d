@@ -62270,7 +62270,17 @@ PrefabInstance:
     - target: {fileID: 2271779725974154095, guid: 0f380c38557ecda478c187916883a968,
         type: 3}
       propertyPath: m_Name
-      value: Gravekeeper
+      value: Shopkeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: ID
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600093963186335928, guid: 0f380c38557ecda478c187916883a968,
+        type: 3}
+      propertyPath: npcName
+      value: Shopkeeper_Graveyard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f380c38557ecda478c187916883a968, type: 3}

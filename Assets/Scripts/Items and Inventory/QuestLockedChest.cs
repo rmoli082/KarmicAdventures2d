@@ -29,7 +29,7 @@ public class QuestLockedChest : TreasureChest
         }
         else
         {
-            dialogText.text = "This is locked by magic. You must possess the right mindset to open it.";
+            dialogText.text = "This is locked by magic. You must be on the right path to open it.";
             dialogBox.SetActive(true);
         }
         

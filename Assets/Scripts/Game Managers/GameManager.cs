@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 	public float yMaxRange = 2f;
 
     public bool gameIsOver = false;
+    public bool levelUpAvailable = false;
 
     private float nextSpawnTime;
 
@@ -28,7 +29,6 @@ public class GameManager : MonoBehaviour
     Scene _scene;
     Vector3 _spawnLocation;
 
-    [SerializeField]
     string locationName;
     string lastLocation;
 
@@ -236,6 +236,10 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SetupDefaults();
+        if (levelUpAvailable)
+        {
+            data.levelUpButton.SetActive(true);
+        }
     }
 
     void PopupKarmaDisplay()

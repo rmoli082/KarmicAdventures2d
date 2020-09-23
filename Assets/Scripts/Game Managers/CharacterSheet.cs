@@ -252,13 +252,14 @@ public class CharacterSheet : MonoBehaviour
     void DoLevelUp()
     {
         GameManager.gm.data.levelUpButton.SetActive(true);
+        GameManager.gm.levelUpAvailable = true;
         skillPoints++;
         GameManager.gm.data.levelUpText.text = $"You have {skillPoints} skill point to spend.";
 
         if (level % 3 == 0)
         {
-            GameManager.gm.data.levelUpText.text = $"You have {statPoints} stat point and {skillPoints} skill point you can spend.";
             statPoints++;
+            GameManager.gm.data.levelUpText.text = $"You have {statPoints} stat point and {skillPoints} skill point you can spend."; 
             GameManager.gm.data.statsPanel.SetActive(true);
         }
     }

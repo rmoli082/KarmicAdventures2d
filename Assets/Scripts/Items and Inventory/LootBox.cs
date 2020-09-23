@@ -11,7 +11,7 @@ public class LootBox : TreasureChest
         {
             id = Random.Range(1, 193734);
             this.chestID = id;
-            this.status = Chest.ChestState.CLOSED;
+            this.status = TreasureChest.ChestState.CLOSED;
         }
         dialogBox.SetActive(false);
         if (item.Length != 0)

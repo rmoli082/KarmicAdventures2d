@@ -81,9 +81,11 @@ MonoBehaviour:
   fixedParticleEffect: {fileID: 4182670012013575616, guid: 17da090cbd3ec504ba4da073aa459073,
     type: 3}
   hitSound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}
-  itemDrops: []
-  coinAmount: 0
-  lootboxPrefab: {fileID: 0}
+  itemDrops:
+  - {fileID: 11400000, guid: 707b04ebc93745c44bc4dc72296203e9, type: 2}
+  coinAmount: 25
+  lootboxPrefab: {fileID: 8185277190968721106, guid: 5b61b76723da79c47be9a73e42c69ecc,
+    type: 3}
   target: {fileID: 0}
   projectilePrefab: {fileID: 540222671576581450, guid: aed789481eedbdb4a87fe359261f45e6,
     type: 3}

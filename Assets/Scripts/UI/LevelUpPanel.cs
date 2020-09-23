@@ -44,5 +44,6 @@ public class LevelUpPanel : MonoBehaviour
         }
         CharacterSheet.charSheet.skillPoints--;
         gameObject.SetActive(false);
+        GameManager.gm.levelUpAvailable = false;
     }
 }

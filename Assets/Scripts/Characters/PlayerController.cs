@@ -103,12 +103,12 @@ public class PlayerController : MonoBehaviour
                     else
                         character.CloseDialog();
                 } 
-                else if (chest != null && chest.GetComponent<Chest>().status == Chest.ChestState.CLOSED) 
+                else if (chest != null && chest.status == TreasureChest.ChestState.CLOSED) 
                 {
                     Time.timeScale = 0f;
                     chest.DisplayDialog();
-                    chest.GetComponent<Chest>().status = Chest.ChestState.OPENED;
-                    ChestManager.chestManager.UpdateChest(chest.GetComponent<Chest>().chestID, chest.GetComponent<Chest>().status);
+                    chest.status = TreasureChest.ChestState.OPENED;
+                    ChestManager.chestManager.UpdateChest(chest.chestID, chest.status);
                 }
 
             }
@@ -120,16 +120,15 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rigidbody2d.position + Vector2.up * 0.2f, lookDirection, 1.5f, 1 << LayerMask.NameToLayer("NPC"));
             if (hit.collider != null)
             {
-                TreasureChest tchest = hit.collider.GetComponent<TreasureChest>();
-                Chest chest = hit.collider.GetComponent<Chest>();
+                TreasureChest chest = hit.collider.GetComponent<TreasureChest>();
                 if (chest != null)
                 {
-                    if (chest.status == Chest.ChestState.OPENED)
+                    if (chest.status == TreasureChest.ChestState.OPENED)
                     {
                         Time.timeScale = 1f;
-                        tchest.dialogBox.SetActive(false);
-                        tchest.GetTreasure();
-                        chest.status = Chest.ChestState.USED;
+                        chest.dialogBox.SetActive(false);
+                        chest.GetTreasure();
+                        chest.status = TreasureChest.ChestState.USED;
                         ChestManager.chestManager.UpdateChest(chest.chestID, chest.status);
                     }
                 }

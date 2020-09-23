@@ -6,8 +6,15 @@ using UnityEngine.UI;
 using System.Text;
 using TMPro;
 
-public class TreasureChest : Chest
+public class TreasureChest : MonoBehaviour
 {
+    public enum ChestState { OPENED, CLOSED, USED }
+    public int chestID;
+    public ChestState status = ChestState.CLOSED;
+
+    public GameObject dialogBox;
+    public TextMeshProUGUI dialogText;
+
     public int coinAmount;
     public Item[] item;
 
@@ -15,9 +22,17 @@ public class TreasureChest : Chest
 
     Scene _scene;
 
-    protected override void Awake()
+    protected virtual void Awake()
     {
-        base.Awake();
+        if (ChestManager.chestManager.chestList.ContainsKey(chestID))
+        {
+            this.status = ChestManager.chestManager.chestList[chestID];
+        }
+        else
+        {
+            this.status = ChestState.CLOSED;
+            ChestManager.chestManager.UpdateChest(chestID, status);
+        }
     }
 
     protected virtual void Start()
@@ -37,7 +52,7 @@ public class TreasureChest : Chest
                 {
                     id = Random.Range(1, 193734);
                     this.chestID = id;
-                    this.status = Chest.ChestState.CLOSED;
+                    this.status = ChestState.CLOSED;
                 }
             }
             coinAmount = Random.Range(5, 11);
@@ -49,7 +64,7 @@ public class TreasureChest : Chest
         }
     }
 
-    public override void DisplayDialog() {
+    public virtual void DisplayDialog() {
         StringBuilder message = new StringBuilder();
         message.Append("Chest opened.\n You receive:\n");
         if (coinAmount > 0)
@@ -66,7 +81,7 @@ public class TreasureChest : Chest
         dialogBox.SetActive (true);
     }
 
-    public override void GetTreasure() {
+    public virtual void GetTreasure() {
 
         Inventory.inventory.AddCoins(coinAmount);
         if (item.Length > 0) {
