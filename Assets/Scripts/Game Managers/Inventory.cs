@@ -10,8 +10,10 @@ public class Inventory : MonoBehaviour
 
     public static Inventory inventory;
     private int wallet = 0;
-    public List<Item> itemList;
-    public List<Avatar> avatarList;
+    [SerializeField]
+    private Dictionary<Item, int> itemList;
+    [SerializeField]
+    private List<Avatar> avatarList;
 
     void Awake()
     {
@@ -23,6 +25,8 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        itemList = new Dictionary<Item, int>();
+        avatarList = new List<Avatar>();
         UpdatePanelSlots();
     }
 
@@ -38,6 +42,7 @@ public class Inventory : MonoBehaviour
         UpdatePanelSlots();
     }
 
+    /*
     public void AddItem(Item item) 
     {
         if (itemList.Count < 24)
@@ -62,15 +67,53 @@ public class Inventory : MonoBehaviour
             AddItem(item);
         }
     }
+    */
 
-    public void RemoveItem(Item item)
+    public void AddItem(Item item)
     {
-        itemList.Remove(item);
+        if (itemList.Count < 24)
+        {
+            if (itemList.ContainsKey(item))
+            {
+                itemList[item] += 1;
+            }
+            else
+            {
+                itemList[item] = 1;
+            }
+        }
         UpdatePanelSlots();
     }
 
-    public List<Item> GetItems() {
+    public void AddItems(Item[] items)
+    {
+        foreach (Item item in items)
+        {
+            AddItem(item);
+        }
+    }
+
+    public void AddAvatarForm(Avatar avatar)
+    {
+        avatarList.Add(avatar);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        itemList[item] -= 1;
+        if (itemList[item] == 0)
+        {
+            itemList.Remove(item);
+        }
+    }
+
+    public Dictionary<Item, int> GetItems() {
         return itemList;
+    }
+
+    public List<Avatar> GetAvatars()
+    {
+        return avatarList;
     }
 
     public string GetCoins() {
@@ -80,13 +123,19 @@ public class Inventory : MonoBehaviour
     public void UpdatePanelSlots()
     {
         int index = 0;
+        List<Item> panelList = new List<Item>();
+        foreach (KeyValuePair<Item, int> keyPair in itemList)
+        {
+            panelList.Add(keyPair.Key);
+        }
+
         foreach (Transform child in GameManager.gm.data.inventorySlots.transform)
         {
             InventorySlotController slot = child.GetComponent<InventorySlotController>();
 
             if (index < itemList.Count)
             {
-                slot.item = itemList[index];
+                slot.item = panelList[index];
             }
             else
             {
@@ -129,9 +178,10 @@ public class Inventory : MonoBehaviour
         List<ItemSave> saveList = new List<ItemSave>();
         List<AvatarSave> avatarSaves = new List<AvatarSave>();
 
-        foreach (Item item in itemList)
+        foreach (KeyValuePair<Item, int> keypair in itemList)
         {
-            saveList.Add(new ItemSave(item));
+            for (int i = 0; i < keypair.Value; i++)
+                saveList.Add(new ItemSave(keypair.Key));
         }
 
         foreach (Avatar avatar in avatarList)
@@ -152,7 +202,7 @@ public class Inventory : MonoBehaviour
             List<ItemSave> saveList = SaveLoad.Load<List<ItemSave>>("Inventory");
             foreach (ItemSave item in saveList)
             {
-                itemList.Add(ItemDatabase.itemDb.GetItemByID(item.itemID));
+                itemList[ItemDatabase.itemDb.GetItemByID(item.itemID)] += 1;
             }
             UpdatePanelSlots();
         }

@@ -210,11 +210,11 @@ public class QuestManager : MonoBehaviour
             if (quest.questType == Quest.QuestType.FIND_ITEM)
             {
                 FindItem itemQuest = (FindItem)quest;
-                foreach (Item item in Inventory.inventory.itemList)
+                foreach (KeyValuePair<Item, int> keypair in Inventory.inventory.GetItems())
                 {
-                    if (item == itemQuest.itemRequired && itemQuest.questProgress == Quest.QuestProgress.CURRENT)
+                    if (keypair.Key == itemQuest.itemRequired && itemQuest.questProgress == Quest.QuestProgress.CURRENT)
                     {
-                        itemQuest.numberHeld += 1;
+                        itemQuest.numberHeld += keypair.Value;
                         if (itemQuest.numberHeld == itemQuest.numberNeeded)
                         {
                             CompleteQuest(itemQuest);

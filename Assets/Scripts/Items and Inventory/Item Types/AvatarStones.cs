@@ -10,7 +10,7 @@ public class AvatarStones : Item
     public Avatar avatarForm;
     public override void Use()
     {
-        Inventory.inventory.avatarList.Add(avatarForm);
+        Inventory.inventory.AddAvatarForm(avatarForm);
         Inventory.inventory.UpdateAvatarSlots();
         Inventory.inventory.RemoveItem(this);
     }

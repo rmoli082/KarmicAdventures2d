@@ -10,13 +10,13 @@ public class StoneCircle : MonoBehaviour
 
     public void Yes()
     {
-        List<Item> inventory = Inventory.inventory.GetItems();
+        Dictionary<Item, int> inventory = Inventory.inventory.GetItems();
 
-        foreach (Item item in inventory)
+        foreach (KeyValuePair<Item, int> keypair in inventory)
         {
-            if (item.itemID == 13)
+            if (keypair.Key.itemID == 13)
             {
-                Inventory.inventory.RemoveItem(item);
+                Inventory.inventory.RemoveItem(keypair.Key);
                 displayBox.SetActive(false);
                 GameManager.gm.EnterSubArea(levelToLoad);
                 return;

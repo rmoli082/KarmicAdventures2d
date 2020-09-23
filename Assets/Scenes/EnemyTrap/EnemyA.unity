@@ -1819,12 +1819,12 @@ PrefabInstance:
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.83016
+      value: -9.8867
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.629176
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3360882792392601737, guid: 1333ed6d1143ace238588e5dea344ae5,
         type: 3}
@@ -2663,7 +2663,7 @@ PrefabInstance:
         type: 3}
       propertyPath: item.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: d001fe0e9728bee4ab09355e979c9706,
+      objectReference: {fileID: 11400000, guid: bd922252ca9e3d149b4e1929959ff2a1,
         type: 2}
     - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
@@ -2719,6 +2719,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d001fe0e9728bee4ab09355e979c9706,
         type: 2}
+    - target: {fileID: 7461413929606324950, guid: 6c1a57c8f5ab16182ba10596c61e2892,
+        type: 3}
+      propertyPath: status
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7461413929606324951, guid: 6c1a57c8f5ab16182ba10596c61e2892,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2739,26 +2744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &909541192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7461413929606324946, guid: 6c1a57c8f5ab16182ba10596c61e2892,
-    type: 3}
-  m_PrefabInstance: {fileID: 909541190}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &909541193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909541192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a5d18f7f5a924eafbd009c56c0e0f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chestID: 165
-  status: 1
 --- !u!1001 &1020915951
 PrefabInstance:
   m_ObjectHideFlags: 0

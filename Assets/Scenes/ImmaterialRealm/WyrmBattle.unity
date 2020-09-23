@@ -131,6 +131,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3776874441677295997, guid: d96f36522bca51eb095496dc6c8a3dab,
+        type: 3}
+      propertyPath: loadLevel
+      value: Cemetery1
+      objectReference: {fileID: 0}
     - target: {fileID: 4094461334461340201, guid: d96f36522bca51eb095496dc6c8a3dab,
         type: 3}
       propertyPath: m_LocalPosition.x
