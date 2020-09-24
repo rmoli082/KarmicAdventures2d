@@ -27,7 +27,8 @@ MonoBehaviour:
   questObjective: Find a wyrm tooth
   xpReward: 50
   goldReward: 10
-  itemRewards: []
+  itemRewards:
+  - {fileID: 11400000, guid: 707b04ebc93745c44bc4dc72296203e9, type: 2}
   posKarmaAwarded: 0
   negKarmaAwarded: 0
   numberNeeded: 1

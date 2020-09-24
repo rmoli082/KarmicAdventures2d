@@ -55,7 +55,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AvatarS\Avatar.cs" />
+    <Compile Include="Assets\Scripts\Avatars\Avatar.cs" />
     <Compile Include="Assets\Scripts\Characters\NonPlayerCharacter.cs" />
     <Compile Include="Assets\Scripts\Characters\Projectile.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\AvatarSave.cs" />
@@ -78,12 +78,12 @@
     <Compile Include="Assets\Scripts\Characters\Enemies\RangedEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\DoLevelUp.cs" />
     <Compile Include="Assets\Scripts\Quests\KillQuest.cs" />
-    <Compile Include="Assets\Scripts\AvatarS\AvatarDatabase.cs" />
+    <Compile Include="Assets\Scripts\Avatars\AvatarDatabase.cs" />
     <Compile Include="Assets\Scripts\Events and Locations\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Scripts\Game Managers\ChestManager.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Item Types\Consumable.cs" />
-    <Compile Include="Assets\Scripts\AvatarS\AvatarSlotController.cs" />
+    <Compile Include="Assets\Scripts\Avatars\AvatarSlotController.cs" />
     <Compile Include="Assets\Scripts\Characters\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\UIDialogueBox.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemDatabase.cs" />

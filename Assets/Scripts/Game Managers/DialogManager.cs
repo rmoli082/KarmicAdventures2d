@@ -48,16 +48,6 @@ public class DialogManager : MonoBehaviour
         RefreshView();
     }
 
-    public int GetSpiritKarma()
-    {
-        return (int)_mainStory.variablesState["spiritKarma"];
-    }
-
-    public int GetDemonKarma()
-    {
-        return (int)_mainStory.variablesState["demonKarma"];
-    }
-
     void OnClickChoiceButton(Choice choice)
     {
         _mainStory.ChooseChoiceIndex(choice.index);
@@ -82,6 +72,14 @@ public class DialogManager : MonoBehaviour
             if (tags.Contains("GiveQuest"))
             {
                 npc.isQuestGiver = true;
+            }
+            if (tags.Contains("GiveDemonKarma"))
+            {
+                CharacterSheet.charSheet.ChangeDemonKarma(1);
+            }
+            if (tags.Contains("GiveSpiritKarma"))
+            {
+                CharacterSheet.charSheet.ChangeSpiritKarma(1);
             }
         }
 

@@ -13,7 +13,8 @@ public class NPCCharacterWrapper
     public NPCCharacterWrapper(NPCManager.NPCCharacter npcCharacter)
     {
         status = npcCharacter.status;
-        currentQuest = npcCharacter.currentQuest.questID;
+        if (npcCharacter.currentQuest != null)
+            currentQuest = npcCharacter.currentQuest.questID;
         haveSpoken = npcCharacter.haveSpoken;
         hasQuest = npcCharacter.hasQuest;
     }

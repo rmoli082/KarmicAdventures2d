@@ -105,6 +105,7 @@ public class Inventory : MonoBehaviour
         {
             itemList.Remove(item);
         }
+        UpdatePanelSlots();
     }
 
     public Dictionary<Item, int> GetItems() {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarID: 1
   avatarName: Moon Avatar
-  avatarDescription: Unleash the power of the moon
+  avatarDescription: Unleash the shimmering power of the moon
   avatarIcon: {fileID: 2209556253829814930, guid: d63932905cadea6b28dcb1b55f92bf8b,
     type: 3}
   attackUp: 2

@@ -15,7 +15,7 @@ public class AwakeningStone : Item
             if (hit.collider != null)
             {
                 NonPlayerCharacter npc = hit.collider.GetComponent<NonPlayerCharacter>();
-                if (npc != null)
+                if (npc != null && npc.awakeningStatus == NonPlayerCharacter.AwakeningStatus.is_stone)
                 {
                     npc.Awakening(this.itemID);
                     Inventory.inventory.RemoveItem(this);
